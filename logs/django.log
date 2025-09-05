@@ -1163,3 +1163,15 @@ INFO 2025-09-05 20:40:50,699 autoreload 97266 8464575616 /Users/bro/PROJECTS/far
 INFO 2025-09-05 20:40:50,997 autoreload 97301 8464575616 Watching for file changes with StatReloader
 INFO 2025-09-05 20:40:54,298 autoreload 97301 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
 INFO 2025-09-05 20:40:54,593 autoreload 97331 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:44:56,244 autoreload 97331 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-09-05 20:44:56,620 autoreload 98610 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:44:57,850 autoreload 98610 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-09-05 20:44:58,116 autoreload 98627 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:45:00,325 autoreload 98627 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-09-05 20:45:00,536 autoreload 98644 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:45:06,786 autoreload 98644 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-09-05 20:45:07,032 autoreload 98701 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:45:13,344 autoreload 98701 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-09-05 20:45:13,560 autoreload 98748 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:45:39,250 autoreload 98748 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/ai_agent/settings.py changed, reloading.
+INFO 2025-09-05 20:45:39,592 autoreload 98904 8464575616 Watching for file changes with StatReloader
