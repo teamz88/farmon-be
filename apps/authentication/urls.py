@@ -30,4 +30,9 @@ urlpatterns = [
     path('client-info/', views.ClientInfoView.as_view(), name='client_info'),
     path('client-info/status/', views.check_client_info_status, name='client_info_status'),
     path('users/<int:user_id>/client-info/', views.AdminClientInfoView.as_view(), name='admin_client_info'),
+    
+    # Magic link endpoints
+    path('magic-link/', views.MagicLinkRegistrationView.as_view(), name='magic_link_register'),
+    path('magic-link/<str:token>/', views.MagicLinkValidationView.as_view(), name='magic_link_validate'),
+    path('magic-link/<str:token>/set-password/', views.MagicLinkPasswordSetView.as_view(), name='magic_link_set_password'),
 ]

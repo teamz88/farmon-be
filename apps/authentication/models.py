@@ -2,6 +2,9 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 from datetime import timedelta
+import uuid
+import secrets
+import string
 
 
 class User(AbstractUser):
@@ -347,3 +350,187 @@ class UserSession(models.Model):
             # Update user's total time spent
             self.user.total_time_spent += self.duration
             self.user.save(update_fields=['total_time_spent'])
+
+
+class MagicUser(models.Model):
+    """Model to store magic link user registrations before account creation."""
+    
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    
+    # Required fields
+    first_name = models.CharField(
+        max_length=150,
+        help_text="User's first name"
+    )
+    
+    last_name = models.CharField(
+        max_length=150,
+        help_text="User's last name"
+    )
+    
+    email = models.EmailField(
+        unique=True,
+        help_text="User's email address"
+    )
+    
+    # Optional fields
+    company_name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Company name"
+    )
+    
+    phone_number = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True,
+        help_text="User's phone number"
+    )
+    
+    # Magic link fields
+    magic_token = models.CharField(
+        max_length=64,
+        unique=True,
+        help_text="Unique token for magic link"
+    )
+    
+    magic_link = models.URLField(
+        help_text="Generated magic link URL"
+    )
+    
+    # Generated credentials
+    generated_username = models.CharField(
+        max_length=150,
+        unique=True,
+        help_text="Auto-generated username"
+    )
+    
+    generated_password = models.CharField(
+        max_length=128,
+        help_text="Auto-generated temporary password"
+    )
+    
+    # Status tracking
+    is_used = models.BooleanField(
+        default=False,
+        help_text="Whether the magic link has been used"
+    )
+    
+    is_account_created = models.BooleanField(
+        default=False,
+        help_text="Whether the user account has been created"
+    )
+    
+    created_user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='magic_registrations',
+        help_text="The created user account (if any)"
+    )
+    
+    # Webhook tracking
+    webhook_sent = models.BooleanField(
+        default=False,
+        help_text="Whether webhook has been sent to n8n"
+    )
+    
+    webhook_sent_at = models.DateTimeField(
+        null=True,
+        blank=True,
+        help_text="When webhook was sent"
+    )
+    
+    # Timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    expires_at = models.DateTimeField(
+        help_text="When the magic link expires"
+    )
+    
+    class Meta:
+        db_table = 'magic_users'
+        verbose_name = 'Magic User'
+        verbose_name_plural = 'Magic Users'
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} ({self.email})"
+    
+    @classmethod
+    def generate_magic_token(cls):
+        """Generate a secure random token for magic link."""
+        return secrets.token_urlsafe(32)
+    
+    @classmethod
+    def generate_username(cls, first_name, email):
+        """Generate unique username from first name and email."""
+        # Create base username from first name and email prefix
+        email_prefix = email.split('@')[0]
+        base_username = f"{first_name.lower()}.{email_prefix.lower()}"
+        
+        # Remove special characters and limit length
+        base_username = ''.join(c for c in base_username if c.isalnum() or c in '._')
+        base_username = base_username[:30]  # Limit to 30 chars
+        
+        # Ensure uniqueness
+        username = base_username
+        counter = 1
+        while User.objects.filter(username=username).exists() or cls.objects.filter(generated_username=username).exists():
+            username = f"{base_username}{counter}"
+            counter += 1
+            if len(username) > 30:
+                # If too long, truncate base and try again
+                base_username = base_username[:25]
+                username = f"{base_username}{counter}"
+        
+        return username
+    
+    @classmethod
+    def generate_password(cls, length=12):
+        """Generate a secure random password."""
+        alphabet = string.ascii_letters + string.digits + "!@#$%^&*"
+        password = ''.join(secrets.choice(alphabet) for _ in range(length))
+        return password
+    
+    def is_expired(self):
+        """Check if the magic link has expired."""
+        return timezone.now() > self.expires_at
+    
+    def create_user_account(self, password):
+        """Create actual user account from magic user data."""
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        if self.is_account_created and self.created_user:
+            logger.info(f'Account already exists for {self.email}, updating password')
+            user = self.created_user
+            user.set_password(password)
+            user.save()
+            logger.info(f'Password updated for existing user: {user.username}, hash: {user.password[:20]}...')
+            return user
+        
+        logger.info(f'Creating user account for {self.email} with username {self.generated_username}')
+        user = User.objects.create(
+            username=self.generated_username,
+            email=self.email,
+            first_name=self.first_name,
+            last_name=self.last_name,
+            phone_number=self.phone_number,
+            is_active=True
+        )
+        user.set_password(password)
+        user.save()
+        logger.info(f'User created successfully: {user.username}, password hash: {user.password[:20]}...')
+        
+        self.created_user = user
+        self.is_account_created = True
+        self.save(update_fields=['created_user', 'is_account_created', 'updated_at'])
+        
+        return user

@@ -218,13 +218,19 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 
-# Email Configuration
+# Email settings
 EMAIL_BACKEND = env('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 EMAIL_HOST = env('EMAIL_HOST', default='')
 EMAIL_PORT = env.int('EMAIL_PORT', default=587)
 EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=True)
 EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
+
+# Frontend URL for magic links
+FRONTEND_URL = env('FRONTEND_URL', default='http://localhost:3000')
+
+# n8n Webhook Settings
+N8N_WEBHOOK_URL = env('N8N_WEBHOOK_URL', default='')
 
 # Logging
 # Ensure logs directory exists

@@ -7,16 +7,23 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth import login
 from django.db.models import Q
 from django.utils import timezone
+from django.conf import settings
+from datetime import timedelta
+import requests
+import logging
 
-from .models import User, UserSession, ClientInfo
+from .models import User, UserSession, ClientInfo, MagicUser
 from .serializers import (
     UserRegistrationSerializer,
     UserLoginSerializer,
     UserProfileSerializer,
-    UserListSerializer,
     ChangePasswordSerializer,
     UserSessionSerializer,
-    ClientInfoSerializer
+    ClientInfoSerializer,
+    MagicUserRegistrationSerializer,
+    MagicUserSerializer,
+    MagicUserPasswordSetSerializer,
+    UserListSerializer,
 )
 from .permissions import IsAdminUser
 
@@ -68,6 +75,7 @@ class UserLoginView(APIView):
         serializer.is_valid(raise_exception=True)
         
         user = serializer.validated_data['user']
+        logger.info(f'User login: {user.username}, password hash: {user.password[:50]}...')
         login(request, user)
         
         # Update last login
@@ -93,6 +101,212 @@ class UserLoginView(APIView):
             },
             'session_id': session.id
         }, status=status.HTTP_200_OK)
+
+
+# Magic Link Views
+logger = logging.getLogger(__name__)
+
+
+class MagicLinkRegistrationView(generics.CreateAPIView):
+    """Create magic link registration."""
+    
+    queryset = MagicUser.objects.all()
+    serializer_class = MagicUserRegistrationSerializer
+    permission_classes = [permissions.AllowAny]
+    
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        # Create magic user
+        magic_user = serializer.save()
+        
+        # Automatically create user account and sign in
+        user = magic_user.create_user_account(magic_user.generated_password)
+        magic_user.is_account_created = True
+        magic_user.save()
+        
+        # Generate JWT tokens for automatic sign in
+        refresh = RefreshToken.for_user(user)
+        access_token = refresh.access_token
+        
+        # Create user session
+        session = UserSession.objects.create(
+            user=user,
+            ip_address=self.get_client_ip(request),
+            user_agent=request.META.get('HTTP_USER_AGENT', '')
+        )
+        
+        # Send webhook to n8n
+        self.send_webhook(magic_user)
+        
+        return Response({
+            'message': 'Account created and signed in successfully',
+            'magic_link': magic_user.magic_link,
+            'access': str(access_token),
+            'refresh': str(refresh),
+            'user': {
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name
+            },
+            'session_id': session.id
+        }, status=status.HTTP_201_CREATED)
+    
+    def get_client_ip(self, request):
+        """Get client IP address from request."""
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    
+    def send_webhook(self, magic_user):
+        """Send webhook to n8n with magic user data."""
+        try:
+            webhook_url = getattr(settings, 'N8N_WEBHOOK_URL', None)
+            if not webhook_url:
+                logger.warning('N8N_WEBHOOK_URL not configured in settings')
+                return
+            
+            webhook_data = {
+                'magic_link': magic_user.magic_link,
+                'first_name': magic_user.first_name,
+                'last_name': magic_user.last_name,
+                'email': magic_user.email,
+                'company_name': magic_user.company_name,
+                'phone_number': magic_user.phone_number,
+                'created_at': magic_user.created_at.isoformat(),
+            }
+            
+            response = requests.post(
+                webhook_url,
+                json=webhook_data,
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                magic_user.webhook_sent = True
+                magic_user.save(update_fields=['webhook_sent'])
+                logger.info(f'Webhook sent successfully for magic user {magic_user.id}')
+            else:
+                logger.error(f'Webhook failed with status {response.status_code} for magic user {magic_user.id}')
+                
+        except Exception as e:
+            logger.error(f'Error sending webhook for magic user {magic_user.id}: {str(e)}')
+
+
+class MagicLinkValidationView(APIView):
+    """Validate magic link and return user data."""
+    
+    permission_classes = [permissions.AllowAny]
+    
+    def get(self, request, token):
+        try:
+            magic_user = MagicUser.objects.get(magic_token=token)
+            
+            if magic_user.is_expired():
+                return Response({
+                    'error': 'Magic link has expired'
+                }, status=status.HTTP_400_BAD_REQUEST)
+            
+            if magic_user.is_used:
+                return Response({
+                    'error': 'Magic link has already been used'
+                }, status=status.HTTP_400_BAD_REQUEST)
+            
+            serializer = MagicUserSerializer(magic_user)
+            return Response({
+                'valid': True,
+                'user_data': serializer.data
+            }, status=status.HTTP_200_OK)
+            
+        except MagicUser.DoesNotExist:
+            return Response({
+                'error': 'Invalid magic link'
+            }, status=status.HTTP_404_NOT_FOUND)
+
+
+class MagicLinkPasswordSetView(APIView):
+    """Set password for magic link user and create account."""
+    
+    permission_classes = [permissions.AllowAny]
+    
+    def get_client_ip(self, request):
+        """Get client IP address from request."""
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    
+    def post(self, request, token):
+        try:
+            magic_user = MagicUser.objects.get(magic_token=token)
+            
+            if magic_user.is_expired():
+                return Response({
+                    'error': 'Magic link has expired'
+                }, status=status.HTTP_400_BAD_REQUEST)
+            
+            if magic_user.is_used:
+                return Response({
+                    'error': 'Magic link has already been used'
+                }, status=status.HTTP_400_BAD_REQUEST)
+            
+            serializer = MagicUserPasswordSetSerializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            
+            # Create user account
+            password = serializer.validated_data['password']
+            logger.info(f'Setting password for magic user {magic_user.email}')
+            user = magic_user.create_user_account(password)
+            logger.info(f'User created: {user.username}, password hash: {user.password[:50]}...')
+            
+            # Generate JWT tokens
+            refresh = RefreshToken.for_user(user)
+            access_token = refresh.access_token
+            
+            # Create user session
+            session = UserSession.objects.create(
+                user=user,
+                ip_address=self.get_client_ip(request),
+                user_agent=request.META.get('HTTP_USER_AGENT', '')
+            )
+            
+            # Mark magic user as used
+            magic_user.is_used = True
+            magic_user.is_account_created = True
+            magic_user.save(update_fields=['is_used', 'is_account_created'])
+            
+            return Response({
+                'message': 'Account created successfully',
+                'user': {
+                    'id': user.id,
+                    'username': user.username,
+                    'email': user.email,
+                    'first_name': user.first_name,
+                    'last_name': user.last_name,
+                },
+                'tokens': {
+                    'access': str(access_token),
+                    'refresh': str(refresh),
+                }
+            }, status=status.HTTP_201_CREATED)
+            
+        except MagicUser.DoesNotExist:
+            return Response({
+                'error': 'Invalid magic link'
+            }, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.error(f'Error creating account from magic link: {str(e)}')
+            return Response({
+                'error': 'Failed to create account'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class ClientInfoView(generics.RetrieveUpdateAPIView):

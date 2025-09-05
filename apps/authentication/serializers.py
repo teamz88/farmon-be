@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
-from .models import User, UserSession, ClientInfo
+from .models import User, UserSession, ClientInfo, MagicUser
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -63,27 +63,35 @@ class UserLoginSerializer(serializers.Serializer):
     
     def validate(self, attrs):
         """Validate user credentials."""
+        import logging
+        logger = logging.getLogger(__name__)
+        
         username = attrs.get('username')
         password = attrs.get('password')
         
         if username and password:
+            logger.info(f'Login attempt for: {username}')
             # Try to authenticate with username or email
             user = authenticate(
                 request=self.context.get('request'),
                 username=username,
                 password=password
             )
+            logger.info(f'Username auth result: {bool(user)}')
             
             if not user:
                 # Try with email if username authentication failed
                 try:
                     user_obj = User.objects.get(email=username)
+                    logger.info(f'Found user by email: {user_obj.username}, password hash: {user_obj.password[:50]}...')
                     user = authenticate(
                         request=self.context.get('request'),
                         username=user_obj.username,
                         password=password
                     )
+                    logger.info(f'Email auth result: {bool(user)}')
                 except User.DoesNotExist:
+                    logger.info(f'No user found with email: {username}')
                     pass
             
             if not user:
@@ -238,3 +246,96 @@ class ClientInfoSerializer(serializers.ModelSerializer):
         if value and (value < 0 or value > 100):
             raise serializers.ValidationError("Gross profit margin must be between 0 and 100 percent.")
         return value
+
+
+class MagicUserRegistrationSerializer(serializers.ModelSerializer):
+    """Serializer for magic link user registration."""
+    
+    class Meta:
+        model = MagicUser
+        fields = (
+            'first_name', 'last_name', 'email', 'company_name', 'phone_number'
+        )
+        extra_kwargs = {
+            'first_name': {'required': True},
+            'last_name': {'required': True},
+            'email': {'required': True},
+        }
+    
+    def validate_email(self, value):
+        """Validate email uniqueness across both User and MagicUser models."""
+        if User.objects.filter(email=value).exists():
+            raise serializers.ValidationError("A user with this email already exists.")
+        if MagicUser.objects.filter(email=value).exists():
+            raise serializers.ValidationError("A magic link has already been sent to this email.")
+        return value
+    
+    def create(self, validated_data):
+        """Create MagicUser with all required fields."""
+        from django.utils import timezone
+        from datetime import timedelta
+        from django.conf import settings
+        
+        # Generate required fields
+        magic_token = MagicUser.generate_magic_token()
+        generated_username = MagicUser.generate_username(
+            validated_data['first_name'], 
+            validated_data['email']
+        )
+        generated_password = MagicUser.generate_password()
+        
+        # Set expiration time (7 days from now)
+        expires_at = timezone.now() + timedelta(days=7)
+        
+        # Generate magic link URL
+        frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
+        magic_link = f"{frontend_url}/magic-link/set-password?token={magic_token}"
+        
+        # Create the MagicUser instance
+        magic_user = MagicUser.objects.create(
+            magic_token=magic_token,
+            magic_link=magic_link,
+            generated_username=generated_username,
+            generated_password=generated_password,
+            expires_at=expires_at,
+            **validated_data
+        )
+        
+        return magic_user
+
+
+class MagicUserSerializer(serializers.ModelSerializer):
+    """Serializer for MagicUser model."""
+    
+    class Meta:
+        model = MagicUser
+        fields = (
+            'id', 'first_name', 'last_name', 'email', 'company_name',
+            'phone_number', 'magic_link', 'generated_username',
+            'is_used', 'is_account_created', 'webhook_sent',
+            'created_at', 'expires_at'
+        )
+        read_only_fields = (
+            'id', 'magic_link', 'generated_username', 'is_used',
+            'is_account_created', 'webhook_sent', 'created_at', 'expires_at'
+        )
+
+
+class MagicUserPasswordSetSerializer(serializers.Serializer):
+    """Serializer for setting password for magic link users."""
+    
+    password = serializers.CharField(
+        write_only=True,
+        validators=[validate_password],
+        style={'input_type': 'password'}
+    )
+    password_confirm = serializers.CharField(
+        write_only=True,
+        style={'input_type': 'password'}
+    )
+    
+    def validate(self, attrs):
+        """Validate password confirmation."""
+        if attrs['password'] != attrs['password_confirm']:
+            raise serializers.ValidationError("Password confirmation doesn't match.")
+        return attrs

@@ -624,3 +624,524 @@ INFO 2025-08-12 17:41:41,961 basehttp 22343 6256209920 "GET /api/auth/profile/ H
 INFO 2025-08-12 17:41:41,965 basehttp 22343 6273036288 "GET /api/auth/client-info/ HTTP/1.1" 200 475
 INFO 2025-08-12 17:41:41,967 basehttp 22343 6205157376 "GET /api/chat/folders/ HTTP/1.1" 200 2
 INFO 2025-08-12 17:41:41,970 basehttp 22343 6221983744 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:18:55,547 autoreload 51441 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:19:49,890 basehttp 51441 6205681664 "OPTIONS /api/auth/magic-link/ HTTP/1.1" 200 0
+ERROR 2025-09-05 19:19:49,998 log 51441 6205681664 Internal Server Error: /api/auth/magic-link/
+Traceback (most recent call last):
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "expires_at" of relation "magic_users" violates not-null constraint
+DETAIL:  Failing row contains (f778d68f-ab93-4223-b511-fc703cf40379, bro, bro, ralfgrugo4567@gmail.com, Bro, +998997591317, , , , , f, f, f, null, 2025-09-05 19:19:49.932226+00, 2025-09-05 19:19:49.932292+00, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py", line 121, in create
+    magic_user = serializer.save()
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "expires_at" of relation "magic_users" violates not-null constraint
+DETAIL:  Failing row contains (f778d68f-ab93-4223-b511-fc703cf40379, bro, bro, ralfgrugo4567@gmail.com, Bro, +998997591317, , , , , f, f, f, null, 2025-09-05 19:19:49.932226+00, 2025-09-05 19:19:49.932292+00, null, null).
+
+ERROR 2025-09-05 19:19:50,002 basehttp 51441 6205681664 "POST /api/auth/magic-link/ HTTP/1.1" 500 219455
+INFO 2025-09-05 19:20:58,060 autoreload 51441 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-05 19:20:58,403 autoreload 52362 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:21:14,877 autoreload 52362 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/ai_agent/settings.py changed, reloading.
+INFO 2025-09-05 19:21:15,220 autoreload 52502 8464575616 Watching for file changes with StatReloader
+WARNING 2025-09-05 19:22:01,581 views 52502 6169686016 N8N_WEBHOOK_URL not configured in settings
+INFO 2025-09-05 19:22:01,583 basehttp 52502 6169686016 "POST /api/auth/magic-link/ HTTP/1.1" 201 162
+INFO 2025-09-05 19:27:39,011 autoreload 54957 8464575616 Watching for file changes with StatReloader
+WARNING 2025-09-05 19:28:06,052 log 54957 6131757056 Bad Request: /api/auth/magic-link/
+WARNING 2025-09-05 19:28:06,052 basehttp 54957 6131757056 "POST /api/auth/magic-link/ HTTP/1.1" 400 56
+WARNING 2025-09-05 19:28:17,639 log 54957 6131757056 Bad Request: /api/auth/magic-link/
+WARNING 2025-09-05 19:28:17,640 basehttp 54957 6131757056 "POST /api/auth/magic-link/ HTTP/1.1" 400 56
+WARNING 2025-09-05 19:29:50,803 views 54957 6131757056 N8N_WEBHOOK_URL not configured in settings
+INFO 2025-09-05 19:29:50,815 basehttp 54957 6131757056 "POST /api/auth/magic-link/ HTTP/1.1" 201 789
+INFO 2025-09-05 19:31:47,363 autoreload 54957 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/ai_agent/settings.py changed, reloading.
+INFO 2025-09-05 19:31:47,766 autoreload 56747 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:33:06,634 autoreload 56837 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:34:11,034 views 56837 6129430528 Webhook sent successfully for magic user 2fd54b81-69d6-41c1-bb2d-a45689130ee0
+INFO 2025-09-05 19:34:11,047 basehttp 56837 6129430528 "POST /api/auth/magic-link/ HTTP/1.1" 201 783
+INFO 2025-09-05 19:34:11,090 basehttp 56837 6129430528 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:34:11,093 basehttp 56837 6163083264 "OPTIONS /api/auth/client-info/status/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:34:11,096 basehttp 56837 6179909632 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:34:11,096 basehttp 56837 6146256896 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:34:11,098 basehttp 56837 6129430528 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:34:11,126 basehttp 56837 6129430528 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:34:11,126 basehttp 56837 6146256896 "GET /api/auth/client-info/status/ HTTP/1.1" 200 46
+INFO 2025-09-05 19:34:11,126 basehttp 56837 6179909632 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:34:11,140 basehttp 56837 6163083264 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:34:11,140 basehttp 56837 6196736000 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:34:11,147 basehttp 56837 6179909632 "GET /api/auth/client-info/status/ HTTP/1.1" 200 46
+INFO 2025-09-05 19:35:21,423 basehttp 56837 6163083264 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:35:21,431 basehttp 56837 6179909632 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:35:21,439 basehttp 56837 6196736000 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:35:21,443 basehttp 56837 6163083264 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:36:19,139 basehttp 56837 6179909632 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:36:19,139 basehttp 56837 6163083264 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:36:19,141 basehttp 56837 6146256896 "OPTIONS /api/auth/client-info/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:36:19,142 basehttp 56837 6196736000 "OPTIONS /api/auth/client-info/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:36:19,176 basehttp 56837 6163083264 "GET /api/auth/profile/ HTTP/1.1" 200 529
+INFO 2025-09-05 19:36:19,210 basehttp 56837 6196736000 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-05 19:36:19,219 basehttp 56837 6163083264 "GET /api/auth/profile/ HTTP/1.1" 200 529
+INFO 2025-09-05 19:36:19,225 basehttp 56837 6146256896 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-05 19:40:21,821 basehttp 56837 6163083264 "OPTIONS /api/auth/magic-link/set-password/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:40:21,835 basehttp 56837 6146256896 "OPTIONS /api/auth/magic-link/set-password/ HTTP/1.1" 200 0
+WARNING 2025-09-05 19:40:21,873 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:21,874 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:21,883 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:21,883 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:27,938 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:27,939 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:27,946 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:27,946 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:28,880 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:28,880 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:28,889 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:28,889 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:29,459 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:29,461 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:29,478 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:29,478 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:29,737 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:29,737 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:29,745 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:29,745 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:29,973 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:29,973 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:29,982 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:29,983 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,167 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,167 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,178 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,178 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,352 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,352 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,362 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,362 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,529 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,530 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,538 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,539 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,704 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,704 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:30,713 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:30,713 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:44,144 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:44,145 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:40:44,154 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:40:44,154 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:42:39,967 log 56837 6146256896 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:42:39,968 basehttp 56837 6146256896 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:42:39,983 log 56837 6163083264 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:42:39,984 basehttp 56837 6163083264 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+INFO 2025-09-05 19:43:50,938 autoreload 56837 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-05 19:43:51,314 autoreload 63555 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:44:34,531 autoreload 63555 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-05 19:44:34,898 autoreload 63951 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:44:48,440 basehttp 63951 6177304576 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:44:48,443 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:44:48,457 basehttp 63951 6177304576 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:44:48,459 basehttp 63951 6194704384 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:44:48,472 basehttp 63951 6160478208 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:44:48,475 basehttp 63951 6177304576 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:44:48,481 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:44:48,482 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:11,719 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:11,719 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:11,729 basehttp 63951 6177304576 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:11,730 basehttp 63951 6211530752 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:15,067 basehttp 63951 6177304576 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:15,067 basehttp 63951 6211530752 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:15,076 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:15,077 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:19,005 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:19,007 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:19,015 basehttp 63951 6177304576 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:19,016 basehttp 63951 6160478208 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:25,618 basehttp 63951 6177304576 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:25,620 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:25,630 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:45:25,632 basehttp 63951 6211530752 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:01,705 basehttp 63951 6211530752 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:01,706 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,502 basehttp 63951 6211530752 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,505 basehttp 63951 6194704384 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,514 basehttp 63951 6160478208 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,516 basehttp 63951 6211530752 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,555 basehttp 63951 6160478208 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,557 basehttp 63951 6211530752 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,565 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:02,567 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:04,168 basehttp 63951 6194704384 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:04,170 basehttp 63951 6160478208 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:04,177 basehttp 63951 6211530752 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:04,178 basehttp 63951 6194704384 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:42,127 autoreload 63951 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-05 19:48:42,528 autoreload 67099 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:48:49,843 autoreload 67099 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-05 19:48:50,114 autoreload 67176 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:48:56,696 basehttp 67176 6181711872 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:56,706 basehttp 67176 6181711872 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:56,733 basehttp 67176 6164885504 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:56,753 basehttp 67176 6181711872 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:57,333 basehttp 67176 6181711872 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:57,333 basehttp 67176 6164885504 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:57,342 basehttp 67176 6198538240 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:48:57,343 basehttp 67176 6181711872 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:49:01,506 autoreload 67176 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-05 19:49:01,813 autoreload 67341 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:49:13,262 autoreload 67341 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/urls.py changed, reloading.
+INFO 2025-09-05 19:49:13,454 autoreload 67449 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 19:50:36,405 autoreload 67449 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-05 19:50:36,835 autoreload 68257 8464575616 Watching for file changes with StatReloader
+WARNING 2025-09-05 19:52:28,441 log 68257 6195785728 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:28,441 basehttp 68257 6195785728 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:28,450 log 68257 6195785728 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:28,450 basehttp 68257 6195785728 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:40,427 log 68257 6195785728 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:40,428 basehttp 68257 6195785728 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:40,435 log 68257 6212612096 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:40,436 basehttp 68257 6212612096 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:45,536 log 68257 6212612096 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:45,536 basehttp 68257 6212612096 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:45,548 log 68257 6195785728 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:45,548 basehttp 68257 6195785728 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:46,422 log 68257 6195785728 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:46,423 basehttp 68257 6195785728 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:46,444 log 68257 6212612096 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:46,445 basehttp 68257 6212612096 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:56,435 log 68257 6212612096 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:56,435 basehttp 68257 6212612096 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:52:56,446 log 68257 6195785728 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:52:56,446 basehttp 68257 6195785728 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:53:06,100 log 68257 6195785728 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:53:06,102 basehttp 68257 6195785728 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:53:06,113 log 68257 6212612096 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:53:06,113 basehttp 68257 6212612096 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:53:08,280 log 68257 6212612096 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:53:08,280 basehttp 68257 6212612096 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+WARNING 2025-09-05 19:53:08,424 log 68257 6212612096 Not Found: /api/auth/magic-link/set-password/
+WARNING 2025-09-05 19:53:08,424 basehttp 68257 6212612096 "GET /api/auth/magic-link/set-password/ HTTP/1.1" 404 30
+INFO 2025-09-05 19:53:22,478 basehttp 68257 6195785728 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:22,482 basehttp 68257 6212612096 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:22,493 basehttp 68257 6195785728 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:22,497 basehttp 68257 6230011904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:22,506 basehttp 68257 6212612096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:22,510 basehttp 68257 6195785728 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:22,517 basehttp 68257 6230011904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:22,520 basehttp 68257 6212612096 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:29,954 basehttp 68257 6212612096 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:29,954 basehttp 68257 6230011904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:29,965 basehttp 68257 6212612096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:29,965 basehttp 68257 6195785728 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:30,992 basehttp 68257 6212612096 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:30,995 basehttp 68257 6195785728 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:31,003 basehttp 68257 6230011904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:31,003 basehttp 68257 6212612096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:31,656 basehttp 68257 6212612096 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:31,656 basehttp 68257 6230011904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:31,665 basehttp 68257 6195785728 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:31,666 basehttp 68257 6230011904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:45,041 basehttp 68257 6195785728 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:45,044 basehttp 68257 6230011904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:45,065 basehttp 68257 6212612096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:45,068 basehttp 68257 6230011904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:46,155 basehttp 68257 6230011904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:46,158 basehttp 68257 6212612096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:46,169 basehttp 68257 6230011904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:46,169 basehttp 68257 6195785728 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,025 basehttp 68257 6230011904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,028 basehttp 68257 6195785728 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,043 basehttp 68257 6212612096 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,047 basehttp 68257 6230011904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,820 basehttp 68257 6230011904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,823 basehttp 68257 6212612096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,835 basehttp 68257 6195785728 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:53:47,839 basehttp 68257 6230011904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:54:59,427 basehttp 68257 6195785728 "OPTIONS /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:54:59,427 basehttp 68257 6246838272 "OPTIONS /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:54:59,427 basehttp 68257 6212612096 "OPTIONS /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:54:59,427 basehttp 68257 6230011904 "OPTIONS /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:54:59,445 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:54:59,453 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:54:59,461 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:54:59,469 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:08,439 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:08,450 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:16,433 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:16,443 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:24,437 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:24,449 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:33,138 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:33,429 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:53,402 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:55:53,420 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:13,451 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:13,460 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:15,432 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:15,441 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:16,430 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:16,438 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:17,430 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:17,439 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:18,439 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:18,453 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:19,432 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:19,439 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:21,428 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:21,436 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:22,432 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:22,441 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:23,431 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:23,440 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:24,441 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:24,448 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:25,433 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:25,445 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:26,433 basehttp 68257 6246838272 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:26,442 basehttp 68257 6212612096 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 19:56:51,099 basehttp 68257 6195212288 "OPTIONS /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:56:51,134 basehttp 68257 6195212288 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 19:56:51,233 basehttp 68257 6195212288 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:56:51,239 basehttp 68257 6212038656 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:56:51,258 basehttp 68257 6230011904 - Broken pipe from ('127.0.0.1', 64446)
+INFO 2025-09-05 19:56:51,259 basehttp 68257 6195212288 - Broken pipe from ('127.0.0.1', 64432)
+INFO 2025-09-05 19:56:51,464 basehttp 68257 6212038656 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:56:51,467 basehttp 68257 6246838272 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:56:51,479 basehttp 68257 6212038656 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:56:51,479 basehttp 68257 6195212288 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 19:56:55,135 basehttp 68257 6195212288 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-09-05 19:56:55,144 basehttp 68257 6195212288 "POST /api/auth/logout/ HTTP/1.1" 200 31
+WARNING 2025-09-05 19:59:26,462 log 68257 6195212288 Bad Request: /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/
+WARNING 2025-09-05 19:59:26,462 basehttp 68257 6195212288 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 400 44
+INFO 2025-09-05 20:01:28,437 basehttp 68257 6195212288 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-09-05 20:01:28,658 log 68257 6195212288 Bad Request: /api/auth/login/
+WARNING 2025-09-05 20:01:28,658 basehttp 68257 6195212288 "POST /api/auth/login/ HTTP/1.1" 400 45
+WARNING 2025-09-05 20:05:17,117 log 68257 6195212288 Bad Request: /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/
+WARNING 2025-09-05 20:05:17,117 basehttp 68257 6195212288 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 400 44
+WARNING 2025-09-05 20:05:17,129 log 68257 6195212288 Bad Request: /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/
+WARNING 2025-09-05 20:05:17,129 basehttp 68257 6195212288 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 400 44
+INFO 2025-09-05 20:05:45,671 basehttp 68257 6195212288 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:05:45,682 basehttp 68257 6212038656 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:06:02,403 basehttp 68257 6212038656 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 20:06:02,468 basehttp 68257 6212038656 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:06:02,475 basehttp 68257 6195212288 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:06:02,487 basehttp 68257 6230011904 - Broken pipe from ('127.0.0.1', 51074)
+INFO 2025-09-05 20:06:02,488 basehttp 68257 6263664640 - Broken pipe from ('127.0.0.1', 51076)
+INFO 2025-09-05 20:06:02,666 basehttp 68257 6212038656 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:06:02,667 basehttp 68257 6195212288 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:06:02,676 basehttp 68257 6280491008 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:06:02,678 basehttp 68257 6297317376 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:06:06,839 basehttp 68257 6297317376 "POST /api/auth/logout/ HTTP/1.1" 200 31
+WARNING 2025-09-05 20:06:13,184 log 68257 6297317376 Bad Request: /api/auth/login/
+WARNING 2025-09-05 20:06:13,185 basehttp 68257 6297317376 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-05 20:06:59,796 basehttp 68257 6297317376 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:06:59,808 basehttp 68257 6280491008 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:07:10,194 basehttp 68257 6280491008 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 20:07:10,248 basehttp 68257 6297317376 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:07:10,274 basehttp 68257 6280491008 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:07:10,286 basehttp 68257 6195212288 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:07:10,288 basehttp 68257 6297317376 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:07:10,447 basehttp 68257 6297317376 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:07:10,450 basehttp 68257 6195212288 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:07:10,461 basehttp 68257 6280491008 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:07:10,464 basehttp 68257 6297317376 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:09:00,775 basehttp 68257 6297317376 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:09:00,787 basehttp 68257 6280491008 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:09:17,069 autoreload 68257 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-05 20:09:17,399 autoreload 81508 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:09:25,781 autoreload 81508 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-05 20:09:26,096 autoreload 81593 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:09:49,545 basehttp 81593 6124630016 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:10:07,447 basehttp 81593 6124630016 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:10:07,454 basehttp 81593 6124630016 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:10:20,453 basehttp 81593 6124630016 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:10:47,456 autoreload 82487 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:10:51,100 basehttp 82487 6194360320 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:10:51,113 basehttp 82487 6194360320 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:11:01,053 basehttp 82487 6194360320 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 20:11:01,106 basehttp 82487 6211186688 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:11:01,108 basehttp 82487 6194360320 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:11:01,122 basehttp 82487 6228013056 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:11:01,123 basehttp 82487 6211186688 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:11:06,840 basehttp 82487 6211186688 "POST /api/auth/logout/ HTTP/1.1" 200 31
+WARNING 2025-09-05 20:11:20,356 log 82487 6211186688 Bad Request: /api/auth/login/
+WARNING 2025-09-05 20:11:20,357 basehttp 82487 6211186688 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-05 20:14:02,944 autoreload 82487 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-05 20:14:03,282 autoreload 84350 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:14:14,672 autoreload 84350 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-05 20:14:14,961 autoreload 84394 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:14:42,749 autoreload 84394 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-05 20:14:43,055 autoreload 84666 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:15:04,733 autoreload 84666 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-05 20:15:05,035 autoreload 84724 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:15:41,556 autoreload 85018 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:15:56,915 basehttp 85018 6137294848 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:15:56,934 basehttp 85018 6137294848 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:15:58,445 basehttp 85018 6137294848 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:15:58,454 basehttp 85018 6154121216 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:16:09,451 views 85018 6154121216 Setting password for magic user ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:16:09,452 models 85018 6154121216 Account already created for ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:16:09,453 views 85018 6154121216 User created: bro.ralfgrugo45671, password hash: 123...
+INFO 2025-09-05 20:16:09,469 basehttp 85018 6154121216 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 20:16:09,513 basehttp 85018 6154121216 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:16:09,515 basehttp 85018 6137294848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:16:09,529 basehttp 85018 6170947584 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:16:09,532 basehttp 85018 6187773952 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:18:34,586 autoreload 85018 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-05 20:18:34,965 autoreload 86933 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:19:34,625 basehttp 86933 6132609024 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:19:34,664 basehttp 86933 6132609024 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:19:36,199 basehttp 86933 6132609024 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:19:36,211 basehttp 86933 6149435392 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:19:50,049 views 86933 6149435392 Setting password for magic user ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:19:50,049 models 86933 6149435392 Account already created for ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:19:50,051 views 86933 6149435392 User created: bro.ralfgrugo45671, password hash: 123...
+INFO 2025-09-05 20:19:50,054 basehttp 86933 6149435392 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 20:19:50,103 basehttp 86933 6132609024 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:19:50,105 basehttp 86933 6149435392 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:19:50,115 basehttp 86933 6132609024 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:19:50,117 basehttp 86933 6166261760 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:20:36,085 basehttp 86933 6166261760 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-09-05 20:20:53,559 serializers 86933 6166261760 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:20:53,707 serializers 86933 6166261760 Username auth result: False
+INFO 2025-09-05 20:20:53,708 serializers 86933 6166261760 Found user by email: bro.ralfgrugo45671, password hash: 123...
+INFO 2025-09-05 20:20:53,708 serializers 86933 6166261760 Email auth result: False
+WARNING 2025-09-05 20:20:53,709 log 86933 6166261760 Bad Request: /api/auth/login/
+WARNING 2025-09-05 20:20:53,709 basehttp 86933 6166261760 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-05 20:22:13,733 autoreload 86933 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-05 20:22:14,116 autoreload 88816 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:23:48,537 autoreload 88816 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-05 20:23:48,926 autoreload 89614 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:24:26,048 autoreload 89695 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:24:50,182 basehttp 89695 6137802752 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:24:50,193 basehttp 89695 6137802752 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:24:51,591 basehttp 89695 6137802752 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:24:51,600 basehttp 89695 6154629120 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:24:59,844 views 89695 6154629120 Setting password for magic user ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:24:59,845 models 89695 6154629120 Account already created for ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:24:59,847 views 89695 6154629120 User created: bro.ralfgrugo45671, password hash: 123...
+INFO 2025-09-05 20:24:59,860 basehttp 89695 6154629120 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 20:24:59,937 basehttp 89695 6154629120 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:24:59,938 basehttp 89695 6137802752 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:24:59,949 basehttp 89695 6188855296 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:24:59,950 basehttp 89695 6172028928 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:25:48,503 autoreload 89695 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-05 20:25:48,887 autoreload 90646 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 20:26:23,058 basehttp 90646 6162018304 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:26:23,123 basehttp 90646 6162018304 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:26:24,595 basehttp 90646 6162018304 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:26:24,619 basehttp 90646 6178844672 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 495
+INFO 2025-09-05 20:26:33,597 views 90646 6178844672 Setting password for magic user ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:26:33,598 models 90646 6178844672 Account already exists for ralfgrugo4567@gmail.com, updating password
+INFO 2025-09-05 20:26:33,720 models 90646 6178844672 Password updated for existing user: bro.ralfgrugo45671, hash: pbkdf2_sha256$600000...
+INFO 2025-09-05 20:26:33,720 views 90646 6178844672 User created: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$jfPS4QLaMPPuXecU1v4EAB$gvV3nS...
+INFO 2025-09-05 20:26:33,723 basehttp 90646 6178844672 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-05 20:26:33,800 basehttp 90646 6162018304 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:26:33,805 basehttp 90646 6178844672 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:26:33,817 basehttp 90646 6195671040 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:26:33,819 basehttp 90646 6162018304 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:26:45,312 basehttp 90646 6162018304 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-09-05 20:26:58,812 serializers 90646 6162018304 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-05 20:26:58,942 serializers 90646 6162018304 Username auth result: False
+INFO 2025-09-05 20:26:58,944 serializers 90646 6162018304 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$jfPS4QLaMPPuXecU1v4EAB$gvV3nS...
+INFO 2025-09-05 20:26:59,037 serializers 90646 6162018304 Email auth result: True
+INFO 2025-09-05 20:26:59,037 views 90646 6162018304 User login: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$jfPS4QLaMPPuXecU1v4EAB$gvV3nS...
+INFO 2025-09-05 20:26:59,046 basehttp 90646 6162018304 "POST /api/auth/login/ HTTP/1.1" 200 1100
+INFO 2025-09-05 20:26:59,298 basehttp 90646 6162018304 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:26:59,298 basehttp 90646 6178844672 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:26:59,310 basehttp 90646 6178844672 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:26:59,312 basehttp 90646 6212497408 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-05 20:28:29,984 basehttp 90646 6212497408 "POST /api/auth/logout/ HTTP/1.1" 200 31
