@@ -47,7 +47,7 @@ class AIService:
                 'sources': rag_result['sources'],
                 'tokens_used': tokens_used,
                 'response_time_ms': response_time_ms,
-                'model_used': 'rag-junkgpt-ai',
+                'model_used': 'rag-ai',
                 'success': True,
                 'error': None
             }
@@ -89,7 +89,7 @@ class AIService:
                 # Add metadata to each chunk
                 chunk.update({
                     'response_time_ms': response_time_ms,
-                    'model_used': 'rag-junkgpt-ai',
+                    'model_used': 'rag-ai',
                     'success': chunk.get('type') != 'error',
                     'error': chunk.get('error')
                 })
@@ -118,7 +118,7 @@ class AIService:
     def _call_rag_api(self, message: str, conversation_history: list = None, user=None) -> Dict[str, Any]:
         """Call external RAG API to get AI response and sources (non-streaming)."""
         try:
-            url = "https://devrag.junkgpt.com/ask-question/"
+            url = "https://farmonrag.omadligrouphq.com/ask-question/"
             headers = {
                 "Content-Type": "application/json"
             }
@@ -198,7 +198,7 @@ Try rephrasing your question with specific business context or terminology from 
     def _call_rag_api_stream(self, message: str, conversation_history: list = None, user=None) -> Iterator[Dict[str, Any]]:
         """Call external RAG API to get streaming AI response and sources."""
         try:
-            url = "https://devrag.junkgpt.com/ask-question/"
+            url = "https://farmonrag.omadligrouphq.com/ask-question/"
             headers = {
                 "Content-Type": "application/json",
                 "Accept": "text/event-stream"
@@ -831,7 +831,7 @@ class FeedbackService:
     """Service for handling feedback interactions with RAG API."""
     
     def __init__(self):
-        self.rag_base_url = "https://devrag.junkgpt.com"
+        self.rag_base_url = "https://farmonrag.omadligrouphq.com"
     
     def submit_thumbs_feedback(self, question: str, answer: str, feedback_type: str, comment: str = None) -> Dict[str, Any]:
         """Submit thumbs up/down feedback to RAG API.

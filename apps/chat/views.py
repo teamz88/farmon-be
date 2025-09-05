@@ -70,7 +70,7 @@ class ChatStreamView(APIView):
     def options(self, request):
         """Handle preflight CORS requests."""
         response = Response()
-        response['Access-Control-Allow-Origin'] = 'http://localhost:3000, https://junkgpt.com'
+        response['Access-Control-Allow-Origin'] = 'http://localhost:3000, https://omadligrouphq.com'
         response['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
         response['Access-Control-Allow-Headers'] = 'Cache-Control, Authorization, Content-Type'
         response['Access-Control-Allow-Credentials'] = 'true'
