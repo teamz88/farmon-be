@@ -1,3 +1,4 @@
+import os
 import time
 import logging
 import requests
@@ -7,6 +8,7 @@ from django.conf import settings
 from django.utils import timezone
 from markdownify import markdownify as md
 from .models import Conversation, ChatMessage, ChatTemplate, Folder
+from apps.files.models import File
 
 logger = logging.getLogger(__name__)
 
@@ -65,13 +67,14 @@ class AIService:
                 'error': str(e)
             }
     
-    def generate_response_stream(self, message: str, conversation_history: list = None, user=None) -> Iterator[Dict[str, Any]]:
+    def generate_response_stream(self, message: str, conversation_history: list = None, user=None, user_info: Optional[Dict[str, Any]] = None) -> Iterator[Dict[str, Any]]:
         """Generate streaming AI response to user message using external RAG API.
         
         Args:
             message: User's input message
             conversation_history: List of previous messages for context
             user: User instance for getting user info
+            user_info: Optional user profile information for RAG API
             
         Yields:
             Dict containing streaming response data
@@ -82,7 +85,7 @@ class AIService:
 
         try:
             # Call external RAG API with conversation history (streaming)
-            for chunk in self._call_rag_api_stream(message, conversation_history, user):
+            for chunk in self._call_rag_api_stream(message, conversation_history, user, user_info):
                 # Calculate response time for each chunk
                 response_time_ms = int((time.time() - start_time) * 1000)
                 
@@ -126,8 +129,9 @@ class AIService:
             # Format conversation history according to the required structure
             question_data = self._format_conversation_for_api(message, conversation_history)
             
-            # Get user info from ClientInfo model
-            user_info = self._get_user_info(user)
+            # Use provided user_info or get from ClientInfo model
+            if user_info is None:
+                user_info = self._get_user_info(user)
             
             data = {
                 "question": question_data,
@@ -195,7 +199,7 @@ Try rephrasing your question with specific business context or terminology from 
                 'sources': []
             }
     
-    def _call_rag_api_stream(self, message: str, conversation_history: list = None, user=None) -> Iterator[Dict[str, Any]]:
+    def _call_rag_api_stream(self, message: str, conversation_history: list = None, user=None, user_info: Optional[Dict[str, Any]] = None) -> Iterator[Dict[str, Any]]:
         """Call external RAG API to get streaming AI response and sources."""
         try:
             url = "https://farmonrag.omadligrouphq.com/ask-question/"
@@ -396,6 +400,8 @@ Try rephrasing your question with specific business context or terminology from 
                     "Bin Rental",
                     "Light Demolition",
                     "Junk Removal (Commercial)",
+                    "File Upload",
+                    "Document Processing"
                     "Trailer Rental",
                     "Recycling Services"
                 ],
@@ -450,6 +456,71 @@ Try rephrasing your question with specific business context or terminology from 
         """Mock token calculation (roughly 4 characters per token)."""
         total_chars = len(input_text) + len(output_text)
         return max(1, total_chars // 4)
+    
+    def upload_file_to_rag(self, file_obj: File, user_email: str) -> Dict[str, Any]:
+        """Upload file to RAG API for processing.
+        
+        Args:
+            file_obj: File model instance
+            user_email: User's email address
+            
+        Returns:
+            Dictionary containing upload result
+        """
+        try:
+            # Get file path from storage
+            file_path = file_obj.object_key
+            if not file_path:
+                return {
+                    'success': False,
+                    'error': 'File path not found'
+                }
+            
+            # Build full file path
+            from django.conf import settings
+            full_file_path = os.path.join(settings.MEDIA_ROOT, 'uploads', file_path)
+            if not os.path.exists(full_file_path):
+                return {
+                    'success': False,
+                    'error': 'File not found in storage'
+                }
+            
+            # Prepare file for upload
+            with open(full_file_path, 'rb') as f:
+                files = {'file': (file_obj.original_name, f, file_obj.file_type)}
+                data = {'email': user_email}
+                
+                # Upload to RAG API
+                response = requests.post(
+                    'https://farmonrag.omadligrouphq.com/upload/',
+                    files=files,
+                    data=data,
+                    timeout=60
+                )
+            
+            if response.status_code == 200:
+                result = response.json()
+                logger.info(f"File {file_obj.original_name} uploaded to RAG successfully")
+                return {
+                    'success': True,
+                    'data': result,
+                    'error': None
+                }
+            else:
+                error_msg = f"RAG upload failed with status {response.status_code}: {response.text}"
+                logger.error(error_msg)
+                return {
+                    'success': False,
+                    'error': error_msg
+                }
+                
+        except Exception as e:
+            error_msg = f"RAG file upload error: {str(e)}"
+            logger.error(error_msg)
+            return {
+                'success': False,
+                'error': error_msg
+            }
 
 
 class ChatService:
@@ -566,7 +637,8 @@ class ChatService:
         message_content: str,
         conversation_id: Optional[str] = None,
         template_id: Optional[int] = None,
-        folder_id: Optional[str] = None
+        folder_id: Optional[str] = None,
+        user_info: Optional[Dict[str, Any]] = None
     ) -> Iterator[Dict[str, Any]]:
         """Process a chat message and generate streaming AI response.
         
@@ -575,6 +647,8 @@ class ChatService:
             message_content: User's message content
             conversation_id: Optional existing conversation ID
             template_id: Optional template ID to use
+            folder_id: Optional folder ID to assign conversation to
+            user_info: Optional user profile information for RAG API
             
         Yields:
             Dict containing streaming response data
@@ -632,7 +706,7 @@ class ChatService:
             sources = []
             
             # Stream AI response
-            for chunk in self.ai_service.generate_response_stream(message_content, conversation_history, user):
+            for chunk in self.ai_service.generate_response_stream(message_content, conversation_history, user, user_info):
                 # Update accumulated response for delta chunks
                 if chunk.get('type') == 'delta':
                     accumulated_response = chunk.get('accumulated_response', '')
@@ -1011,4 +1085,69 @@ class FeedbackService:
                 'success': False,
                 'data': None,
                 'error': f"Error processing feedbacks request: {str(e)}"
+            }
+    
+    def upload_file_to_rag(self, file_obj: File, user_email: str) -> Dict[str, Any]:
+        """Upload file to RAG API for processing.
+        
+        Args:
+            file_obj: File model instance
+            user_email: User's email address
+            
+        Returns:
+            Dictionary containing upload result
+        """
+        try:
+            # Get file path from storage
+            file_path = file_obj.object_key
+            if not file_path:
+                return {
+                    'success': False,
+                    'error': 'File path not found'
+                }
+            
+            # Build full file path
+            from django.conf import settings
+            full_file_path = os.path.join(settings.MEDIA_ROOT, 'uploads', file_path)
+            if not os.path.exists(full_file_path):
+                return {
+                    'success': False,
+                    'error': 'File not found in storage'
+                }
+            
+            # Prepare file for upload
+            with open(full_file_path, 'rb') as f:
+                files = {'file': (file_obj.original_name, f, file_obj.file_type)}
+                data = {'email': user_email}
+                
+                # Upload to RAG API
+                response = requests.post(
+                    'https://farmonrag.omadligrouphq.com/upload/',
+                    files=files,
+                    data=data,
+                    timeout=60
+                )
+            
+            if response.status_code == 200:
+                result = response.json()
+                logger.info(f"File {file_obj.original_name} uploaded to RAG successfully")
+                return {
+                    'success': True,
+                    'data': result,
+                    'error': None
+                }
+            else:
+                error_msg = f"RAG upload failed with status {response.status_code}: {response.text}"
+                logger.error(error_msg)
+                return {
+                    'success': False,
+                    'error': error_msg
+                }
+                
+        except Exception as e:
+            error_msg = f"RAG file upload error: {str(e)}"
+            logger.error(error_msg)
+            return {
+                'success': False,
+                'error': error_msg
             }

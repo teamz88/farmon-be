@@ -21,6 +21,7 @@ from .serializers import (
 )
 from .services import FileService
 from .filters import FileFilter
+from apps.chat.services import AIService
 
 User = get_user_model()
 
@@ -44,11 +45,25 @@ class FileUploadView(APIView):
             )
             
             if success:
+                # Upload file to RAG API
+                ai_service = AIService()
+                rag_result = ai_service.upload_file_to_rag(file_obj, request.user.email)
+                
                 file_serializer = FileSerializer(file_obj, context={'request': request})
-                return Response({
+                response_data = {
                     'message': message,
                     'file': file_serializer.data
-                }, status=status.HTTP_201_CREATED)
+                }
+                
+                # Add RAG upload status to response
+                if rag_result['success']:
+                    response_data['rag_upload'] = 'success'
+                    response_data['rag_message'] = 'File uploaded to RAG successfully'
+                else:
+                    response_data['rag_upload'] = 'failed'
+                    response_data['rag_message'] = rag_result.get('error', 'RAG upload failed')
+                
+                return Response(response_data, status=status.HTTP_201_CREATED)
             else:
                 return Response({
                     'error': message

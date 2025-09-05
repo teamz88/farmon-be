@@ -146,6 +146,12 @@ class ChatRequestSerializer(serializers.Serializer):
         help_text="Folder ID to organize the conversation (optional)"
     )
     
+    user_info = serializers.DictField(
+        required=False,
+        allow_null=True,
+        help_text="User profile information to send to RAG API (optional)"
+    )
+    
     def validate_message(self, value):
         """Validate message content."""
         if not value or not value.strip():

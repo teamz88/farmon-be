@@ -111,7 +111,8 @@ class ChatStreamView(APIView):
                     message_content=serializer.validated_data['message'],
                     conversation_id=serializer.validated_data.get('conversation_id'),
                     template_id=serializer.validated_data.get('template_id'),
-                    folder_id=serializer.validated_data.get('folder_id')
+                    folder_id=serializer.validated_data.get('folder_id'),
+                    user_info=serializer.validated_data.get('user_info')
                 ):
                     chunk_count += 1
                     # Format chunk as Server-Sent Event
