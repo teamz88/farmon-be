@@ -45,23 +45,31 @@ class FileUploadView(APIView):
             )
             
             if success:
-                # Upload file to RAG API
-                ai_service = AIService()
-                rag_result = ai_service.upload_file_to_rag(file_obj, request.user.email)
-                
                 file_serializer = FileSerializer(file_obj, context={'request': request})
                 response_data = {
                     'message': message,
                     'file': file_serializer.data
                 }
                 
-                # Add RAG upload status to response
-                if rag_result['success']:
-                    response_data['rag_upload'] = 'success'
-                    response_data['rag_message'] = 'File uploaded to RAG successfully'
-                else:
+                # Try to upload file to RAG API (non-blocking)
+                try:
+                    ai_service = AIService()
+                    rag_result = ai_service.upload_file_to_rag(file_obj, request.user.email)
+                    
+                    if rag_result['success']:
+                        response_data['rag_upload'] = 'success'
+                        response_data['rag_message'] = 'File uploaded to RAG successfully'
+                    else:
+                        response_data['rag_upload'] = 'failed'
+                        response_data['rag_message'] = rag_result.get('error', 'RAG upload failed')
+                        
+                except Exception as e:
+                    # Log the error but don't fail the file upload
+                    import logging
+                    logger = logging.getLogger(__name__)
+                    logger.error(f"RAG upload failed for file {file_obj.original_name}: {str(e)}")
                     response_data['rag_upload'] = 'failed'
-                    response_data['rag_message'] = rag_result.get('error', 'RAG upload failed')
+                    response_data['rag_message'] = 'RAG service temporarily unavailable'
                 
                 return Response(response_data, status=status.HTTP_201_CREATED)
             else:

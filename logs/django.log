@@ -447,3 +447,311 @@ INFO 2025-09-05 23:40:14,135 services 34903 6125252608 File uploaded successfull
 INFO 2025-09-05 23:40:36,997 services 34903 6125252608 File Atomic habits ( PDFDrive ).pdf uploaded to RAG successfully
 INFO 2025-09-05 23:40:37,002 basehttp 34903 6125252608 "POST /api/files/upload/ HTTP/1.1" 201 965
 INFO 2025-09-05 23:40:37,002 basehttp 34903 6125252608 - Broken pipe from ('127.0.0.1', 55184)
+INFO 2025-09-05 23:42:22,038 services 34903 6193131520 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-05 23:42:22,056 services 34903 6193131520 Successfully uploaded file: 100M-Leads-by-Alex-Hormozi_20231222143136_04bc0ee5_4f14d060.pdf
+INFO 2025-09-05 23:42:22,060 services 34903 6193131520 File uploaded successfully: 430edfef-dcdb-483a-8e8c-57104f3fba6d
+ERROR 2025-09-05 23:42:36,245 services 34903 6193131520 RAG upload failed with status 500: {"detail":"(psycopg2.OperationalError) SSL connection has been closed unexpectedly\n\n[SQL: INSERT INTO pdf_metadata (filename, email, path, source, total_pages, uploaded_at, embedding_dim) VALUES (%(filename)s, %(email)s, %(path)s, %(source)s, %(total_pages)s, %(uploaded_at)s, %(embedding_dim)s) RETURNING pdf_metadata.id]\n[parameters: {'filename': '100M-Leads-by-Alex-Hormozi_20231222143136_04bc0ee5.pdf', 'email': 'ralfgrugo4567@gmail.com', 'path': 'https://boltaiagent.blob.core.windows.net/farmonai/49d5ea08-8b66-43d2-a47e-f78e0d463c35_100M-Leads-by-Alex-Hormozi_20231222143136_04bc0ee5.pdf?se=2026-09-05T23%3A42%3A35Z&sp=r&sv=2025-07-05&sr=b&sig=S1n%2BSAQ18vLjTjimICyOMoasUd6YwhRRyTsMwA9BaTU%3D', 'source': 'pdf', 'total_pages': 1, 'uploaded_at': datetime.datetime(2025, 9, 5, 23, 42, 36, 199125), 'embedding_dim': 384}]\n(Background on this error at: https://sqlalche.me/e/20/e3q8) - Error processing file upload"}
+INFO 2025-09-05 23:42:36,256 basehttp 34903 6193131520 "POST /api/files/upload/ HTTP/1.1" 201 1974
+INFO 2025-09-05 23:42:36,258 basehttp 34903 6193131520 - Broken pipe from ('127.0.0.1', 55195)
+INFO 2025-09-05 23:44:27,368 autoreload 34903 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/files/views.py changed, reloading.
+INFO 2025-09-05 23:44:27,725 autoreload 36407 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-05 23:46:51,999 basehttp 36407 6208286720 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:46:52,004 basehttp 36407 6191460352 "GET /api/chat/conversations/ HTTP/1.1" 200 1085
+INFO 2025-09-05 23:46:52,014 basehttp 36407 6208286720 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:46:52,022 basehttp 36407 6225686528 "GET /api/chat/conversations/ HTTP/1.1" 200 1085
+INFO 2025-09-05 23:47:32,309 services 36407 6225686528 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-05 23:47:32,316 services 36407 6225686528 Successfully uploaded file: Farmon Instant Chat - Omadli Group_c6d31b01.pdf
+INFO 2025-09-05 23:47:32,319 services 36407 6225686528 File uploaded successfully: 866fdbeb-1935-4684-b27d-3a97ca73650c
+INFO 2025-09-05 23:47:34,454 services 36407 6225686528 File Farmon Instant Chat - Omadli Group.pdf uploaded to RAG successfully
+INFO 2025-09-05 23:47:34,455 basehttp 36407 6225686528 "POST /api/files/upload/ HTTP/1.1" 201 993
+INFO 2025-09-05 23:47:34,506 services 36407 6225686528 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-05 23:47:34,508 services 36407 6225686528 Successfully uploaded file: Farmon Instant Chat - Omadli Group_c3813d09.pdf
+INFO 2025-09-05 23:47:34,509 services 36407 6225686528 File uploaded successfully: d2257601-a239-42e9-82ce-3eb1697f9593
+ERROR 2025-09-05 23:47:36,182 services 36407 6225686528 RAG upload failed with status 500: {"detail":"(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint \"document_chunks_pkey\"\nDETAIL:  Key (id)=(Farmon Instant Chat - Omadli Group.pdf_0) already exists.\n\n[SQL: INSERT INTO document_chunks (id, email, source, text, page_number, uploaded_at, embedding_dim, pdf_metadata_id) VALUES (%(id)s, %(email)s, %(source)s, %(text)s, %(page_number)s, %(uploaded_at)s, %(embedding_dim)s, %(pdf_metadata_id)s)]\n[parameters: {'id': 'Farmon Instant Chat - Omadli Group.pdf_0', 'email': 'ralfgrugo4567@gmail.com', 'source': 'Farmon Instant Chat - Omadli Group.pdf', 'text': 'New Chat New Chat Chat Profile Files CONVERSATIONS New project hi bro Today 0 test Today 0 Hello 👋, Bro! Ready to boost your growth. What can I do fo ... (60 characters truncated) ... Hormozi_20231222143136_04bc0ee5.pdf (18.92 MB) Upload Type your message... 9/6/25, 4:46 AM Farmon Instant Chat - Omadli Group localhost:3000/chat 1/1', 'page_number': 1, 'uploaded_at': datetime.datetime(2025, 9, 5, 23, 47, 36, 56714), 'embedding_dim': 384, 'pdf_metadata_id': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj) - Error processing file upload"}
+INFO 2025-09-05 23:47:36,184 basehttp 36407 6225686528 "POST /api/files/upload/ HTTP/1.1" 201 2173
+INFO 2025-09-05 23:47:36,241 basehttp 36407 6225686528 "POST /api/chat/conversations/ HTTP/1.1" 201 335
+INFO 2025-09-05 23:47:36,248 basehttp 36407 6208286720 "OPTIONS /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 0
+INFO 2025-09-05 23:47:36,278 basehttp 36407 6208286720 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:47:36,281 basehttp 36407 6225686528 "GET /api/chat/conversations/ HTTP/1.1" 200 1421
+INFO 2025-09-05 23:47:36,392 views 36407 6225686528 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-05 23:47:36,392 views 36407 6225686528 Request data: {'message': 'give me greeting', 'conversation_id': '400feb1e-d27b-4f3d-ac8d-cae5684251ad', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-05 23:47:36,396 views 36407 6225686528 Serializer validated data: OrderedDict({'message': 'give me greeting', 'conversation_id': UUID('400feb1e-d27b-4f3d-ac8d-cae5684251ad'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-05 23:47:36,396 views 36407 6225686528 Starting generate_stream function
+INFO 2025-09-05 23:47:36,396 views 36407 6225686528 About to call process_chat_message_stream
+ERROR 2025-09-05 23:47:36,415 services 36407 6225686528 ASK DATA ==========================: {'question': [{'message_type': 'user', 'content': 'give me greeting'}], 'user_info': {'id': 1, 'company_name': '', 'owner_name': '', 'state': '', 'city': '', 'year_started': 2000, 'trucks_count': 5, 'monthly_revenue': '0-250k', 'gross_profit_margin': '50.00', 'main_services': ['Junk Removal (Residential)', 'Bin Rental', 'Light Demolition', 'Junk Removal (Commercial)', 'File Upload', 'Document ProcessingTrailer Rental', 'Recycling Services'], 'pricing_model': 'by_weight', 'software_tools': ['CRM Software', 'GPS Tracking', 'Route Optimization', 'Inventory Management', 'Booking System', 'Accounting Software', 'Customer Management', 'Mobile Apps'], 'current_challenges': 'How to retain employees?'}}
+ERROR 2025-09-05 23:47:36,983 services 36407 6225686528 RAG API streaming request failed: 422 Client Error: Unprocessable Entity for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-05 23:47:36,987 views 36407 6225686528 Stream completed with 1 chunks
+INFO 2025-09-05 23:47:36,989 basehttp 36407 6225686528 "POST /api/chat/stream/ HTTP/1.1" 200 508
+INFO 2025-09-05 23:47:44,370 basehttp 36407 6191460352 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:47:44,375 basehttp 36407 6208286720 "GET /api/chat/conversations/ HTTP/1.1" 200 1638
+INFO 2025-09-05 23:47:44,380 basehttp 36407 6225113088 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 1047
+INFO 2025-09-05 23:47:44,388 basehttp 36407 6191460352 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:47:44,399 basehttp 36407 6242512896 "GET /api/chat/conversations/ HTTP/1.1" 200 1638
+INFO 2025-09-05 23:47:55,829 views 36407 6242512896 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-05 23:47:55,830 views 36407 6242512896 Request data: {'message': 'hi bro', 'conversation_id': '400feb1e-d27b-4f3d-ac8d-cae5684251ad', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-05 23:47:55,833 views 36407 6242512896 Serializer validated data: OrderedDict({'message': 'hi bro', 'conversation_id': UUID('400feb1e-d27b-4f3d-ac8d-cae5684251ad'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-05 23:47:55,834 views 36407 6242512896 Starting generate_stream function
+INFO 2025-09-05 23:47:55,834 views 36407 6242512896 About to call process_chat_message_stream
+ERROR 2025-09-05 23:47:55,844 services 36407 6242512896 ASK DATA ==========================: {'question': [{'message_type': 'user', 'content': 'hi bro'}, {'message_type': 'assistant', 'content': "I apologize, but I'm having trouble connecting to the knowledge base. Please try again later."}, {'message_type': 'user', 'content': 'give me greeting'}], 'user_info': {'id': 1, 'company_name': '', 'owner_name': '', 'state': '', 'city': '', 'year_started': 2000, 'trucks_count': 5, 'monthly_revenue': '0-250k', 'gross_profit_margin': '50.00', 'main_services': ['Junk Removal (Residential)', 'Bin Rental', 'Light Demolition', 'Junk Removal (Commercial)', 'File Upload', 'Document ProcessingTrailer Rental', 'Recycling Services'], 'pricing_model': 'by_weight', 'software_tools': ['CRM Software', 'GPS Tracking', 'Route Optimization', 'Inventory Management', 'Booking System', 'Accounting Software', 'Customer Management', 'Mobile Apps'], 'current_challenges': 'How to retain employees?'}}
+ERROR 2025-09-05 23:47:56,406 services 36407 6242512896 RAG API streaming request failed: 422 Client Error: Unprocessable Entity for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-05 23:47:56,408 views 36407 6242512896 Stream completed with 1 chunks
+INFO 2025-09-05 23:47:56,408 basehttp 36407 6242512896 "POST /api/chat/stream/ HTTP/1.1" 200 508
+INFO 2025-09-05 23:48:00,700 basehttp 36407 6225113088 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:48:00,706 basehttp 36407 6191460352 "GET /api/chat/conversations/ HTTP/1.1" 200 1638
+INFO 2025-09-05 23:48:00,722 basehttp 36407 6225113088 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:48:00,723 basehttp 36407 6208286720 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-05 23:48:00,735 basehttp 36407 6191460352 "GET /api/chat/conversations/ HTTP/1.1" 200 1638
+WARNING 2025-09-05 23:59:22,059 log 36407 6190886912 Unauthorized: /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/
+WARNING 2025-09-05 23:59:22,063 basehttp 36407 6190886912 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 401 172
+WARNING 2025-09-05 23:59:22,414 log 36407 6207713280 Unauthorized: /api/chat/folders/
+WARNING 2025-09-05 23:59:22,416 log 36407 6190886912 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-05 23:59:22,417 basehttp 36407 6190886912 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-05 23:59:22,420 basehttp 36407 6207713280 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-09-05 23:59:22,424 log 36407 6207713280 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-05 23:59:22,425 basehttp 36407 6207713280 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-05 23:59:22,428 log 36407 6224539648 Unauthorized: /api/chat/folders/
+WARNING 2025-09-05 23:59:22,429 basehttp 36407 6224539648 "GET /api/chat/folders/ HTTP/1.1" 401 172
+INFO 2025-09-05 23:59:36,371 serializers 36407 6224539648 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-05 23:59:36,520 serializers 36407 6224539648 Username auth result: False
+INFO 2025-09-05 23:59:36,521 serializers 36407 6224539648 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$jfPS4QLaMPPuXecU1v4EAB$gvV3nS...
+INFO 2025-09-05 23:59:36,627 serializers 36407 6224539648 Email auth result: True
+INFO 2025-09-05 23:59:36,627 views 36407 6224539648 User login: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$jfPS4QLaMPPuXecU1v4EAB$gvV3nS...
+INFO 2025-09-05 23:59:36,638 basehttp 36407 6224539648 "POST /api/auth/login/ HTTP/1.1" 200 1101
+INFO 2025-09-05 23:59:36,886 basehttp 36407 6207713280 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:59:36,893 basehttp 36407 6224539648 "GET /api/chat/conversations/ HTTP/1.1" 200 1638
+INFO 2025-09-05 23:59:36,902 basehttp 36407 6190886912 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-05 23:59:36,911 basehttp 36407 6207713280 "GET /api/chat/conversations/ HTTP/1.1" 200 1638
+INFO 2025-09-06 00:00:20,445 autoreload 39327 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:00:37,574 services 39327 6165852160 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:00:37,580 services 39327 6165852160 Successfully uploaded file: List API Keys - MercurJS documentation_22568da7.pdf
+INFO 2025-09-06 00:00:37,582 services 39327 6165852160 File uploaded successfully: 7c34d1d1-2fbf-4d1f-802a-bd10e1c68034
+INFO 2025-09-06 00:00:40,872 services 39327 6165852160 File List API Keys - MercurJS documentation.pdf uploaded to RAG successfully
+INFO 2025-09-06 00:00:40,873 basehttp 39327 6165852160 "POST /api/files/upload/ HTTP/1.1" 201 1005
+INFO 2025-09-06 00:00:40,895 services 39327 6165852160 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:00:40,897 services 39327 6165852160 Successfully uploaded file: List API Keys - MercurJS documentation_4835c2f9.pdf
+INFO 2025-09-06 00:00:40,899 services 39327 6165852160 File uploaded successfully: 66ccd947-82e8-4d32-81e9-9436885deaab
+ERROR 2025-09-06 00:00:42,926 services 39327 6165852160 RAG upload failed with status 500: {"detail":"(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint \"document_chunks_pkey\"\nDETAIL:  Key (id)=(List API Keys - MercurJS documentation.pdf_0) already exists.\n\n[SQL: INSERT INTO document_chunks (id, email, source, text, page_number, uploaded_at, embedding_dim, pdf_metadata_id) VALUES (%(id__0)s, %(email__0)s, %(source__0)s, %(text__0)s, %(page_number__0)s, %(uploaded_at__0)s, %(embedding_dim__0)s, %(pdf_metadata_ ... 472 characters truncated ... , %(text__4)s, %(page_number__4)s, %(uploaded_at__4)s, %(embedding_dim__4)s, %(pdf_metadata_id__4)s)]\n[parameters: {'pdf_metadata_id__0': None, 'uploaded_at__0': datetime.datetime(2025, 9, 6, 0, 0, 42, 803229), 'page_number__0': 1, 'source__0': 'List API Keys - MercurJS documentation.pdf', 'embedding_dim__0': 384, 'email__0': 'ralfgrugo4567@gmail.com', 'text__0': 'Try it Admin Api Keys Retrieve a list of API keys. The API keys can be filtered by fields such as id . The API keys can also be sorted or paginated.  ... (684 characters truncated) ... included in the returned data. if a field is prefixed with +  it will be added to the default fields, using -  will remove it from the default fields', 'id__0': 'List API Keys - MercurJS documentation.pdf_0', 'pdf_metadata_id__1': None, 'uploaded_at__1': datetime.datetime(2025, 9, 6, 0, 0, 42, 803378), 'page_number__1': 1, 'source__1': 'List API Keys - MercurJS documentation.pdf', 'embedding_dim__1': 384, 'email__1': 'ralfgrugo4567@gmail.com', 'text__1': \". if a field is prefixed with +  it will be added to the default fields, using -  will remove it from the default fields. without prefix it will repl ... (236 characters truncated) ... , prefix the field name with - . A search term to search the API keys' searchable properties. Filter by an API key's ID. Filter by an API key's title\", 'id__1': 'List API Keys - MercurJS documentation.pdf_1', 'pdf_metadata_id__2': None, 'uploaded_at__2': datetime.datetime(2025, 9, 6, 0, 0, 42, 803403), 'page_number__2': 1, 'source__2': 'List API Keys - MercurJS documentation.pdf', 'embedding_dim__2': 384, 'email__2': 'ralfgrugo4567@gmail.com', 'text__2': '. To change the order to descending, prefix the field name with - . A search term to search the API keys\\' searchable properties. Filter by an API ke ... (708 characters truncated) ...  the API key\\'s update date. Show child attributes Filter by the API key\\'s deletion date. Show child attributes Filter by the API key\\'s revoke date', 'id__2': 'List API Keys - MercurJS documentation.pdf_2', 'pdf_metadata_id__3': None, 'uploaded_at__3': datetime.datetime(2025, 9, 6, 0, 0, 42, 803424), 'page_number__3': 1, 'source__3': 'List API Keys - MercurJS documentation.pdf', 'embedding_dim__3': 384, 'email__3': 'ralfgrugo4567@gmail.com', 'text__3': \". Show child attributes Filter by the API key's update date. Show child attributes Filter by the API key's deletion date. Show child attributes Filte ... (631 characters truncated) ... umber of items returned in the list. The number of items skipped before retrieving the returned items. The total count of items. The list of API keys\", 'id__3': 'List API Keys - MercurJS documentation.pdf_3', 'pdf_metadata_id__4': None, 'uploaded_at__4': datetime.datetime(2025, 9, 6, 0, 0, 42, 803453), 'page_number__4': 1, 'source__4': 'List API Keys - MercurJS documentation.pdf', 'embedding_dim__4': 384, 'email__4': 'ralfgrugo4567@gmail.com', 'text__4': '. Response OK The maximum number of items returned in the list. The number of items skipped before retrieving the returned items. The total count of  ... (332 characters truncated) ... 5 Powered by Mintlify 9/6/25, 4:58 AM List API Keys - MercurJS documentation https://docs.mercurjs.com/api-reference/admin-api-keys/list-api-keys 5/5', 'id__4': 'List API Keys - MercurJS documentation.pdf_4'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj) - Error processing file upload"}
+INFO 2025-09-06 00:00:42,927 basehttp 39327 6165852160 "POST /api/files/upload/ HTTP/1.1" 201 4972
+INFO 2025-09-06 00:00:42,942 basehttp 39327 6165852160 "POST /api/chat/conversations/ HTTP/1.1" 201 338
+INFO 2025-09-06 00:00:42,951 basehttp 39327 6182678528 "OPTIONS /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:00:42,959 basehttp 39327 6165852160 "GET /api/chat/conversations/ HTTP/1.1" 200 1977
+INFO 2025-09-06 00:00:42,960 basehttp 39327 6182678528 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:00:42,983 views 39327 6182678528 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-06 00:00:42,983 views 39327 6182678528 Request data: {'message': 'give me instruction', 'conversation_id': 'feba5b2b-f49c-4530-84ec-3023033b3eb7', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-06 00:00:42,988 views 39327 6182678528 Serializer validated data: OrderedDict({'message': 'give me instruction', 'conversation_id': UUID('feba5b2b-f49c-4530-84ec-3023033b3eb7'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-06 00:00:42,988 views 39327 6182678528 Starting generate_stream function
+INFO 2025-09-06 00:00:42,988 views 39327 6182678528 About to call process_chat_message_stream
+ERROR 2025-09-06 00:00:43,003 services 39327 6182678528 ASK DATA ==========================: {'question': [{'message_type': 'user', 'content': 'give me instruction'}], 'user_info': {'id': 1, 'company_name': '', 'owner_name': '', 'state': '', 'city': '', 'year_started': 2000, 'trucks_count': 5, 'monthly_revenue': '0-250k', 'gross_profit_margin': '50.00', 'main_services': ['Junk Removal (Residential)', 'Bin Rental', 'Light Demolition', 'Junk Removal (Commercial)', 'File Upload', 'Document ProcessingTrailer Rental', 'Recycling Services'], 'pricing_model': 'by_weight', 'software_tools': ['CRM Software', 'GPS Tracking', 'Route Optimization', 'Inventory Management', 'Booking System', 'Accounting Software', 'Customer Management', 'Mobile Apps'], 'current_challenges': 'How to retain employees?'}}
+ERROR 2025-09-06 00:00:43,559 services 39327 6182678528 RAG API streaming request failed: 422 Client Error: Unprocessable Entity for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-06 00:00:43,562 views 39327 6182678528 Stream completed with 1 chunks
+INFO 2025-09-06 00:00:43,562 basehttp 39327 6182678528 "POST /api/chat/stream/ HTTP/1.1" 200 508
+INFO 2025-09-06 00:00:57,953 basehttp 39327 6165852160 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:01:05,425 basehttp 39327 6165852160 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:01:23,281 basehttp 39327 6165852160 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:02:55,480 autoreload 39327 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:02:55,994 autoreload 40005 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:02:57,237 autoreload 40005 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:02:57,519 autoreload 40024 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:01,916 autoreload 40024 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:03:02,200 autoreload 40086 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:05,541 autoreload 40086 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:03:05,940 autoreload 40113 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:08,074 autoreload 40113 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:03:08,644 autoreload 40129 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:18,071 autoreload 40129 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:03:18,438 autoreload 40209 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:20,831 autoreload 40209 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:03:21,165 autoreload 40242 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:24,295 autoreload 40242 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:03:24,597 autoreload 40267 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:26,843 autoreload 40267 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:03:27,098 autoreload 40285 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:03:35,326 basehttp 40285 6216183808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:03:35,333 basehttp 40285 6233010176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:03:35,337 basehttp 40285 6199357440 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:03:35,346 basehttp 40285 6216183808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:03:35,362 basehttp 40285 6233010176 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:05:44,143 basehttp 40285 6216183808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:05:44,159 basehttp 40285 6233010176 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:05:44,165 basehttp 40285 6199357440 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:05:44,182 basehttp 40285 6216183808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:05:44,212 basehttp 40285 6250409984 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:06:14,827 basehttp 40285 6216183808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:06:14,841 basehttp 40285 6250409984 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:06:14,842 basehttp 40285 6199357440 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:06:14,849 basehttp 40285 6233010176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:06:14,859 basehttp 40285 6216183808 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:06:19,835 basehttp 40285 6216183808 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:06:19,844 basehttp 40285 6233010176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:06:19,854 basehttp 40285 6216183808 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:06:19,860 basehttp 40285 6199357440 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:07:14,293 basehttp 40285 6216183808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:07:14,301 basehttp 40285 6199357440 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:07:14,309 basehttp 40285 6233010176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:07:14,336 basehttp 40285 6216183808 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:07:16,811 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:16,831 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 1398
+INFO 2025-09-06 00:07:16,837 basehttp 40285 6216183808 "GET /api/files/ HTTP/1.1" 200 6961
+INFO 2025-09-06 00:07:16,845 services 40285 6199357440 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:16,858 basehttp 40285 6199357440 "GET /api/files/stats/ HTTP/1.1" 200 1398
+INFO 2025-09-06 00:07:16,863 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 6961
+INFO 2025-09-06 00:07:20,800 basehttp 40285 6233010176 "OPTIONS /api/files/66ccd947-82e8-4d32-81e9-9436885deaab/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:20,817 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:20,820 basehttp 40285 6233010176 "DELETE /api/files/66ccd947-82e8-4d32-81e9-9436885deaab/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:20,842 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 6076
+INFO 2025-09-06 00:07:20,851 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:20,859 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 1248
+INFO 2025-09-06 00:07:22,282 basehttp 40285 6233010176 "OPTIONS /api/files/7c34d1d1-2fbf-4d1f-802a-bd10e1c68034/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:22,296 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:22,298 basehttp 40285 6233010176 "DELETE /api/files/7c34d1d1-2fbf-4d1f-802a-bd10e1c68034/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:22,322 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 5191
+INFO 2025-09-06 00:07:22,330 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:22,341 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 1097
+INFO 2025-09-06 00:07:23,632 basehttp 40285 6233010176 "OPTIONS /api/files/d2257601-a239-42e9-82ce-3eb1697f9593/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:23,643 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:23,645 basehttp 40285 6233010176 "DELETE /api/files/d2257601-a239-42e9-82ce-3eb1697f9593/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:23,667 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 4318
+INFO 2025-09-06 00:07:23,676 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:23,683 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 952
+INFO 2025-09-06 00:07:25,833 basehttp 40285 6233010176 "OPTIONS /api/files/866fdbeb-1935-4684-b27d-3a97ca73650c/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:25,848 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:25,851 basehttp 40285 6233010176 "DELETE /api/files/866fdbeb-1935-4684-b27d-3a97ca73650c/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:25,890 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 3445
+INFO 2025-09-06 00:07:25,900 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:25,911 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 806
+INFO 2025-09-06 00:07:27,247 basehttp 40285 6233010176 "OPTIONS /api/files/430edfef-dcdb-483a-8e8c-57104f3fba6d/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:27,259 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:27,260 basehttp 40285 6233010176 "DELETE /api/files/430edfef-dcdb-483a-8e8c-57104f3fba6d/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:27,286 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 2523
+INFO 2025-09-06 00:07:27,302 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:27,312 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 645
+INFO 2025-09-06 00:07:28,688 basehttp 40285 6233010176 "OPTIONS /api/files/c09991b9-6c0f-42dc-afd4-09d96ee5ca5e/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:28,702 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:28,704 basehttp 40285 6233010176 "DELETE /api/files/c09991b9-6c0f-42dc-afd4-09d96ee5ca5e/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:28,731 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 1678
+INFO 2025-09-06 00:07:28,742 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:28,753 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 507
+INFO 2025-09-06 00:07:30,263 basehttp 40285 6233010176 "OPTIONS /api/files/bf624090-eb9e-46ed-9e93-63cfe9d16258/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:30,276 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:30,279 basehttp 40285 6233010176 "DELETE /api/files/bf624090-eb9e-46ed-9e93-63cfe9d16258/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:30,299 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 833
+INFO 2025-09-06 00:07:30,308 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:30,316 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 371
+INFO 2025-09-06 00:07:31,656 basehttp 40285 6233010176 "OPTIONS /api/files/211fd246-22f0-40d7-8587-5c1ebca6fe03/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:07:31,673 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:31,686 basehttp 40285 6233010176 "DELETE /api/files/211fd246-22f0-40d7-8587-5c1ebca6fe03/ HTTP/1.1" 204 0
+INFO 2025-09-06 00:07:31,730 basehttp 40285 6233010176 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:07:31,774 services 40285 6233010176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:07:31,793 basehttp 40285 6233010176 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-06 00:07:39,224 basehttp 40285 6199357440 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:07:39,236 basehttp 40285 6233010176 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:07:39,243 basehttp 40285 6216183808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:07:39,272 basehttp 40285 6199357440 "GET /api/chat/conversations/ HTTP/1.1" 200 2194
+INFO 2025-09-06 00:08:08,534 autoreload 41353 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:08:11,594 services 41353 6170800128 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:08:11,603 services 41353 6170800128 Successfully uploaded file: test_e33f1e50.pdf
+INFO 2025-09-06 00:08:11,605 services 41353 6170800128 File uploaded successfully: d27abe99-e57d-4c42-8f4a-e744ad12144d
+ERROR 2025-09-06 00:08:15,633 services 41353 6170800128 RAG upload failed with status 500: {"detail":"(psycopg2.OperationalError) SSL connection has been closed unexpectedly\n\n[SQL: INSERT INTO pdf_metadata (filename, email, path, source, total_pages, uploaded_at, embedding_dim) VALUES (%(filename)s, %(email)s, %(path)s, %(source)s, %(total_pages)s, %(uploaded_at)s, %(embedding_dim)s) RETURNING pdf_metadata.id]\n[parameters: {'filename': 'test.pdf', 'email': 'ralfgrugo4567@gmail.com', 'path': 'https://boltaiagent.blob.core.windows.net/farmonai/c6db10ff-a3a5-409a-ae53-83e7045d0a69_test.pdf?se=2026-09-06T00%3A08%3A15Z&sp=r&sv=2025-07-05&sr=b&sig=4uonwdvlg6cGTYJmuOZatK1fG7d9Ed6027CfGGVS9Ys%3D', 'source': 'pdf', 'total_pages': 1, 'uploaded_at': datetime.datetime(2025, 9, 6, 0, 8, 15, 638830), 'embedding_dim': 384}]\n(Background on this error at: https://sqlalche.me/e/20/e3q8) - Error processing file upload"}
+INFO 2025-09-06 00:08:15,634 basehttp 41353 6170800128 "POST /api/files/upload/ HTTP/1.1" 201 1738
+INFO 2025-09-06 00:08:15,651 services 41353 6170800128 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:08:15,653 services 41353 6170800128 Successfully uploaded file: test_b1cdea27.pdf
+INFO 2025-09-06 00:08:15,654 services 41353 6170800128 File uploaded successfully: eb67880b-65c4-49f8-8f99-4dc289a65903
+INFO 2025-09-06 00:08:20,129 services 41353 6170800128 File test.pdf uploaded to RAG successfully
+INFO 2025-09-06 00:08:20,130 basehttp 41353 6170800128 "POST /api/files/upload/ HTTP/1.1" 201 902
+INFO 2025-09-06 00:08:20,150 basehttp 41353 6170800128 "POST /api/chat/conversations/ HTTP/1.1" 201 338
+INFO 2025-09-06 00:08:20,158 basehttp 41353 6187626496 "OPTIONS /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:08:20,168 basehttp 41353 6170800128 "GET /api/chat/conversations/ HTTP/1.1" 200 2533
+INFO 2025-09-06 00:08:20,170 basehttp 41353 6187626496 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:08:20,205 views 41353 6187626496 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-06 00:08:20,205 views 41353 6187626496 Request data: {'message': 'give me best advice', 'conversation_id': 'e6c50d0c-19a0-4eb8-8216-f12ed804167e', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-06 00:08:20,209 views 41353 6187626496 Serializer validated data: OrderedDict({'message': 'give me best advice', 'conversation_id': UUID('e6c50d0c-19a0-4eb8-8216-f12ed804167e'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-06 00:08:20,209 views 41353 6187626496 Starting generate_stream function
+INFO 2025-09-06 00:08:20,209 views 41353 6187626496 About to call process_chat_message_stream
+ERROR 2025-09-06 00:08:20,218 services 41353 6187626496 ASK DATA ==========================: {'question': [{'message_type': 'user', 'content': 'give me best advice'}], 'user_info': {'id': 1, 'company_name': '', 'owner_name': '', 'state': '', 'city': '', 'year_started': 2000, 'trucks_count': 5, 'monthly_revenue': '0-250k', 'gross_profit_margin': '50.00', 'main_services': ['Junk Removal (Residential)', 'Bin Rental', 'Light Demolition', 'Junk Removal (Commercial)', 'File Upload', 'Document ProcessingTrailer Rental', 'Recycling Services'], 'pricing_model': 'by_weight', 'software_tools': ['CRM Software', 'GPS Tracking', 'Route Optimization', 'Inventory Management', 'Booking System', 'Accounting Software', 'Customer Management', 'Mobile Apps'], 'current_challenges': 'How to retain employees?'}}
+ERROR 2025-09-06 00:08:20,778 services 41353 6187626496 RAG API streaming request failed: 422 Client Error: Unprocessable Entity for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-06 00:08:20,780 views 41353 6187626496 Stream completed with 1 chunks
+INFO 2025-09-06 00:08:20,780 basehttp 41353 6187626496 "POST /api/chat/stream/ HTTP/1.1" 200 508
+INFO 2025-09-06 00:09:03,050 autoreload 41353 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:03,460 autoreload 41570 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:04,596 autoreload 41570 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:04,818 autoreload 41579 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:06,035 autoreload 41579 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:06,258 autoreload 41587 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:07,469 autoreload 41587 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:07,768 autoreload 41598 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:09,014 autoreload 41598 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:09,314 autoreload 41612 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:13,462 autoreload 41612 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:13,687 autoreload 41645 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:18,010 autoreload 41645 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:18,242 autoreload 41685 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:22,374 autoreload 41685 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:22,665 autoreload 41719 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:25,881 autoreload 41719 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:26,144 autoreload 41747 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:30,437 autoreload 41747 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:30,687 autoreload 41790 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:09:33,813 autoreload 41790 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:09:34,071 autoreload 41814 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:10:07,921 autoreload 41814 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:10:08,280 autoreload 41938 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:11:32,217 autoreload 41938 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:11:32,619 autoreload 42239 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:11:33,858 autoreload 42239 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:11:34,090 autoreload 42248 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:11:41,092 autoreload 42290 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:11:44,324 basehttp 42290 6146142208 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:11:44,335 basehttp 42290 6162968576 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:11:44,340 basehttp 42290 6129315840 "GET /api/chat/conversations/ HTTP/1.1" 200 2750
+INFO 2025-09-06 00:11:44,345 basehttp 42290 6146142208 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:11:44,370 basehttp 42290 6162968576 "GET /api/chat/conversations/ HTTP/1.1" 200 2750
+INFO 2025-09-06 00:12:02,062 services 42290 6162968576 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:12:02,073 services 42290 6162968576 Successfully uploaded file: test2_15637107.pdf
+INFO 2025-09-06 00:12:02,076 services 42290 6162968576 File uploaded successfully: 3be03910-755e-4776-989f-b40355c95c0d
+INFO 2025-09-06 00:12:08,640 services 42290 6162968576 File test2.pdf uploaded to RAG successfully
+INFO 2025-09-06 00:12:08,641 basehttp 42290 6162968576 "POST /api/files/upload/ HTTP/1.1" 201 905
+INFO 2025-09-06 00:12:08,655 views 42290 6162968576 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-06 00:12:08,655 views 42290 6162968576 Request data: {'message': 'give me best advice', 'conversation_id': 'e6c50d0c-19a0-4eb8-8216-f12ed804167e', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-06 00:12:08,656 views 42290 6162968576 Serializer validated data: OrderedDict({'message': 'give me best advice', 'conversation_id': UUID('e6c50d0c-19a0-4eb8-8216-f12ed804167e'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-06 00:12:08,657 views 42290 6162968576 Starting generate_stream function
+INFO 2025-09-06 00:12:08,657 views 42290 6162968576 About to call process_chat_message_stream
+ERROR 2025-09-06 00:12:08,663 services 42290 6162968576 ASK DATA ==========================: {'question': [{'message_type': 'user', 'content': 'give me best advice'}, {'message_type': 'assistant', 'content': "I apologize, but I'm having trouble connecting to the knowledge base. Please try again later."}, {'message_type': 'user', 'content': 'give me best advice'}], 'user_info': {'id': 1, 'company_name': '', 'owner_name': '', 'state': '', 'city': '', 'year_started': 2000, 'trucks_count': 5, 'monthly_revenue': '0-250k', 'gross_profit_margin': '50.00', 'main_services': ['Junk Removal (Residential)', 'Bin Rental', 'Light Demolition', 'Junk Removal (Commercial)', 'File Upload', 'Document ProcessingTrailer Rental', 'Recycling Services'], 'pricing_model': 'by_weight', 'software_tools': ['CRM Software', 'GPS Tracking', 'Route Optimization', 'Inventory Management', 'Booking System', 'Accounting Software', 'Customer Management', 'Mobile Apps'], 'current_challenges': 'How to retain employees?'}}
+ERROR 2025-09-06 00:12:09,223 services 42290 6162968576 RAG API streaming request failed: 422 Client Error: Unprocessable Entity for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-06 00:12:09,226 views 42290 6162968576 Stream completed with 1 chunks
+INFO 2025-09-06 00:12:09,226 basehttp 42290 6162968576 "POST /api/chat/stream/ HTTP/1.1" 200 508
+INFO 2025-09-06 00:13:05,084 autoreload 42290 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:13:05,466 autoreload 42644 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:08,740 autoreload 42644 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:13:08,978 autoreload 42666 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:25,471 autoreload 42666 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:13:25,934 autoreload 42746 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:27,174 autoreload 42746 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:13:27,391 autoreload 42754 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:29,612 autoreload 42754 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:13:29,889 autoreload 42770 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:33,106 autoreload 42770 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:13:33,355 autoreload 42795 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:34,584 autoreload 42795 8464575616 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-06 00:13:34,826 autoreload 42806 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:49,878 autoreload 42873 8464575616 Watching for file changes with StatReloader
+INFO 2025-09-06 00:13:53,477 basehttp 42873 6222770176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:13:53,494 basehttp 42873 6205943808 "GET /api/chat/conversations/ HTTP/1.1" 200 2750
+INFO 2025-09-06 00:13:53,497 basehttp 42873 6239596544 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 2099
+INFO 2025-09-06 00:13:53,508 basehttp 42873 6222770176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:13:53,561 basehttp 42873 6256422912 "GET /api/chat/conversations/ HTTP/1.1" 200 2750
+INFO 2025-09-06 00:14:21,742 services 42873 6256422912 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:14:21,761 services 42873 6256422912 Successfully uploaded file: Account Setting _ TRAE - Collaborate with Intelligence_4b290815.pdf
+INFO 2025-09-06 00:14:21,766 services 42873 6256422912 File uploaded successfully: 7bfa08f4-e90a-46ad-b69c-365a51dcf376
+ERROR 2025-09-06 00:14:23,029 services 42873 6256422912 RAG upload failed with status 500: {"detail":"(psycopg2.OperationalError) SSL connection has been closed unexpectedly\n\n[SQL: INSERT INTO pdf_metadata (filename, email, path, source, total_pages, uploaded_at, embedding_dim) VALUES (%(filename)s, %(email)s, %(path)s, %(source)s, %(total_pages)s, %(uploaded_at)s, %(embedding_dim)s) RETURNING pdf_metadata.id]\n[parameters: {'filename': 'Account Setting _ TRAE - Collaborate with Intelligence.pdf', 'email': 'ralfgrugo4567@gmail.com', 'path': 'https://boltaiagent.blob.core.windows.net/farmonai/2e41888f-dbe2-4feb-99cc-1260eeb6ab86_Account%20Setting%20_%20TRAE%20-%20Collaborate%20with%20Intelligence.pdf?se=2026-09-06T00%3A14%3A23Z&sp=r&sv=2025-07-05&sr=b&sig=ALjrli8taCA8xJDxKLA5GVyg0BnNZchPOAJhjKeadQA%3D', 'source': 'pdf', 'total_pages': 1, 'uploaded_at': datetime.datetime(2025, 9, 6, 0, 14, 23, 33610), 'embedding_dim': 384}]\n(Background on this error at: https://sqlalche.me/e/20/e3q8) - Error processing file upload"}
+INFO 2025-09-06 00:14:23,029 basehttp 42873 6256422912 "POST /api/files/upload/ HTTP/1.1" 201 2003
+INFO 2025-09-06 00:14:23,050 views 42873 6256422912 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-06 00:14:23,051 views 42873 6256422912 Request data: {'message': 'give me best advice', 'conversation_id': 'e6c50d0c-19a0-4eb8-8216-f12ed804167e', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-06 00:14:23,055 views 42873 6256422912 Serializer validated data: OrderedDict({'message': 'give me best advice', 'conversation_id': UUID('e6c50d0c-19a0-4eb8-8216-f12ed804167e'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-06 00:14:23,056 views 42873 6256422912 Starting generate_stream function
+INFO 2025-09-06 00:14:23,056 views 42873 6256422912 About to call process_chat_message_stream
+ERROR 2025-09-06 00:14:23,073 services 42873 6256422912 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'give me best advice'}, {'message_type': 'assistant', 'content': "I apologize, but I'm having trouble connecting to the knowledge base. Please try again later."}, {'message_type': 'user', 'content': 'give me best advice'}, {'message_type': 'assistant', 'content': "I apologize, but I'm having trouble connecting to the knowledge base. Please try again later."}, {'message_type': 'user', 'content': 'give me best advice'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-06 00:14:33,440 services 42873 6256422912 Source document: Sources: Atomic habits ( PDFDrive ).pdf 
+INFO 2025-09-06 00:14:33,440 services 42873 6256422912 Extracted document list: ['Atomic habits ( PDFDrive ).pdf']
+INFO 2025-09-06 00:14:33,440 services 42873 6256422912 Finished processing 1082 lines
+INFO 2025-09-06 00:14:33,448 views 42873 6256422912 Stream completed with 542 chunks
+INFO 2025-09-06 00:14:33,449 basehttp 42873 6256422912 "POST /api/chat/stream/ HTTP/1.1" 200 171658

@@ -1,3 +1,4 @@
+import email
 import os
 import time
 import logging
@@ -135,8 +136,12 @@ class AIService:
             
             data = {
                 "question": question_data,
-                "user_info": user_info
+                "user_info": {
+                    "email": user.email
+                }
             }
+
+            logger.error(f"ASK DATA 1 =======================, {str(data)}")
 
             
             response = requests.post(url, json=data, headers=headers, timeout=30)
@@ -216,10 +221,12 @@ Try rephrasing your question with specific business context or terminology from 
             
             data = {
                 "question": question_data,
-                "user_info": user_info
+                "user_info": {
+                    "email": user.email
+                }
             }
 
-            logger.error(f"ASK DATA ==========================: {str(data)}")
+            logger.error(f"ASK DATA 2 ==========================: {str(data)}")
             
             response = requests.post(url, json=data, headers=headers, timeout=60, stream=True)
             response.raise_for_status()
