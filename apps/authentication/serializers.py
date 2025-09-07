@@ -297,7 +297,7 @@ class MagicUserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = MagicUser
         fields = (
-            'first_name', 'last_name', 'email', 'company_name', 'phone_number'
+            'first_name', 'last_name', 'email', 'company_name', 'phone_number', 'title', 'position'
         )
         extra_kwargs = {
             'first_name': {'required': True},
@@ -354,7 +354,7 @@ class MagicUserSerializer(serializers.ModelSerializer):
         model = MagicUser
         fields = (
             'id', 'first_name', 'last_name', 'email', 'company_name',
-            'phone_number', 'magic_link', 'generated_username',
+            'phone_number', 'title', 'position', 'magic_link', 'generated_username',
             'is_used', 'is_account_created', 'webhook_sent',
             'created_at', 'expires_at'
         )

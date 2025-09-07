@@ -68,6 +68,20 @@ class User(AbstractUser):
         null=True,
         help_text="User's phone number"
     )
+    
+    title = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="User's job title"
+    )
+    
+    position = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="User's position in company"
+    )
 
     avatar = models.ImageField(
         upload_to='avatars/',
@@ -392,6 +406,20 @@ class MagicUser(models.Model):
         help_text="User's phone number"
     )
     
+    title = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="User's job title"
+    )
+    
+    position = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="User's position in company"
+    )
+
     # Magic link fields
     magic_token = models.CharField(
         max_length=64,
@@ -490,7 +518,40 @@ class MagicUser(models.Model):
                 base_username = base_username[:25]
                 username = f"{base_username}{counter}"
         
+        return username
+    
+    @classmethod
+    def generate_password(cls):
+        """Generate a secure random password."""
+        # Generate a 12-character password with letters, digits, and special characters
+        characters = string.ascii_letters + string.digits + '!@#$%^&*'
+        return ''.join(secrets.choice(characters) for _ in range(12))
+    
+    def create_user_account(self, password):
+        """Create a User account from MagicUser data."""
+        user = User.objects.create_user(
+            username=self.generated_username,
+            email=self.email,
+            password=password,
+            first_name=self.first_name,
+            last_name=self.last_name
+        )
+        
+        # Set additional fields
+        user.phone_number = self.phone_number
+        user.title = self.title
+        user.position = self.position
+        user.save()
+        
+        # Link the created user to this magic user
+        self.created_user = user
+        self.save(update_fields=['created_user'])
+        
         return user
+    
+    def is_expired(self):
+        """Check if the magic link has expired."""
+        return timezone.now() > self.expires_at
 
 
 class PasswordReset(models.Model):
