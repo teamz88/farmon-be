@@ -2,6 +2,10 @@ from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
 
 from . import views
+from .views import (
+    ForgotPasswordView,
+    ResetPasswordView,
+)
 
 app_name = 'authentication'
 
@@ -35,4 +39,8 @@ urlpatterns = [
     path('magic-link/', views.MagicLinkRegistrationView.as_view(), name='magic_link_register'),
     path('magic-link/<str:token>/', views.MagicLinkValidationView.as_view(), name='magic_link_validate'),
     path('magic-link/<str:token>/set-password/', views.MagicLinkPasswordSetView.as_view(), name='magic_link_set_password'),
+    
+    # Password Reset URLs
+    path('forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
+    path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
 ]

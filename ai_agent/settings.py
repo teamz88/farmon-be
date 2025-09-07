@@ -232,6 +232,7 @@ FRONTEND_URL = env('FRONTEND_URL', default='http://localhost:3000')
 
 # n8n Webhook Settings
 N8N_WEBHOOK_URL = env('N8N_WEBHOOK_URL', default='')
+N8N_RESET_PASSWORD_WEBHOOK_URL = env('N8N_RESET_PASSWORD_WEBHOOK_URL', default='')
 
 # Logging
 # Ensure logs directory exists

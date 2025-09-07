@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
-from .models import User, UserSession, ClientInfo, MagicUser
+from .models import User, UserSession, ClientInfo, MagicUser, PasswordReset
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -45,6 +45,49 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         """Validate password confirmation."""
         if attrs['password'] != attrs['password_confirm']:
+            raise serializers.ValidationError("Password confirmation doesn't match.")
+        return attrs
+
+
+class ForgotPasswordSerializer(serializers.Serializer):
+    """Serializer for forgot password request."""
+    
+    email = serializers.EmailField()
+    
+    def validate_email(self, value):
+        """Validate that email exists in the system."""
+        if not User.objects.filter(email=value).exists():
+            raise serializers.ValidationError("User with this email does not exist.")
+        return value
+
+
+class ResetPasswordSerializer(serializers.Serializer):
+    """Serializer for password reset."""
+    
+    token = serializers.CharField(max_length=64)
+    new_password = serializers.CharField(
+        write_only=True,
+        validators=[validate_password],
+        style={'input_type': 'password'}
+    )
+    new_password_confirm = serializers.CharField(
+        write_only=True,
+        style={'input_type': 'password'}
+    )
+    
+    def validate_token(self, value):
+        """Validate that token exists and is not expired."""
+        try:
+            reset_request = PasswordReset.objects.get(token=value, is_used=False)
+            if reset_request.is_expired():
+                raise serializers.ValidationError("Reset token has expired.")
+            return value
+        except PasswordReset.DoesNotExist:
+            raise serializers.ValidationError("Invalid or expired reset token.")
+    
+    def validate(self, attrs):
+        """Validate password confirmation."""
+        if attrs['new_password'] != attrs['new_password_confirm']:
             raise serializers.ValidationError("Password confirmation doesn't match.")
         return attrs
     

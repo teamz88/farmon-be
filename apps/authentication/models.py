@@ -490,47 +490,92 @@ class MagicUser(models.Model):
                 base_username = base_username[:25]
                 username = f"{base_username}{counter}"
         
-        return username
+        return user
+
+
+class PasswordReset(models.Model):
+    """Model for handling password reset requests."""
+    
+    email = models.EmailField(
+        help_text="Email address for password reset"
+    )
+    
+    token = models.CharField(
+        max_length=64,
+        unique=True,
+        help_text="Unique token for password reset"
+    )
+    
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        help_text="When the reset request was created"
+    )
+    
+    expires_at = models.DateTimeField(
+        help_text="When the reset token expires"
+    )
+    
+    is_used = models.BooleanField(
+        default=False,
+        help_text="Whether the reset token has been used"
+    )
+    
+    # Rate limiting fields
+    ip_address = models.GenericIPAddressField(
+        null=True,
+        blank=True,
+        help_text="IP address of the request"
+    )
+    
+    class Meta:
+        db_table = 'password_resets'
+        verbose_name = 'Password Reset'
+        verbose_name_plural = 'Password Resets'
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['email', 'created_at']),
+            models.Index(fields=['token']),
+        ]
+    
+    def __str__(self):
+        return f"Password reset for {self.email}"
     
     @classmethod
-    def generate_password(cls, length=12):
-        """Generate a secure random password."""
-        alphabet = string.ascii_letters + string.digits + "!@#$%^&*"
-        password = ''.join(secrets.choice(alphabet) for _ in range(length))
-        return password
+    def generate_token(cls):
+        """Generate a secure random token."""
+        return secrets.token_urlsafe(32)
     
     def is_expired(self):
-        """Check if the magic link has expired."""
+        """Check if the reset token has expired."""
         return timezone.now() > self.expires_at
     
-    def create_user_account(self, password):
-        """Create actual user account from magic user data."""
-        import logging
-        logger = logging.getLogger(__name__)
+    @classmethod
+    def can_request_reset(cls, email, ip_address=None):
+        """Check if user can request password reset (rate limiting)."""
+        # Check requests in last 24 hours
+        yesterday = timezone.now() - timedelta(days=1)
         
-        if self.is_account_created and self.created_user:
-            logger.info(f'Account already exists for {self.email}, updating password')
-            user = self.created_user
-            user.set_password(password)
-            user.save()
-            logger.info(f'Password updated for existing user: {user.username}, hash: {user.password[:20]}...')
-            return user
+        # Count requests by email
+        email_requests = cls.objects.filter(
+            email=email,
+            created_at__gte=yesterday
+        ).count()
         
-        logger.info(f'Creating user account for {self.email} with username {self.generated_username}')
-        user = User.objects.create(
-            username=self.generated_username,
-            email=self.email,
-            first_name=self.first_name,
-            last_name=self.last_name,
-            phone_number=self.phone_number,
-            is_active=True
-        )
-        user.set_password(password)
-        user.save()
-        logger.info(f'User created successfully: {user.username}, password hash: {user.password[:20]}...')
+        # Count requests by IP (if provided)
+        ip_requests = 0
+        if ip_address:
+            ip_requests = cls.objects.filter(
+                ip_address=ip_address,
+                created_at__gte=yesterday
+            ).count()
         
-        self.created_user = user
-        self.is_account_created = True
-        self.save(update_fields=['created_user', 'is_account_created', 'updated_at'])
-        
-        return user
+        # Allow max 3 requests per email or IP per day
+        return email_requests < 3 and ip_requests < 3
+
+    def save(self, *args, **kwargs):
+        """Override save to generate token and expiration if not set."""
+        if not self.token:
+            self.token = self.generate_token()
+        if not self.expires_at:
+            self.expires_at = timezone.now() + timedelta(hours=24)
+        super().save(*args, **kwargs)

@@ -12,7 +12,7 @@ from datetime import timedelta
 import requests
 import logging
 
-from .models import User, UserSession, ClientInfo, MagicUser
+from .models import User, UserSession, ClientInfo, MagicUser, PasswordReset
 from .serializers import (
     UserRegistrationSerializer,
     UserLoginSerializer,
@@ -24,6 +24,8 @@ from .serializers import (
     MagicUserSerializer,
     MagicUserPasswordSetSerializer,
     UserListSerializer,
+    ForgotPasswordSerializer,
+    ResetPasswordSerializer,
 )
 from .permissions import IsAdminUser
 
@@ -101,6 +103,148 @@ class UserLoginView(APIView):
             },
             'session_id': session.id
         }, status=status.HTTP_200_OK)
+
+
+class ForgotPasswordView(APIView):
+    """Handle forgot password requests."""
+    
+    permission_classes = [permissions.AllowAny]
+    
+    def get_client_ip(self, request):
+        """Get client IP address from request."""
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    
+    def post(self, request):
+        serializer = ForgotPasswordSerializer(data=request.data)
+        if serializer.is_valid():
+            email = serializer.validated_data['email']
+            ip_address = self.get_client_ip(request)
+            
+            # Check rate limiting
+            if not PasswordReset.can_request_reset(email, ip_address):
+                return Response({
+                    'error': 'Rate limit exceeded. You can only request password reset 3 times per day.'
+                }, status=status.HTTP_429_TOO_MANY_REQUESTS)
+            
+            # Create password reset request
+            reset_request = PasswordReset.objects.create(
+                email=email,
+                ip_address=ip_address
+            )
+            
+            # Send webhook to n8n
+            self.send_reset_webhook(reset_request)
+            
+            return Response({
+                'message': 'Password reset link has been sent to your email.'
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def send_reset_webhook(self, reset_request):
+        """Send password reset webhook to n8n."""
+        try:
+            webhook_url = getattr(settings, 'N8N_RESET_PASSWORD_WEBHOOK_URL', None)
+            if not webhook_url:
+                logger.warning('N8N_RESET_PASSWORD_WEBHOOK_URL not configured in settings')
+                return
+            
+            webhook_data = {
+                'email': reset_request.email,
+                'token': reset_request.token,
+                'reset_link': f"{getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')}/reset-password/{reset_request.token}",
+                'created_at': reset_request.created_at.isoformat(),
+            }
+            
+            response = requests.post(
+                webhook_url,
+                json=webhook_data,
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                logger.info(f'Password reset webhook sent successfully for {reset_request.email}')
+            else:
+                logger.error(f'Password reset webhook failed with status {response.status_code} for {reset_request.email}')
+                
+        except Exception as e:
+            logger.error(f'Error sending password reset webhook for {reset_request.email}: {str(e)}')
+
+
+class ResetPasswordView(APIView):
+    """Handle password reset with token."""
+    
+    permission_classes = [permissions.AllowAny]
+    
+    def get(self, request):
+        """Validate reset token."""
+        token = request.query_params.get('token')
+        if not token:
+            return Response({
+                'error': 'Token is required.'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            reset_request = PasswordReset.objects.get(token=token, is_used=False)
+            
+            if reset_request.is_expired():
+                return Response({
+                    'error': 'Reset token has expired.'
+                }, status=status.HTTP_400_BAD_REQUEST)
+            
+            return Response({
+                'message': 'Token is valid.',
+                'email': reset_request.email
+            }, status=status.HTTP_200_OK)
+            
+        except PasswordReset.DoesNotExist:
+            return Response({
+                'error': 'Invalid reset token.'
+            }, status=status.HTTP_400_BAD_REQUEST)
+    
+    def post(self, request):
+        serializer = ResetPasswordSerializer(data=request.data)
+        if serializer.is_valid():
+            token = serializer.validated_data['token']
+            new_password = serializer.validated_data['new_password']
+            
+            try:
+                # Get the reset request
+                reset_request = PasswordReset.objects.get(token=token, is_used=False)
+                
+                if reset_request.is_expired():
+                    return Response({
+                        'error': 'Reset token has expired.'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+                
+                # Get the user and update password
+                user = User.objects.get(email=reset_request.email)
+                user.set_password(new_password)
+                user.save()
+                
+                # Mark reset request as used
+                reset_request.is_used = True
+                reset_request.save()
+                
+                return Response({
+                    'message': 'Password has been reset successfully.'
+                }, status=status.HTTP_200_OK)
+                
+            except PasswordReset.DoesNotExist:
+                return Response({
+                    'error': 'Invalid or expired reset token.'
+                }, status=status.HTTP_400_BAD_REQUEST)
+            except User.DoesNotExist:
+                return Response({
+                    'error': 'User not found.'
+                }, status=status.HTTP_400_BAD_REQUEST)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # Magic Link Views

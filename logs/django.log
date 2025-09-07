@@ -755,3 +755,503 @@ INFO 2025-09-06 00:14:33,440 services 42873 6256422912 Extracted document list: 
 INFO 2025-09-06 00:14:33,440 services 42873 6256422912 Finished processing 1082 lines
 INFO 2025-09-06 00:14:33,448 views 42873 6256422912 Stream completed with 542 chunks
 INFO 2025-09-06 00:14:33,449 basehttp 42873 6256422912 "POST /api/chat/stream/ HTTP/1.1" 200 171658
+INFO 2025-09-06 00:22:03,549 basehttp 42873 6222770176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:22:03,572 basehttp 42873 6205370368 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:22:03,593 basehttp 42873 6239596544 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:22:03,597 basehttp 42873 6222770176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:22:03,612 basehttp 42873 6256996352 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:22:17,229 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:17,232 basehttp 42873 6256996352 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:17,318 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:17,321 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:18,182 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:18,208 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:18,209 basehttp 42873 6222770176 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:18,222 services 42873 6256996352 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:18,233 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:18,236 basehttp 42873 6256996352 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:19,892 basehttp 42873 6256996352 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:19,893 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:19,905 basehttp 42873 6256996352 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:19,905 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:23,492 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:23,510 basehttp 42873 6256996352 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:23,526 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:23,530 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:24,211 services 42873 6222770176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:24,225 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:24,229 basehttp 42873 6222770176 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:24,238 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:24,254 basehttp 42873 6256996352 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:24,258 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:24,700 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:24,704 basehttp 42873 6256996352 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:24,725 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:24,727 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:25,540 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:25,540 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:25,562 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:25,562 basehttp 42873 6256996352 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:25,843 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:25,854 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:25,855 basehttp 42873 6256996352 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:25,867 services 42873 6222770176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:25,880 basehttp 42873 6222770176 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:25,880 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:26,334 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:26,339 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:26,362 basehttp 42873 6256996352 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:26,369 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:27,059 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:27,064 basehttp 42873 6256996352 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:27,099 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:27,099 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:27,497 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:27,519 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:27,521 basehttp 42873 6222770176 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:27,527 services 42873 6256996352 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:27,538 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:27,538 basehttp 42873 6256996352 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:38,326 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:38,338 basehttp 42873 6256996352 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:38,346 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:38,356 services 42873 6256996352 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:22:38,370 basehttp 42873 6222770176 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:22:38,380 basehttp 42873 6256996352 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:22:38,935 basehttp 42873 6256996352 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:38,944 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:38,954 basehttp 42873 6256996352 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:22:38,963 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:22:43,008 basehttp 42873 6239596544 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:22:45,523 basehttp 42873 6256996352 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:22:45,531 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:22:45,546 basehttp 42873 6222770176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:22:45,559 basehttp 42873 6256996352 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:24:00,878 basehttp 42873 6222770176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:24:00,889 basehttp 42873 6256996352 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:24:00,896 basehttp 42873 6239596544 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:24:00,906 basehttp 42873 6222770176 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:24:13,536 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:24:13,568 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:24:13,569 basehttp 42873 6222770176 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:24:13,592 services 42873 6205370368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:24:13,610 basehttp 42873 6256996352 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:24:13,613 basehttp 42873 6205370368 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:24:14,337 basehttp 42873 6205370368 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:24:14,343 basehttp 42873 6256996352 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:24:14,356 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:24:14,365 basehttp 42873 6205370368 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:24:16,728 basehttp 42873 6205370368 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:24:57,621 basehttp 42873 6239596544 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:24:57,638 basehttp 42873 6205370368 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:24:57,649 basehttp 42873 6256996352 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:24:57,674 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:25:04,303 services 42873 6256996352 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:25:04,328 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:25:04,330 basehttp 42873 6256996352 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:25:04,345 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:25:04,359 basehttp 42873 6205370368 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:25:04,363 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:25:04,776 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:04,781 basehttp 42873 6205370368 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:04,789 basehttp 42873 6256996352 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:04,796 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:09,412 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:09,417 basehttp 42873 6256996352 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:09,427 basehttp 42873 6205370368 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:09,496 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:12,471 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:12,490 basehttp 42873 6205370368 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:12,495 basehttp 42873 6222770176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:25:12,513 basehttp 42873 6256996352 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:25:12,523 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:12,534 basehttp 42873 6273822720 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:12,536 basehttp 42873 6205370368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-06 00:25:12,551 basehttp 42873 6222770176 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:25:17,246 basehttp 42873 6222770176 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:25:18,582 basehttp 42873 6222770176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:19,349 basehttp 42873 6222770176 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:25:19,862 basehttp 42873 6222770176 "GET /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/history/ HTTP/1.1" 200 1037
+INFO 2025-09-06 00:25:22,419 basehttp 42873 6222770176 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:22,422 basehttp 42873 6205370368 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:22,446 basehttp 42873 6273822720 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:22,446 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:22,799 services 42873 6273822720 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:25:22,815 basehttp 42873 6273822720 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:25:22,815 basehttp 42873 6222770176 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:25:22,825 services 42873 6205370368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:25:22,843 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:25:22,845 basehttp 42873 6205370368 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:25:25,757 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:25,764 basehttp 42873 6205370368 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:25,786 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:25,788 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:27,600 services 42873 6239596544 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:25:27,616 basehttp 42873 6222770176 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:25:27,625 basehttp 42873 6239596544 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:25:27,634 services 42873 6222770176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:25:27,640 basehttp 42873 6205370368 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:25:27,642 basehttp 42873 6222770176 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:25:35,399 basehttp 42873 6222770176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:37,542 basehttp 42873 6222770176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:39,794 basehttp 42873 6222770176 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:25:40,284 basehttp 42873 6222770176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:41,022 basehttp 42873 6222770176 "GET /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/history/ HTTP/1.1" 200 1037
+INFO 2025-09-06 00:25:41,835 basehttp 42873 6222770176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:42,208 basehttp 42873 6222770176 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:25:42,906 basehttp 42873 6222770176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:47,366 basehttp 42873 6222770176 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:25:47,916 basehttp 42873 6222770176 "GET /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/history/ HTTP/1.1" 200 1037
+INFO 2025-09-06 00:25:48,232 basehttp 42873 6222770176 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:25:48,462 basehttp 42873 6222770176 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:25:48,703 basehttp 42873 6222770176 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:48,706 basehttp 42873 6205370368 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:25:48,723 basehttp 42873 6239596544 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:49,077 basehttp 42873 6205370368 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:49,081 basehttp 42873 6239596544 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:25:49,102 basehttp 42873 6205370368 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:25:49,412 basehttp 42873 6205370368 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:49,425 basehttp 42873 6239596544 "GET /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/history/ HTTP/1.1" 200 4972
+INFO 2025-09-06 00:25:49,450 basehttp 42873 6239596544 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:49,792 basehttp 42873 6205370368 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:49,797 basehttp 42873 6239596544 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:25:49,825 basehttp 42873 6205370368 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:25:50,096 basehttp 42873 6205370368 "GET /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/history/ HTTP/1.1" 200 1037
+INFO 2025-09-06 00:25:50,102 basehttp 42873 6239596544 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:25:50,113 basehttp 42873 6222770176 "GET /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/history/ HTTP/1.1" 200 1037
+INFO 2025-09-06 00:25:50,589 basehttp 42873 6239596544 "GET /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/history/ HTTP/1.1" 200 1037
+INFO 2025-09-06 00:25:50,590 basehttp 42873 6222770176 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:25:50,608 basehttp 42873 6239596544 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:25:55,034 basehttp 42873 6239596544 "GET /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/history/ HTTP/1.1" 200 1050
+INFO 2025-09-06 00:25:56,718 basehttp 42873 6239596544 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:56,722 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:25:56,732 basehttp 42873 6205370368 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:25:56,736 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:26:00,366 basehttp 42873 6239596544 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:26:00,682 basehttp 42873 6239596544 "OPTIONS /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:26:00,708 basehttp 42873 6239596544 "PATCH /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/ HTTP/1.1" 200 542
+INFO 2025-09-06 00:26:00,726 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:26:00,979 basehttp 42873 6239596544 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:26:01,017 basehttp 42873 6205370368 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:26:01,020 basehttp 42873 6239596544 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:26:01,804 basehttp 42873 6205370368 "GET /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/history/ HTTP/1.1" 200 1035
+INFO 2025-09-06 00:26:01,810 basehttp 42873 6239596544 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:26:01,845 basehttp 42873 6239596544 "GET /api/chat/conversations/400feb1e-d27b-4f3d-ac8d-cae5684251ad/history/ HTTP/1.1" 200 2083
+INFO 2025-09-06 00:26:04,450 basehttp 42873 6239596544 "OPTIONS /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:26:04,466 basehttp 42873 6239596544 "PATCH /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/ HTTP/1.1" 200 555
+INFO 2025-09-06 00:26:04,484 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:26:07,148 basehttp 42873 6239596544 "PATCH /api/chat/conversations/e89e60a0-2351-483b-aed8-4ac1ef18cdd7/ HTTP/1.1" 200 542
+INFO 2025-09-06 00:26:07,166 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:26:08,399 basehttp 42873 6239596544 "PATCH /api/chat/conversations/feba5b2b-f49c-4530-84ec-3023033b3eb7/ HTTP/1.1" 200 555
+INFO 2025-09-06 00:26:08,415 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:26:09,403 basehttp 42873 6239596544 "OPTIONS /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:26:09,417 basehttp 42873 6239596544 "PATCH /api/chat/conversations/e6c50d0c-19a0-4eb8-8216-f12ed804167e/ HTTP/1.1" 200 568
+INFO 2025-09-06 00:26:09,433 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:26:10,270 basehttp 42873 6239596544 "OPTIONS /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:26:10,282 basehttp 42873 6239596544 "PATCH /api/chat/conversations/3d8996b5-771b-42d1-8071-5c00b71a56a8/ HTTP/1.1" 200 540
+INFO 2025-09-06 00:26:10,297 basehttp 42873 6239596544 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-06 00:26:56,122 basehttp 42873 6204796928 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:26:56,128 basehttp 42873 6222770176 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:26:56,143 basehttp 42873 6204796928 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-06 00:26:56,151 basehttp 42873 6239596544 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-06 00:26:56,608 services 42873 6204796928 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:26:56,622 basehttp 42873 6204796928 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:26:56,623 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:26:56,630 services 42873 6222770176 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-06 00:26:56,640 basehttp 42873 6222770176 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-06 00:26:56,642 basehttp 42873 6239596544 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-06 00:33:47,461 basehttp 42873 6204796928 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-09-06 00:33:47,556 basehttp 42873 6204796928 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-09-07 19:37:39,363 autoreload 24318 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 19:45:52,560 basehttp 24318 6138015744 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:45:52,567 serializers 24318 6138015744 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-07 19:45:52,698 serializers 24318 6138015744 Username auth result: False
+INFO 2025-09-07 19:45:52,699 serializers 24318 6138015744 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$jfPS4QLaMPPuXecU1v4EAB$gvV3nS...
+INFO 2025-09-07 19:45:52,794 serializers 24318 6138015744 Email auth result: True
+INFO 2025-09-07 19:45:52,794 views 24318 6138015744 User login: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$jfPS4QLaMPPuXecU1v4EAB$gvV3nS...
+INFO 2025-09-07 19:45:52,821 basehttp 24318 6138015744 "POST /api/auth/login/ HTTP/1.1" 200 1101
+INFO 2025-09-07 19:45:53,000 basehttp 24318 6138015744 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:45:53,002 basehttp 24318 6154842112 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:45:53,003 basehttp 24318 6171668480 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:45:53,003 basehttp 24318 6188494848 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:45:53,027 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:45:53,040 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:45:53,045 basehttp 24318 6188494848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:45:53,056 basehttp 24318 6171668480 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:47:57,383 basehttp 24318 6188494848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:47:57,389 basehttp 24318 6171668480 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:47:57,398 basehttp 24318 6138015744 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:47:57,407 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:48:42,220 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:48:42,228 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:48:42,233 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:48:42,233 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:49:09,722 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:09,725 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:09,728 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:49:09,728 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2763
+INFO 2025-09-07 19:49:24,164 basehttp 24318 6154842112 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:49:24,165 basehttp 24318 6188494848 "OPTIONS /api/auth/client-info/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:49:24,166 basehttp 24318 6171668480 "OPTIONS /api/auth/client-info/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:49:24,167 basehttp 24318 6138015744 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:49:24,182 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:49:24,184 basehttp 24318 6138015744 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:49:24,191 basehttp 24318 6171668480 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:49:24,191 basehttp 24318 6154842112 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:49:27,669 basehttp 24318 6154842112 "OPTIONS /api/chat/conversations/clear-all/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:49:27,689 basehttp 24318 6154842112 "DELETE /api/chat/conversations/clear-all/ HTTP/1.1" 200 65
+INFO 2025-09-07 19:49:29,390 basehttp 24318 6154842112 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:49:29,390 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:49:29,394 basehttp 24318 6138015744 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:49:29,402 basehttp 24318 6188494848 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:49:29,403 basehttp 24318 6205321216 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:29,405 basehttp 24318 6222147584 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:29,408 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:29,410 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:37,141 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:49:37,144 basehttp 24318 6154842112 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:49:37,145 basehttp 24318 6188494848 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:49:37,150 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:37,151 basehttp 24318 6205321216 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:37,152 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:49:37,157 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:49:37,160 basehttp 24318 6188494848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:14,837 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:14,841 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:14,841 basehttp 24318 6205321216 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:14,842 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:14,845 basehttp 24318 6154842112 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:14,847 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:14,851 basehttp 24318 6188494848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:14,855 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:15,213 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:15,216 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:15,222 basehttp 24318 6138015744 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:15,229 basehttp 24318 6154842112 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:15,231 basehttp 24318 6222147584 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:15,232 basehttp 24318 6205321216 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:15,234 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:15,237 basehttp 24318 6188494848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:25,779 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:25,779 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:25,783 basehttp 24318 6205321216 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:25,785 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:25,786 basehttp 24318 6154842112 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:25,788 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:25,791 basehttp 24318 6188494848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:25,791 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:26,147 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:26,153 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:26,163 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:26,164 basehttp 24318 6154842112 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:26,164 basehttp 24318 6205321216 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:26,168 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:26,169 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:26,172 basehttp 24318 6188494848 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:45,192 basehttp 24318 6138015744 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:45,194 basehttp 24318 6205321216 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:45,195 basehttp 24318 6188494848 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:45,196 basehttp 24318 6154842112 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:45,196 basehttp 24318 6171668480 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:45,196 basehttp 24318 6222147584 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:45,206 basehttp 24318 6138015744 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:45,208 basehttp 24318 6205321216 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:53,625 basehttp 24318 6205321216 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:53,626 basehttp 24318 6138015744 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:50:53,629 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:53,633 basehttp 24318 6171668480 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:50:53,634 basehttp 24318 6154842112 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:53,634 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:53,638 basehttp 24318 6138015744 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:50:53,638 basehttp 24318 6205321216 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:04,386 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:04,387 basehttp 24318 6205321216 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:51:04,392 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:04,393 basehttp 24318 6138015744 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:51:04,400 basehttp 24318 6205321216 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:51:04,402 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:04,404 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:51:04,408 basehttp 24318 6154842112 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:07,970 basehttp 24318 6154842112 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:51:07,978 basehttp 24318 6171668480 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:07,981 basehttp 24318 6205321216 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:07,984 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:51:07,991 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:51:08,003 basehttp 24318 6171668480 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:08,005 basehttp 24318 6154842112 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:08,008 basehttp 24318 6205321216 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:51:48,840 basehttp 24318 6154842112 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:51:48,843 basehttp 24318 6138015744 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:48,843 basehttp 24318 6171668480 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:51:48,845 basehttp 24318 6222147584 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:48,846 basehttp 24318 6205321216 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:51:48,846 basehttp 24318 6188494848 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:51:48,854 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:51:48,856 basehttp 24318 6222147584 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:34,483 basehttp 24318 6222147584 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:34,483 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:34,487 basehttp 24318 6205321216 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:34,487 basehttp 24318 6154842112 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:38,493 basehttp 24318 6154842112 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:38,494 basehttp 24318 6205321216 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:38,504 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:38,511 basehttp 24318 6138015744 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:38,513 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:38,515 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:38,515 basehttp 24318 6222147584 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:38,518 basehttp 24318 6205321216 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:38,520 basehttp 24318 6171668480 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:38,526 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:49,872 basehttp 24318 6222147584 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:49,873 basehttp 24318 6188494848 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:49,878 basehttp 24318 6154842112 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:49,879 basehttp 24318 6138015744 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:49,884 basehttp 24318 6171668480 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:53:49,886 basehttp 24318 6205321216 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:53:49,902 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:49,903 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:49,904 basehttp 24318 6222147584 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:53:49,908 basehttp 24318 6138015744 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:55:49,476 basehttp 24318 6138015744 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:55:49,478 basehttp 24318 6154842112 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:55:49,494 basehttp 24318 6138015744 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:55:49,495 basehttp 24318 6154842112 "GET /api/auth/client-info/ HTTP/1.1" 200 354
+INFO 2025-09-07 19:55:49,496 basehttp 24318 6222147584 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:55:49,496 basehttp 24318 6188494848 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:55:49,496 basehttp 24318 6205321216 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:55:49,499 basehttp 24318 6171668480 "GET /api/auth/profile/ HTTP/1.1" 200 554
+INFO 2025-09-07 19:55:49,507 basehttp 24318 6154842112 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:55:49,507 basehttp 24318 6222147584 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 19:57:27,446 basehttp 24318 6222147584 "OPTIONS /api/files/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:57:27,446 basehttp 24318 6205321216 "OPTIONS /api/files/stats/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:57:27,446 basehttp 24318 6154842112 "OPTIONS /api/files/stats/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:57:27,446 basehttp 24318 6171668480 "OPTIONS /api/files/ HTTP/1.1" 200 0
+INFO 2025-09-07 19:57:27,473 services 24318 6205321216 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-07 19:57:27,473 services 24318 6154842112 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-07 19:57:27,494 basehttp 24318 6171668480 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-07 19:57:27,495 basehttp 24318 6222147584 "GET /api/files/ HTTP/1.1" 200 3283
+INFO 2025-09-07 19:57:27,498 basehttp 24318 6205321216 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-07 19:57:27,499 basehttp 24318 6154842112 "GET /api/files/stats/ HTTP/1.1" 200 727
+INFO 2025-09-07 20:16:15,408 autoreload 24318 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-07 20:16:15,766 autoreload 43428 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:16:23,054 autoreload 43428 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-07 20:16:23,254 autoreload 43454 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:16:40,598 autoreload 43454 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-07 20:16:40,827 autoreload 43550 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:17:07,579 autoreload 43550 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-07 20:17:07,847 autoreload 43739 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:17:42,730 autoreload 43739 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:17:43,015 autoreload 43988 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:18:07,747 autoreload 43988 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/urls.py changed, reloading.
+INFO 2025-09-07 20:18:08,225 autoreload 44153 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:20:29,875 autoreload 45260 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:25:51,732 basehttp 45260 6189772800 "OPTIONS /api/auth/forgot-password/ HTTP/1.1" 200 0
+WARNING 2025-09-07 20:25:51,774 log 45260 6189772800 Bad Request: /api/auth/forgot-password/
+WARNING 2025-09-07 20:25:51,774 basehttp 45260 6189772800 "POST /api/auth/forgot-password/ HTTP/1.1" 400 50
+WARNING 2025-09-07 20:25:57,169 log 45260 6189772800 Bad Request: /api/auth/forgot-password/
+WARNING 2025-09-07 20:25:57,169 basehttp 45260 6189772800 "POST /api/auth/forgot-password/ HTTP/1.1" 400 50
+ERROR 2025-09-07 20:26:06,016 log 45260 6189772800 Internal Server Error: /api/auth/forgot-password/
+Traceback (most recent call last):
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py", line 129, in post
+    if not PasswordReset.check_rate_limit(email, ip_address):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'PasswordReset' has no attribute 'check_rate_limit'
+ERROR 2025-09-07 20:26:06,017 basehttp 45260 6189772800 "POST /api/auth/forgot-password/ HTTP/1.1" 500 107793
+INFO 2025-09-07 20:27:06,887 autoreload 45260 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:27:07,202 autoreload 47755 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:27:26,814 autoreload 47755 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/models.py changed, reloading.
+INFO 2025-09-07 20:27:27,115 autoreload 47875 8588520576 Watching for file changes with StatReloader
+WARNING 2025-09-07 20:28:15,258 views 47875 6167080960 N8N_RESET_PASSWORD_WEBHOOK_URL not configured in settings
+INFO 2025-09-07 20:28:15,259 basehttp 47875 6167080960 "POST /api/auth/forgot-password/ HTTP/1.1" 200 62
+INFO 2025-09-07 20:29:25,297 autoreload 48522 8588520576 Watching for file changes with StatReloader
+WARNING 2025-09-07 20:29:46,023 views 48522 6134280192 N8N_RESET_PASSWORD_WEBHOOK_URL not configured in settings
+INFO 2025-09-07 20:29:46,023 basehttp 48522 6134280192 "POST /api/auth/forgot-password/ HTTP/1.1" 200 62
+INFO 2025-09-07 20:30:46,852 autoreload 48522 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/ai_agent/settings.py changed, reloading.
+INFO 2025-09-07 20:30:47,167 autoreload 49025 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:31:03,866 autoreload 49083 8588520576 Watching for file changes with StatReloader
+ERROR 2025-09-07 20:31:29,747 views 49083 6129004544 Error sending password reset webhook for ralfgrugo4567@gmail.com: HTTPSConnectionPool(host='your-n8n-instance.com', port=443): Max retries exceeded with url: /webhook/farmon-reset-password (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10d399550>, 'Connection to your-n8n-instance.com timed out. (connect timeout=10)'))
+INFO 2025-09-07 20:31:29,748 basehttp 49083 6129004544 "POST /api/auth/forgot-password/ HTTP/1.1" 200 62
+INFO 2025-09-07 20:31:29,749 basehttp 49083 6129004544 - Broken pipe from ('127.0.0.1', 57071)
+INFO 2025-09-07 20:32:11,194 autoreload 49540 8588520576 Watching for file changes with StatReloader
+WARNING 2025-09-07 20:32:20,857 log 49540 6169423872 Too Many Requests: /api/auth/forgot-password/
+WARNING 2025-09-07 20:32:20,857 basehttp 49540 6169423872 "POST /api/auth/forgot-password/ HTTP/1.1" 429 85
+ERROR 2025-09-07 20:32:59,398 views 49540 6169423872 Password reset webhook failed with status 500 for ralfgrugo4567@gmail.com
+INFO 2025-09-07 20:32:59,401 basehttp 49540 6169423872 "POST /api/auth/forgot-password/ HTTP/1.1" 200 62
+INFO 2025-09-07 20:36:42,682 views 49540 6169423872 Password reset webhook sent successfully for ralfgrugo4567@gmail.com
+INFO 2025-09-07 20:36:42,685 basehttp 49540 6169423872 "POST /api/auth/forgot-password/ HTTP/1.1" 200 62
+INFO 2025-09-07 20:37:55,300 basehttp 49540 6186250240 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:37:55,304 basehttp 49540 6169423872 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:37:55,310 basehttp 49540 6186250240 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:37:55,312 basehttp 49540 6203650048 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:38:24,670 basehttp 49540 6203650048 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:38:24,670 basehttp 49540 6186250240 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:38:24,682 basehttp 49540 6169423872 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:38:24,683 basehttp 49540 6220476416 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:39:25,365 autoreload 49540 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:39:25,728 autoreload 52711 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:39:29,003 autoreload 52711 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:39:29,261 autoreload 52762 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:39:30,441 autoreload 52762 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:39:30,658 autoreload 52777 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:42:30,842 views 52777 6203142144 Password reset webhook sent successfully for ralfgrugo4567@gmail.com
+INFO 2025-09-07 20:42:30,846 basehttp 52777 6203142144 "POST /api/auth/forgot-password/ HTTP/1.1" 200 62
+INFO 2025-09-07 20:43:06,552 basehttp 52777 6203142144 "OPTIONS /api/auth/magic-link/z-0MpU2ZzIYjMdhD-_G0IlP0IdbpFelfgH0BOyC0qz8/ HTTP/1.1" 200 0
+INFO 2025-09-07 20:43:06,552 basehttp 52777 6219968512 "OPTIONS /api/auth/magic-link/z-0MpU2ZzIYjMdhD-_G0IlP0IdbpFelfgH0BOyC0qz8/ HTTP/1.1" 200 0
+WARNING 2025-09-07 20:43:06,567 log 52777 6219968512 Not Found: /api/auth/magic-link/z-0MpU2ZzIYjMdhD-_G0IlP0IdbpFelfgH0BOyC0qz8/
+WARNING 2025-09-07 20:43:06,568 basehttp 52777 6219968512 "GET /api/auth/magic-link/z-0MpU2ZzIYjMdhD-_G0IlP0IdbpFelfgH0BOyC0qz8/ HTTP/1.1" 404 30
+WARNING 2025-09-07 20:43:06,580 log 52777 6203142144 Not Found: /api/auth/magic-link/z-0MpU2ZzIYjMdhD-_G0IlP0IdbpFelfgH0BOyC0qz8/
+WARNING 2025-09-07 20:43:06,580 basehttp 52777 6203142144 "GET /api/auth/magic-link/z-0MpU2ZzIYjMdhD-_G0IlP0IdbpFelfgH0BOyC0qz8/ HTTP/1.1" 404 30
+INFO 2025-09-07 20:43:38,513 autoreload 52777 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:43:38,878 autoreload 53697 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:43:40,173 autoreload 53697 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:43:40,415 autoreload 53725 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:43:42,632 autoreload 53725 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:43:42,872 autoreload 53743 8588520576 Watching for file changes with StatReloader
+WARNING 2025-09-07 20:52:03,899 log 53743 6172209152 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-07 20:52:03,901 log 53743 6189035520 Unauthorized: /api/chat/folders/
+WARNING 2025-09-07 20:52:03,902 basehttp 53743 6172209152 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-07 20:52:03,902 basehttp 53743 6189035520 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-09-07 20:52:03,905 log 53743 6205861888 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-07 20:52:03,907 log 53743 6172209152 Unauthorized: /api/chat/folders/
+WARNING 2025-09-07 20:52:03,907 basehttp 53743 6205861888 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-07 20:52:03,907 basehttp 53743 6172209152 "GET /api/chat/folders/ HTTP/1.1" 401 172
+INFO 2025-09-07 20:54:04,859 autoreload 53743 8588520576 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-07 20:54:05,260 autoreload 59246 8588520576 Watching for file changes with StatReloader
+INFO 2025-09-07 20:55:48,961 basehttp 59246 6127104000 "GET /api/auth/reset-password/?token=Wg7gkQ5m0hNeIgqh8EfNwcn8UziN7_xI_pmwv_dMm3A HTTP/1.1" 200 63
+INFO 2025-09-07 20:55:48,969 basehttp 59246 6127104000 "GET /api/auth/reset-password/?token=Wg7gkQ5m0hNeIgqh8EfNwcn8UziN7_xI_pmwv_dMm3A HTTP/1.1" 200 63
+INFO 2025-09-07 20:56:05,924 basehttp 59246 6127104000 "OPTIONS /api/auth/reset-password/ HTTP/1.1" 200 0
+INFO 2025-09-07 20:56:06,070 basehttp 59246 6127104000 "POST /api/auth/reset-password/ HTTP/1.1" 200 51
+INFO 2025-09-07 20:56:22,518 serializers 59246 6127104000 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-07 20:56:22,632 serializers 59246 6127104000 Username auth result: False
+INFO 2025-09-07 20:56:22,633 serializers 59246 6127104000 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-07 20:56:22,724 serializers 59246 6127104000 Email auth result: False
+WARNING 2025-09-07 20:56:22,724 log 59246 6127104000 Bad Request: /api/auth/login/
+WARNING 2025-09-07 20:56:22,724 basehttp 59246 6127104000 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-07 20:56:25,773 serializers 59246 6127104000 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-07 20:56:25,894 serializers 59246 6127104000 Username auth result: False
+INFO 2025-09-07 20:56:25,895 serializers 59246 6127104000 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-07 20:56:25,987 serializers 59246 6127104000 Email auth result: True
+INFO 2025-09-07 20:56:25,987 views 59246 6127104000 User login: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-07 20:56:26,000 basehttp 59246 6127104000 "POST /api/auth/login/ HTTP/1.1" 200 1101
+INFO 2025-09-07 20:56:26,149 basehttp 59246 6143930368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:56:26,150 basehttp 59246 6127104000 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:56:26,157 basehttp 59246 6143930368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 20:56:26,158 basehttp 59246 6127104000 "GET /api/chat/conversations/ HTTP/1.1" 200 2
