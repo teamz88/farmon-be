@@ -318,21 +318,34 @@ Try rephrasing your question with specific business context or terminology from 
 
         except requests.exceptions.RequestException as e:
             logger.error(f"RAG API streaming request failed: {str(e)}")
+            # Check if user has uploaded files
             yield {
                 'type': 'error',
-                'response': "I apologize, but I'm having trouble connecting to the knowledge base. Please try again later.",
+                'response': 'Apologies, but that question seems too general or outside my trained scope based on internal documents. Please upload relevant documents first to get more specific answers.',
                 'sources': [],
                 'error': str(e)
             }
         except Exception as e:
             logger.error(f"RAG API streaming processing error: {str(e)}")
             logger.error(f"Exception type: {type(e).__name__}")
-            yield {
-                'type': 'error',
-                'response': "I apologize, but something went wrong while processing your request. Please try again.",
-                'sources': [],
-                'error': str(e)
-            }
+            # Check if user has uploaded files
+            from apps.files.models import File
+            user_files_count = File.objects.filter(user=user, deleted_at__isnull=True, status='completed').count()
+            
+            if user_files_count == 0:
+                yield {
+                    'type': 'error',
+                    'response': 'Apologies, but that question seems too general or outside my trained scope based on internal documents. Please upload relevant documents first to get more specific answers.',
+                    'sources': [],
+                    'error': str(e)
+                }
+            else:
+                yield {
+                    'type': 'error',
+                    'response': 'Apologies, but that question seems too general or outside my trained scope based on internal documents.',
+                    'sources': [],
+                    'error': str(e)
+                }
     
     def _format_conversation_for_api(self, current_message: str, conversation_history: list = None) -> list:
         """Format conversation history for the RAG API according to the required structure.

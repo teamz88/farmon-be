@@ -1695,3 +1695,317 @@ INFO 2025-09-08 16:10:22,594 basehttp 8539 6198587392 "GET /api/chat/folders/ HT
 INFO 2025-09-08 16:10:22,595 basehttp 8539 6164934656 "GET /api/chat/conversations/ HTTP/1.1" 200 2
 INFO 2025-09-08 16:10:22,602 basehttp 8539 6198587392 "GET /api/chat/conversations/ HTTP/1.1" 200 2
 INFO 2025-09-08 16:10:22,603 basehttp 8539 6181761024 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:55:23,292 autoreload 40383 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 17:12:50,090 basehttp 40383 6179942400 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:12:50,092 basehttp 40383 6163116032 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:12:50,102 basehttp 40383 6179942400 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:12:50,104 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:12:53,484 basehttp 40383 6179942400 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:12:53,487 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:12:53,495 basehttp 40383 6163116032 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:12:53,498 basehttp 40383 6179942400 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:13:00,042 basehttp 40383 6179942400 "POST /api/chat/conversations/ HTTP/1.1" 201 326
+INFO 2025-09-08 17:13:00,047 basehttp 40383 6163116032 "OPTIONS /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:13:00,058 basehttp 40383 6179942400 "GET /api/chat/conversations/ HTTP/1.1" 200 328
+INFO 2025-09-08 17:13:00,063 basehttp 40383 6163116032 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:13:00,080 views 40383 6163116032 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 17:13:00,080 views 40383 6163116032 Request data: {'message': 'hi boss', 'conversation_id': 'e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:13:00,083 views 40383 6163116032 Serializer validated data: OrderedDict({'message': 'hi boss', 'conversation_id': UUID('e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 17:13:00,084 views 40383 6163116032 Starting generate_stream function
+INFO 2025-09-08 17:13:00,084 views 40383 6163116032 About to call process_chat_message_stream
+ERROR 2025-09-08 17:13:00,110 services 40383 6163116032 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi boss'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:13:04,008 services 40383 6163116032 Source document: Sources: Uzbek-English Translation Help - Grok.pdf
+INFO 2025-09-08 17:13:04,008 services 40383 6163116032 Extracted document list: ['Uzbek-English Translation Help - Grok.pdf']
+INFO 2025-09-08 17:13:04,008 services 40383 6163116032 Finished processing 30 lines
+INFO 2025-09-08 17:13:04,023 views 40383 6163116032 Stream completed with 16 chunks
+INFO 2025-09-08 17:13:04,023 basehttp 40383 6163116032 "POST /api/chat/stream/ HTTP/1.1" 200 5138
+INFO 2025-09-08 17:13:16,592 basehttp 40383 6179942400 "GET /api/chat/conversations/ HTTP/1.1" 200 492
+INFO 2025-09-08 17:13:16,592 basehttp 40383 6196768768 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:13:16,604 basehttp 40383 6163116032 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 937
+INFO 2025-09-08 17:13:16,609 basehttp 40383 6196768768 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:13:16,612 basehttp 40383 6179942400 "GET /api/chat/conversations/ HTTP/1.1" 200 492
+INFO 2025-09-08 17:14:13,879 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:14:13,900 services 40383 6179942400 Successfully uploaded file: COOLIFY teamz88_fa _ Deployments _ Coolify_3e9716f1.pdf
+INFO 2025-09-08 17:14:13,902 services 40383 6179942400 File uploaded successfully: 4584109b-7f20-42af-932e-bbcf422c47a4
+INFO 2025-09-08 17:14:15,764 services 40383 6179942400 File [COOLIFY] teamz88_fa... _ Deployments _ Coolify.pdf uploaded to RAG successfully
+INFO 2025-09-08 17:14:15,765 basehttp 40383 6179942400 "POST /api/files/upload/ HTTP/1.1" 201 1027
+INFO 2025-09-08 17:14:15,788 views 40383 6179942400 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 17:14:15,789 views 40383 6179942400 Request data: {'message': 'explain this doc', 'conversation_id': 'e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:14:15,794 views 40383 6179942400 Serializer validated data: OrderedDict({'message': 'explain this doc', 'conversation_id': UUID('e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 17:14:15,794 views 40383 6179942400 Starting generate_stream function
+INFO 2025-09-08 17:14:15,794 views 40383 6179942400 About to call process_chat_message_stream
+ERROR 2025-09-08 17:14:15,801 services 40383 6179942400 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'explain this doc'}, {'message_type': 'assistant', 'content': 'Hello! How can I assist you today?\n\n\n'}, {'message_type': 'user', 'content': 'hi boss'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:14:23,868 basehttp 40383 6196768768 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 1797
+INFO 2025-09-08 17:14:26,467 services 40383 6179942400 Source document: Sources: Atomic habits ( PDFDrive ).pdf, Audit of Issues & Proposed Solutions.pdf 
+INFO 2025-09-08 17:14:26,467 services 40383 6179942400 Extracted document list: ['Atomic habits ( PDFDrive ).pdf', 'Audit of Issues & Proposed Solutions.pdf']
+INFO 2025-09-08 17:14:26,467 services 40383 6179942400 Finished processing 1248 lines
+INFO 2025-09-08 17:14:26,479 views 40383 6179942400 Stream completed with 625 chunks
+INFO 2025-09-08 17:14:26,479 basehttp 40383 6179942400 "POST /api/chat/stream/ HTTP/1.1" 200 198665
+INFO 2025-09-08 17:14:33,157 basehttp 40383 6196768768 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:14:34,401 services 40383 6163116032 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:14:34,421 basehttp 40383 6196768768 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:14:34,431 basehttp 40383 6163116032 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:14:34,438 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:14:34,468 basehttp 40383 6196768768 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:14:34,472 basehttp 40383 6179942400 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:14:40,751 services 40383 6196768768 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:14:40,770 basehttp 40383 6179942400 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:14:40,771 basehttp 40383 6196768768 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:14:40,796 services 40383 6196768768 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:14:40,806 basehttp 40383 6196768768 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:14:40,807 basehttp 40383 6163116032 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:14:44,649 services 40383 6196768768 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:14:44,667 basehttp 40383 6163116032 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:14:44,670 basehttp 40383 6196768768 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:14:44,691 services 40383 6163116032 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:14:44,704 basehttp 40383 6179942400 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:14:44,704 basehttp 40383 6163116032 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:14:45,375 basehttp 40383 6179942400 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:14:51,911 basehttp 40383 6179942400 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:14:53,420 basehttp 40383 6179942400 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:14:55,295 basehttp 40383 6179942400 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:14:56,006 basehttp 40383 6179942400 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:14:57,507 basehttp 40383 6179942400 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:14:59,738 basehttp 40383 6179942400 "GET /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/history/ HTTP/1.1" 200 4449
+INFO 2025-09-08 17:16:01,451 basehttp 40383 6179942400 - Broken pipe from ('127.0.0.1', 54442)
+INFO 2025-09-08 17:16:01,660 basehttp 40383 6196768768 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:16:01,662 basehttp 40383 6163116032 "GET /api/chat/conversations/ HTTP/1.1" 200 558
+INFO 2025-09-08 17:16:01,673 basehttp 40383 6196768768 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:16:01,677 basehttp 40383 6179942400 "GET /api/chat/conversations/ HTTP/1.1" 200 558
+INFO 2025-09-08 17:16:03,532 basehttp 40383 6196768768 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:16:03,538 basehttp 40383 6179942400 "GET /api/chat/conversations/ HTTP/1.1" 200 558
+INFO 2025-09-08 17:16:03,544 basehttp 40383 6163116032 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:16:03,555 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 558
+INFO 2025-09-08 17:16:11,538 basehttp 40383 6196768768 "POST /api/chat/conversations/ HTTP/1.1" 201 330
+INFO 2025-09-08 17:16:11,544 basehttp 40383 6163116032 "OPTIONS /api/chat/conversations/97dcd7e8-b174-49fa-ad5b-21d3b9984a6e/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:16:11,556 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 889
+INFO 2025-09-08 17:16:11,557 basehttp 40383 6163116032 "GET /api/chat/conversations/97dcd7e8-b174-49fa-ad5b-21d3b9984a6e/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:16:11,575 views 40383 6163116032 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 17:16:11,575 views 40383 6163116032 Request data: {'message': 'hi big boss', 'conversation_id': '97dcd7e8-b174-49fa-ad5b-21d3b9984a6e', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:16:11,577 views 40383 6163116032 Serializer validated data: OrderedDict({'message': 'hi big boss', 'conversation_id': UUID('97dcd7e8-b174-49fa-ad5b-21d3b9984a6e'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 17:16:11,578 views 40383 6163116032 Starting generate_stream function
+INFO 2025-09-08 17:16:11,578 views 40383 6163116032 About to call process_chat_message_stream
+ERROR 2025-09-08 17:16:11,589 services 40383 6163116032 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big boss'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:16:15,591 services 40383 6163116032 Source document: Sources: Atomic habits ( PDFDrive ).pdf, Farmon Instant Chat - Omadli Group.pdf, Uzbek-English Translation Help - Grok.pdf 
+INFO 2025-09-08 17:16:15,592 services 40383 6163116032 Extracted document list: ['Atomic habits ( PDFDrive ).pdf', 'Farmon Instant Chat - Omadli Group.pdf', 'Uzbek-English Translation Help - Grok.pdf']
+INFO 2025-09-08 17:16:15,592 services 40383 6163116032 Finished processing 92 lines
+INFO 2025-09-08 17:16:15,601 views 40383 6163116032 Stream completed with 47 chunks
+INFO 2025-09-08 17:16:15,601 basehttp 40383 6163116032 "POST /api/chat/stream/ HTTP/1.1" 200 15168
+INFO 2025-09-08 17:17:27,110 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:27,134 basehttp 40383 6179942400 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:17:27,141 basehttp 40383 6196768768 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:17:27,153 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:27,164 basehttp 40383 6179942400 "GET /api/files/stats/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:17:27,165 basehttp 40383 6163116032 "GET /api/files/ HTTP/1.1" 200 4190
+INFO 2025-09-08 17:17:30,405 basehttp 40383 6179942400 "OPTIONS /api/files/eb67880b-65c4-49f8-8f99-4dc289a65903/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:17:30,426 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:30,429 basehttp 40383 6179942400 "DELETE /api/files/eb67880b-65c4-49f8-8f99-4dc289a65903/ HTTP/1.1" 204 0
+INFO 2025-09-08 17:17:30,458 basehttp 40383 6179942400 "GET /api/files/ HTTP/1.1" 200 3408
+INFO 2025-09-08 17:17:30,467 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:30,479 basehttp 40383 6179942400 "GET /api/files/stats/ HTTP/1.1" 200 772
+INFO 2025-09-08 17:17:32,326 basehttp 40383 6179942400 "OPTIONS /api/files/d27abe99-e57d-4c42-8f4a-e744ad12144d/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:17:32,343 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:32,346 basehttp 40383 6179942400 "DELETE /api/files/d27abe99-e57d-4c42-8f4a-e744ad12144d/ HTTP/1.1" 204 0
+INFO 2025-09-08 17:17:32,377 basehttp 40383 6179942400 "GET /api/files/ HTTP/1.1" 200 2626
+INFO 2025-09-08 17:17:32,389 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:32,402 basehttp 40383 6179942400 "GET /api/files/stats/ HTTP/1.1" 200 657
+INFO 2025-09-08 17:17:34,105 basehttp 40383 6179942400 "OPTIONS /api/files/7bfa08f4-e90a-46ad-b69c-365a51dcf376/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:17:34,118 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:34,120 basehttp 40383 6179942400 "DELETE /api/files/7bfa08f4-e90a-46ad-b69c-365a51dcf376/ HTTP/1.1" 204 0
+INFO 2025-09-08 17:17:34,141 basehttp 40383 6179942400 "GET /api/files/ HTTP/1.1" 200 1693
+INFO 2025-09-08 17:17:34,150 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:34,162 basehttp 40383 6179942400 "GET /api/files/stats/ HTTP/1.1" 200 492
+INFO 2025-09-08 17:17:36,671 basehttp 40383 6179942400 "OPTIONS /api/files/3be03910-755e-4776-989f-b40355c95c0d/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:17:36,691 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:36,695 basehttp 40383 6179942400 "DELETE /api/files/3be03910-755e-4776-989f-b40355c95c0d/ HTTP/1.1" 204 0
+INFO 2025-09-08 17:17:36,730 basehttp 40383 6179942400 "GET /api/files/ HTTP/1.1" 200 908
+INFO 2025-09-08 17:17:36,748 services 40383 6179942400 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:36,763 basehttp 40383 6179942400 "GET /api/files/stats/ HTTP/1.1" 200 380
+INFO 2025-09-08 17:17:41,825 services 40383 6163116032 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:41,841 basehttp 40383 6213595136 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:17:41,851 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 1121
+INFO 2025-09-08 17:17:41,854 basehttp 40383 6179942400 "GET /api/files/ HTTP/1.1" 200 908
+INFO 2025-09-08 17:17:41,866 basehttp 40383 6213595136 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:17:41,870 basehttp 40383 6163116032 "GET /api/files/stats/ HTTP/1.1" 200 380
+INFO 2025-09-08 17:17:41,877 basehttp 40383 6230994944 "GET /api/chat/conversations/ HTTP/1.1" 200 1121
+INFO 2025-09-08 17:17:41,881 basehttp 40383 6196768768 "GET /api/files/ HTTP/1.1" 200 908
+INFO 2025-09-08 17:17:41,883 services 40383 6213595136 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:41,891 basehttp 40383 6213595136 "GET /api/files/stats/ HTTP/1.1" 200 380
+INFO 2025-09-08 17:17:44,029 basehttp 40383 6213595136 "OPTIONS /api/files/4584109b-7f20-42af-932e-bbcf422c47a4/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:17:44,042 services 40383 6213595136 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:44,044 basehttp 40383 6213595136 "DELETE /api/files/4584109b-7f20-42af-932e-bbcf422c47a4/ HTTP/1.1" 204 0
+INFO 2025-09-08 17:17:44,062 basehttp 40383 6213595136 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:17:44,072 services 40383 6213595136 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 17:17:44,080 basehttp 40383 6213595136 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 17:17:48,161 basehttp 40383 6213595136 "OPTIONS /api/chat/conversations/97dcd7e8-b174-49fa-ad5b-21d3b9984a6e/delete/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:17:48,177 basehttp 40383 6213595136 "DELETE /api/chat/conversations/97dcd7e8-b174-49fa-ad5b-21d3b9984a6e/delete/ HTTP/1.1" 200 47
+INFO 2025-09-08 17:17:48,189 basehttp 40383 6213595136 "GET /api/chat/conversations/ HTTP/1.1" 200 558
+INFO 2025-09-08 17:17:51,157 basehttp 40383 6213595136 "OPTIONS /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/delete/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:17:51,170 basehttp 40383 6213595136 "DELETE /api/chat/conversations/e0fcb759-c43e-4094-8b1f-3f1e7bf53f4d/delete/ HTTP/1.1" 200 47
+INFO 2025-09-08 17:17:51,181 basehttp 40383 6213595136 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:17:54,632 basehttp 40383 6196768768 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:17:54,634 basehttp 40383 6213595136 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:17:54,643 basehttp 40383 6230994944 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:17:54,643 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:18,029 basehttp 40383 6230994944 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:18,029 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:18,046 basehttp 40383 6213595136 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:18,046 basehttp 40383 6163116032 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:21,534 basehttp 40383 6163116032 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:21,535 basehttp 40383 6213595136 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:21,555 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:21,556 basehttp 40383 6230994944 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:31,984 basehttp 40383 6196768768 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:31,985 basehttp 40383 6230994944 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:31,995 basehttp 40383 6213595136 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:31,998 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:39,226 basehttp 40383 6196768768 "POST /api/chat/conversations/ HTTP/1.1" 201 330
+INFO 2025-09-08 17:19:39,232 basehttp 40383 6213595136 "OPTIONS /api/chat/conversations/6c786e96-868d-4a23-baf1-a6cdb294f31a/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:19:39,240 basehttp 40383 6196768768 "GET /api/chat/conversations/ HTTP/1.1" 200 332
+INFO 2025-09-08 17:19:39,245 basehttp 40383 6213595136 "GET /api/chat/conversations/6c786e96-868d-4a23-baf1-a6cdb294f31a/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:19:39,259 views 40383 6196768768 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 17:19:39,259 views 40383 6196768768 Request data: {'message': 'hi big boss', 'conversation_id': '6c786e96-868d-4a23-baf1-a6cdb294f31a', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:19:39,262 views 40383 6196768768 Serializer validated data: OrderedDict({'message': 'hi big boss', 'conversation_id': UUID('6c786e96-868d-4a23-baf1-a6cdb294f31a'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 17:19:39,262 views 40383 6196768768 Starting generate_stream function
+INFO 2025-09-08 17:19:39,262 views 40383 6196768768 About to call process_chat_message_stream
+ERROR 2025-09-08 17:19:39,272 services 40383 6196768768 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big boss'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+ERROR 2025-09-08 17:19:40,141 services 40383 6196768768 RAG API streaming request failed: 500 Server Error: Internal Server Error for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-08 17:19:40,145 views 40383 6196768768 Stream completed with 1 chunks
+INFO 2025-09-08 17:19:40,145 basehttp 40383 6196768768 "POST /api/chat/stream/ HTTP/1.1" 200 588
+INFO 2025-09-08 17:21:21,140 autoreload 40383 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-08 17:21:21,523 autoreload 51206 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 17:21:26,727 autoreload 51206 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-08 17:21:26,972 autoreload 51252 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 17:21:31,117 autoreload 51252 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-08 17:21:31,433 autoreload 51294 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 17:21:35,176 basehttp 51294 6183546880 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:21:35,179 basehttp 51294 6166720512 "GET /api/chat/conversations/ HTTP/1.1" 200 559
+INFO 2025-09-08 17:21:35,187 basehttp 51294 6183546880 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:21:35,194 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 559
+INFO 2025-09-08 17:21:40,254 basehttp 51294 6200373248 "POST /api/chat/conversations/ HTTP/1.1" 201 326
+INFO 2025-09-08 17:21:40,258 basehttp 51294 6183546880 "OPTIONS /api/chat/conversations/e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:21:40,266 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 886
+INFO 2025-09-08 17:21:40,267 basehttp 51294 6183546880 "GET /api/chat/conversations/e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:21:40,283 views 51294 6183546880 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 17:21:40,283 views 51294 6183546880 Request data: {'message': 'hi boss', 'conversation_id': 'e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:21:40,285 views 51294 6183546880 Serializer validated data: OrderedDict({'message': 'hi boss', 'conversation_id': UUID('e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 17:21:40,286 views 51294 6183546880 Starting generate_stream function
+INFO 2025-09-08 17:21:40,286 views 51294 6183546880 About to call process_chat_message_stream
+ERROR 2025-09-08 17:21:40,295 services 51294 6183546880 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi boss'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:21:42,979 services 51294 6183546880 Source document: Sources: Uzbek-English Translation Help - Grok.pdf
+INFO 2025-09-08 17:21:42,979 services 51294 6183546880 Extracted document list: ['Uzbek-English Translation Help - Grok.pdf']
+INFO 2025-09-08 17:21:42,980 services 51294 6183546880 Finished processing 30 lines
+INFO 2025-09-08 17:21:42,990 views 51294 6183546880 Stream completed with 16 chunks
+INFO 2025-09-08 17:21:42,990 basehttp 51294 6183546880 "POST /api/chat/stream/ HTTP/1.1" 200 5138
+INFO 2025-09-08 17:21:51,450 basehttp 51294 6200373248 "OPTIONS /api/chat/conversations/e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b/delete/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:21:51,463 basehttp 51294 6200373248 "DELETE /api/chat/conversations/e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b/delete/ HTTP/1.1" 200 47
+INFO 2025-09-08 17:21:51,482 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 559
+INFO 2025-09-08 17:21:54,933 basehttp 51294 6200373248 "OPTIONS /api/chat/conversations/6c786e96-868d-4a23-baf1-a6cdb294f31a/delete/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:21:54,955 basehttp 51294 6200373248 "DELETE /api/chat/conversations/6c786e96-868d-4a23-baf1-a6cdb294f31a/delete/ HTTP/1.1" 200 47
+INFO 2025-09-08 17:21:54,969 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:21:57,073 basehttp 51294 6166720512 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:21:57,073 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+WARNING 2025-09-08 17:21:57,074 log 51294 6183546880 Not Found: /api/chat/conversations/e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b/history/
+WARNING 2025-09-08 17:21:57,074 basehttp 51294 6183546880 "GET /api/chat/conversations/e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b/history/ HTTP/1.1" 404 23
+INFO 2025-09-08 17:21:57,084 basehttp 51294 6217199616 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:21:57,084 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+WARNING 2025-09-08 17:22:00,884 log 51294 6217199616 Not Found: /api/chat/conversations/e69046e3-b5e0-4a2a-b3ed-4c10c0d3c87b/history/
+INFO 2025-09-08 17:22:00,885 basehttp 51294 6217199616 - Broken pipe from ('127.0.0.1', 56884)
+INFO 2025-09-08 17:22:01,052 basehttp 51294 6183546880 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:01,052 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:01,064 basehttp 51294 6200373248 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:01,064 basehttp 51294 6183546880 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:02,961 basehttp 51294 6183546880 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:02,963 basehttp 51294 6200373248 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:02,970 basehttp 51294 6166720512 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:02,971 basehttp 51294 6183546880 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:07,283 basehttp 51294 6183546880 "POST /api/chat/conversations/ HTTP/1.1" 201 330
+INFO 2025-09-08 17:22:07,288 basehttp 51294 6166720512 "OPTIONS /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:22:07,297 basehttp 51294 6183546880 "GET /api/chat/conversations/ HTTP/1.1" 200 332
+INFO 2025-09-08 17:22:07,302 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:07,316 views 51294 6166720512 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 17:22:07,316 views 51294 6166720512 Request data: {'message': 'hi big boss', 'conversation_id': '9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:22:07,318 views 51294 6166720512 Serializer validated data: OrderedDict({'message': 'hi big boss', 'conversation_id': UUID('9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 17:22:07,318 views 51294 6166720512 Starting generate_stream function
+INFO 2025-09-08 17:22:07,318 views 51294 6166720512 About to call process_chat_message_stream
+ERROR 2025-09-08 17:22:07,328 services 51294 6166720512 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big boss'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+ERROR 2025-09-08 17:22:07,999 services 51294 6166720512 RAG API streaming request failed: 500 Server Error: Internal Server Error for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-08 17:22:08,004 views 51294 6166720512 Stream completed with 1 chunks
+INFO 2025-09-08 17:22:08,005 basehttp 51294 6166720512 "POST /api/chat/stream/ HTTP/1.1" 200 588
+INFO 2025-09-08 17:22:28,647 basehttp 51294 6200373248 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:28,651 basehttp 51294 6183546880 "GET /api/chat/conversations/ HTTP/1.1" 200 559
+INFO 2025-09-08 17:22:28,663 basehttp 51294 6200373248 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:22:28,663 basehttp 51294 6234025984 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:22:28,671 basehttp 51294 6166720512 "GET /api/chat/conversations/ HTTP/1.1" 200 559
+INFO 2025-09-08 17:23:30,821 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:23:40,819 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:23:47,808 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:23:59,808 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:24:15,354 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:24:24,308 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:24:35,642 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:24:43,445 basehttp 51294 6166720512 "GET /api/chat/conversations/9327cfe2-e9c4-411b-8046-e7b4d8a4c6b6/history/ HTTP/1.1" 200 1122
+INFO 2025-09-08 17:35:53,021 basehttp 51294 6166147072 - Broken pipe from ('127.0.0.1', 60841)
+INFO 2025-09-08 17:35:53,183 basehttp 51294 6199799808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:35:53,186 basehttp 51294 6182973440 "GET /api/chat/conversations/ HTTP/1.1" 200 559
+INFO 2025-09-08 17:35:53,205 basehttp 51294 6199799808 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:35:53,210 basehttp 51294 6216626176 "GET /api/chat/conversations/ HTTP/1.1" 200 559
+INFO 2025-09-08 17:35:57,912 basehttp 51294 6216626176 "POST /api/chat/conversations/ HTTP/1.1" 201 330
+INFO 2025-09-08 17:35:57,919 basehttp 51294 6199799808 "OPTIONS /api/chat/conversations/fea79d9c-53fe-46f9-8ff0-b705dad8f065/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 17:35:57,930 basehttp 51294 6216626176 "GET /api/chat/conversations/ HTTP/1.1" 200 890
+INFO 2025-09-08 17:35:57,931 basehttp 51294 6199799808 "GET /api/chat/conversations/fea79d9c-53fe-46f9-8ff0-b705dad8f065/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 17:35:57,952 views 51294 6199799808 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 17:35:57,952 views 51294 6199799808 Request data: {'message': 'hi big boss', 'conversation_id': 'fea79d9c-53fe-46f9-8ff0-b705dad8f065', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 17:35:57,955 views 51294 6199799808 Serializer validated data: OrderedDict({'message': 'hi big boss', 'conversation_id': UUID('fea79d9c-53fe-46f9-8ff0-b705dad8f065'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 17:35:57,955 views 51294 6199799808 Starting generate_stream function
+INFO 2025-09-08 17:35:57,955 views 51294 6199799808 About to call process_chat_message_stream
+ERROR 2025-09-08 17:35:57,964 services 51294 6199799808 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big boss'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+ERROR 2025-09-08 17:35:58,965 services 51294 6199799808 RAG API streaming request failed: 500 Server Error: Internal Server Error for url: https://farmonrag.omadligrouphq.com/ask-question/
+INFO 2025-09-08 17:35:58,968 views 51294 6199799808 Stream completed with 1 chunks
+INFO 2025-09-08 17:35:58,968 basehttp 51294 6199799808 "POST /api/chat/stream/ HTTP/1.1" 200 589
+INFO 2025-09-08 17:37:19,879 basehttp 51294 6216626176 "GET /api/chat/conversations/fea79d9c-53fe-46f9-8ff0-b705dad8f065/history/ HTTP/1.1" 200 1122
+WARNING 2025-09-08 17:48:21,094 log 51294 6166147072 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-08 17:48:21,097 log 51294 6182973440 Unauthorized: /api/chat/folders/
+WARNING 2025-09-08 17:48:21,098 basehttp 51294 6166147072 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-08 17:48:21,099 log 51294 6199799808 Unauthorized: /api/chat/conversations/fea79d9c-53fe-46f9-8ff0-b705dad8f065/history/
+WARNING 2025-09-08 17:48:21,101 log 51294 6166147072 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-08 17:48:21,101 basehttp 51294 6182973440 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-09-08 17:48:21,104 log 51294 6216626176 Unauthorized: /api/chat/folders/
+WARNING 2025-09-08 17:48:21,105 basehttp 51294 6199799808 "GET /api/chat/conversations/fea79d9c-53fe-46f9-8ff0-b705dad8f065/history/ HTTP/1.1" 401 172
+WARNING 2025-09-08 17:48:21,105 basehttp 51294 6216626176 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-09-08 17:48:21,105 basehttp 51294 6166147072 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+INFO 2025-09-08 18:01:51,586 serializers 51294 6166147072 Login attempt for: bro
+INFO 2025-09-08 18:01:51,809 serializers 51294 6166147072 Username auth result: False
+INFO 2025-09-08 18:01:51,809 serializers 51294 6166147072 No user found with email: bro
+WARNING 2025-09-08 18:01:51,810 log 51294 6166147072 Bad Request: /api/auth/login/
+WARNING 2025-09-08 18:01:51,810 basehttp 51294 6166147072 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-08 18:01:55,546 serializers 51294 6166147072 Login attempt for: bro
+INFO 2025-09-08 18:01:55,677 serializers 51294 6166147072 Username auth result: True
+INFO 2025-09-08 18:01:55,677 views 51294 6166147072 User login: bro, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-08 18:01:55,691 basehttp 51294 6166147072 "POST /api/auth/login/ HTTP/1.1" 200 1149
+INFO 2025-09-08 18:01:56,070 basehttp 51294 6216626176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:01:56,083 basehttp 51294 6199799808 "GET /api/chat/conversations/ HTTP/1.1" 200 1022
+INFO 2025-09-08 18:01:56,087 basehttp 51294 6182973440 "GET /api/analytics/subscription-stats/?start_date=2025-08-09&end_date=2025-09-08 HTTP/1.1" 200 181
+INFO 2025-09-08 18:01:56,101 basehttp 51294 6216626176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:01:56,108 basehttp 51294 6233452544 "GET /api/chat/conversations/ HTTP/1.1" 200 1022
+INFO 2025-09-08 18:01:56,186 basehttp 51294 6166147072 "GET /api/analytics/dashboard/?start_date=2025-08-09&end_date=2025-09-08 HTTP/1.1" 200 5102
+INFO 2025-09-08 18:01:58,515 basehttp 51294 6233452544 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:01:58,521 basehttp 51294 6166147072 "GET /api/chat/conversations/ HTTP/1.1" 200 1022
+INFO 2025-09-08 18:01:58,525 basehttp 51294 6216626176 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:01:58,539 basehttp 51294 6233452544 "GET /api/chat/conversations/ HTTP/1.1" 200 1022
+INFO 2025-09-08 18:02:02,259 basehttp 51294 6233452544 "POST /api/chat/conversations/ HTTP/1.1" 201 315
+INFO 2025-09-08 18:02:02,263 basehttp 51294 6216626176 "OPTIONS /api/chat/conversations/9c4a15d6-af67-4229-9a98-dbda1b2dfad7/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:02:02,278 basehttp 51294 6216626176 "GET /api/chat/conversations/9c4a15d6-af67-4229-9a98-dbda1b2dfad7/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:02:02,278 basehttp 51294 6233452544 "GET /api/chat/conversations/ HTTP/1.1" 200 1338
+INFO 2025-09-08 18:02:02,297 views 51294 6233452544 ChatStreamView POST called by user: bro (bro1 sultan)
+INFO 2025-09-08 18:02:02,297 views 51294 6233452544 Request data: {'message': 'hi big boss', 'conversation_id': '9c4a15d6-af67-4229-9a98-dbda1b2dfad7', 'user_info': {'email': 'oshomurotov@omadligroup.com'}}
+INFO 2025-09-08 18:02:02,300 views 51294 6233452544 Serializer validated data: OrderedDict({'message': 'hi big boss', 'conversation_id': UUID('9c4a15d6-af67-4229-9a98-dbda1b2dfad7'), 'user_info': {'email': 'oshomurotov@omadligroup.com'}})
+INFO 2025-09-08 18:02:02,301 views 51294 6233452544 Starting generate_stream function
+INFO 2025-09-08 18:02:02,301 views 51294 6233452544 About to call process_chat_message_stream
+ERROR 2025-09-08 18:02:02,311 services 51294 6233452544 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big boss'}], 'user_info': {'email': 'oshomurotov@omadligroup.com'}}
+INFO 2025-09-08 18:02:05,312 services 51294 6233452544 Source document: Sources: Account Setting _ TRAE - Collaborate with Intelligence.pdf 
+INFO 2025-09-08 18:02:05,312 services 51294 6233452544 Extracted document list: ['Account Setting _ TRAE - Collaborate with Intelligence.pdf']
+INFO 2025-09-08 18:02:05,312 services 51294 6233452544 Finished processing 50 lines
+INFO 2025-09-08 18:02:05,322 views 51294 6233452544 Stream completed with 26 chunks
+INFO 2025-09-08 18:02:05,322 basehttp 51294 6233452544 "POST /api/chat/stream/ HTTP/1.1" 200 8277
+INFO 2025-09-08 18:02:05,846 basehttp 51294 6216626176 "GET /api/chat/conversations/9c4a15d6-af67-4229-9a98-dbda1b2dfad7/history/ HTTP/1.1" 200 945
