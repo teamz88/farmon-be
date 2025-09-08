@@ -155,13 +155,14 @@ class UserProfileSerializer(serializers.ModelSerializer):
     full_name = serializers.CharField(source='get_full_name', read_only=True)
     is_subscription_active = serializers.BooleanField(read_only=True)
     days_until_expiry = serializers.IntegerField(read_only=True)
+    company_name = serializers.SerializerMethodField()
     
     class Meta:
         model = User
         fields = (
             'id', 'username', 'email', 'first_name', 'last_name',
-            'full_name', 'phone_number', 'avatar', 'role',
-            'subscription_type', 'subscription_status',
+            'full_name', 'phone_number', 'avatar', 'role', 'title', 'position',
+            'company_name', 'subscription_type', 'subscription_status',
             'subscription_start_date', 'subscription_end_date',
             'is_subscription_active', 'days_until_expiry',
             'email_notifications', 'last_activity', 'total_time_spent',
@@ -173,6 +174,22 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'subscription_end_date', 'last_activity', 'total_time_spent',
             'date_joined', 'last_login'
         )
+    
+    def get_company_name(self, obj):
+        """Get company name from MagicUser if available, otherwise from ClientInfo."""
+        # First try to get from MagicUser
+        try:
+            magic_user = MagicUser.objects.get(email=obj.email, is_account_created=True)
+            if magic_user.company_name:
+                return magic_user.company_name
+        except MagicUser.DoesNotExist:
+            pass
+        
+        # Fallback to ClientInfo
+        if hasattr(obj, 'client_info') and obj.client_info.company_name:
+            return obj.client_info.company_name
+        
+        return None
     
     def validate_email(self, value):
         """Validate email uniqueness (excluding current user)."""
