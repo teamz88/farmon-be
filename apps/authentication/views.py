@@ -259,45 +259,74 @@ class MagicLinkRegistrationView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
     
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        
-        # Create magic user
-        magic_user = serializer.save()
-        
-        # Automatically create user account and sign in
-        user = magic_user.create_user_account(magic_user.generated_password)
-        magic_user.is_account_created = True
-        magic_user.save()
-        
-        # Generate JWT tokens for automatic sign in
-        refresh = RefreshToken.for_user(user)
-        access_token = refresh.access_token
-        
-        # Create user session
-        session = UserSession.objects.create(
-            user=user,
-            ip_address=self.get_client_ip(request),
-            user_agent=request.META.get('HTTP_USER_AGENT', '')
-        )
-        
-        # Send webhook to n8n
-        self.send_webhook(magic_user)
-        
-        return Response({
-            'message': 'Account created and signed in successfully',
-            'magic_link': magic_user.magic_link,
-            'access': str(access_token),
-            'refresh': str(refresh),
-            'user': {
-                'id': user.id,
-                'username': user.username,
-                'email': user.email,
-                'first_name': user.first_name,
-                'last_name': user.last_name
-            },
-            'session_id': session.id
-        }, status=status.HTTP_201_CREATED)
+        try:
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            
+            # Create magic user
+            magic_user = serializer.save()
+            
+            # Check if user already exists with this email
+            existing_user = User.objects.filter(email=magic_user.email).first()
+            
+            if existing_user:
+                # Link existing user to magic user
+                user = existing_user
+                magic_user.created_user = user
+                magic_user.is_account_created = True
+                magic_user.save()
+            else:
+                # Automatically create user account and sign in
+                user = magic_user.create_user_account(magic_user.generated_password)
+                magic_user.is_account_created = True
+                magic_user.save()
+            
+            # Generate JWT tokens for automatic sign in
+            refresh = RefreshToken.for_user(user)
+            access_token = refresh.access_token
+            
+            # Create user session
+            session = UserSession.objects.create(
+                user=user,
+                ip_address=self.get_client_ip(request),
+                user_agent=request.META.get('HTTP_USER_AGENT', '')
+            )
+            
+            # Send webhook to n8n
+            self.send_webhook(magic_user)
+            
+            return Response({
+                'message': 'Account created and signed in successfully',
+                'magic_link': magic_user.magic_link,
+                'access': str(access_token),
+                'refresh': str(refresh),
+                'user': {
+                    'id': user.id,
+                    'username': user.username,
+                    'email': user.email,
+                    'first_name': user.first_name,
+                    'last_name': user.last_name
+                },
+                'session_id': session.id
+            }, status=status.HTTP_201_CREATED)
+            
+        except Exception as e:
+            logger.error(f'Error in magic link registration: {str(e)}')
+            
+            # Handle specific database constraint errors
+            if 'duplicate key value violates unique constraint' in str(e):
+                if 'username' in str(e):
+                    return Response({
+                        'error': 'Username already exists. Please try again.'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+                elif 'email' in str(e):
+                    return Response({
+                        'error': 'Email already exists. Please try again.'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+            
+            return Response({
+                'error': 'Failed to create magic link registration'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
     def get_client_ip(self, request):
         """Get client IP address from request."""
@@ -405,11 +434,20 @@ class MagicLinkPasswordSetView(APIView):
             serializer = MagicUserPasswordSetSerializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             
-            # Create user account
+            # Create or update user account
             password = serializer.validated_data['password']
             logger.info(f'Setting password for magic user {magic_user.email}')
-            user = magic_user.create_user_account(password)
-            logger.info(f'User created: {user.username}, password hash: {user.password[:50]}...')
+            
+            if magic_user.is_account_created and magic_user.created_user:
+                # Update existing user's password
+                user = magic_user.created_user
+                user.set_password(password)
+                user.save()
+                logger.info(f'Updated existing user: {user.username}, password hash: {user.password[:50]}...')
+            else:
+                # Create new user account
+                user = magic_user.create_user_account(password)
+                logger.info(f'User created: {user.username}, password hash: {user.password[:50]}...')
             
             # Generate JWT tokens
             refresh = RefreshToken.for_user(user)
@@ -448,6 +486,18 @@ class MagicLinkPasswordSetView(APIView):
             }, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             logger.error(f'Error creating account from magic link: {str(e)}')
+            
+            # Handle specific database constraint errors
+            if 'duplicate key value violates unique constraint' in str(e):
+                if 'username' in str(e):
+                    return Response({
+                        'error': 'Username already exists. Please try again.'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+                elif 'email' in str(e):
+                    return Response({
+                        'error': 'Email already exists. Please try again.'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+            
             return Response({
                 'error': 'Failed to create account'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

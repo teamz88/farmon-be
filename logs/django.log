@@ -1619,3 +1619,79 @@ INFO 2025-09-07 21:22:54,466 basehttp 73025 6152417280 "GET /api/chat/folders/ H
 INFO 2025-09-07 21:22:54,468 basehttp 73025 6135590912 "GET /api/chat/conversations/ HTTP/1.1" 200 2
 INFO 2025-09-07 21:22:54,494 basehttp 73025 6169817088 "GET /api/chat/conversations/ HTTP/1.1" 200 2
 INFO 2025-09-07 21:22:54,494 basehttp 73025 6186643456 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:47,546 basehttp 73025 6135590912 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:47,546 basehttp 73025 6169243648 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:47,562 basehttp 73025 6186070016 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:47,562 basehttp 73025 6169243648 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:48,497 basehttp 73025 6169243648 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:48,497 basehttp 73025 6186070016 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:48,511 basehttp 73025 6135590912 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-07 21:39:48,511 basehttp 73025 6186070016 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 15:59:42,703 autoreload 3940 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 16:03:03,665 basehttp 3940 6127939584 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-09-08 16:03:03,666 basehttp 3940 6144765952 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+INFO 2025-09-08 16:03:03,666 basehttp 3940 6161592320 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-09-08 16:03:03,667 basehttp 3940 6178418688 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+WARNING 2025-09-08 16:03:03,677 log 3940 6127939584 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-08 16:03:03,678 log 3940 6144765952 Unauthorized: /api/chat/folders/
+WARNING 2025-09-08 16:03:03,678 basehttp 3940 6144765952 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-09-08 16:03:03,678 basehttp 3940 6127939584 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-08 16:03:03,680 log 3940 6178418688 Unauthorized: /api/chat/folders/
+WARNING 2025-09-08 16:03:03,681 log 3940 6161592320 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-08 16:03:03,681 basehttp 3940 6161592320 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-08 16:03:03,682 basehttp 3940 6178418688 "GET /api/chat/folders/ HTTP/1.1" 401 172
+INFO 2025-09-08 16:06:15,863 basehttp 3940 6178418688 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 524
+INFO 2025-09-08 16:06:15,872 basehttp 3940 6161592320 "GET /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/ HTTP/1.1" 200 524
+INFO 2025-09-08 16:06:31,690 basehttp 3940 6161592320 "OPTIONS /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 200 0
+INFO 2025-09-08 16:06:31,717 views 3940 6161592320 Setting password for magic user ralfgrugo4567@gmail.com
+ERROR 2025-09-08 16:06:31,846 views 3940 6161592320 Error creating account from magic link: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(bro.ralfgrugo45671) already exists.
+
+ERROR 2025-09-08 16:06:31,846 log 3940 6161592320 Internal Server Error: /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/
+ERROR 2025-09-08 16:06:31,846 basehttp 3940 6161592320 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 500 36
+INFO 2025-09-08 16:07:52,288 autoreload 3940 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-08 16:07:52,665 autoreload 7975 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 16:08:11,305 autoreload 7975 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-08 16:08:11,573 autoreload 8128 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 16:08:28,108 autoreload 8128 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-08 16:08:28,395 autoreload 8261 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 16:08:33,795 basehttp 8261 6196637696 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-08 16:08:33,799 serializers 8261 6196637696 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-08 16:08:33,919 serializers 8261 6196637696 Username auth result: False
+INFO 2025-09-08 16:08:33,920 serializers 8261 6196637696 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-08 16:08:34,012 serializers 8261 6196637696 Email auth result: False
+WARNING 2025-09-08 16:08:34,012 log 8261 6196637696 Bad Request: /api/auth/login/
+WARNING 2025-09-08 16:08:34,012 basehttp 8261 6196637696 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-08 16:08:38,858 autoreload 8261 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-08 16:08:39,226 autoreload 8321 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 16:08:42,963 serializers 8321 6191591424 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-08 16:08:43,075 serializers 8321 6191591424 Username auth result: False
+INFO 2025-09-08 16:08:43,076 serializers 8321 6191591424 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-08 16:08:43,170 serializers 8321 6191591424 Email auth result: True
+INFO 2025-09-08 16:08:43,170 views 8321 6191591424 User login: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-08 16:08:43,186 basehttp 8321 6191591424 "POST /api/auth/login/ HTTP/1.1" 200 1101
+INFO 2025-09-08 16:08:43,451 basehttp 8321 6208417792 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:08:43,454 basehttp 8321 6191591424 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:08:43,461 basehttp 8321 6208417792 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:08:43,461 basehttp 8321 6225244160 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:08:58,829 autoreload 8321 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py changed, reloading.
+INFO 2025-09-08 16:08:59,115 autoreload 8539 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 16:10:03,131 views 8539 6164934656 Setting password for magic user ralfgrugo4567@gmail.com
+INFO 2025-09-08 16:10:03,247 views 8539 6164934656 Updated existing user: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$vaoLYfJLpXPP3IWSMvqQWY$TuHc2j...
+INFO 2025-09-08 16:10:03,250 basehttp 8539 6164934656 "POST /api/auth/magic-link/Lf4IoaaU_L4gY-Y9C2s4bMrYmMlKgSrELkAXDDjHWtE/set-password/ HTTP/1.1" 201 654
+INFO 2025-09-08 16:10:03,304 basehttp 8539 6164934656 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:10:03,309 basehttp 8539 6181761024 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:10:03,333 basehttp 8539 6198587392 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:10:03,335 basehttp 8539 6164934656 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:10:08,727 basehttp 8539 6164934656 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-09-08 16:10:08,743 basehttp 8539 6164934656 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-09-08 16:10:22,097 serializers 8539 6164934656 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-08 16:10:22,230 serializers 8539 6164934656 Username auth result: False
+INFO 2025-09-08 16:10:22,231 serializers 8539 6164934656 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$vaoLYfJLpXPP3IWSMvqQWY$TuHc2j...
+INFO 2025-09-08 16:10:22,323 serializers 8539 6164934656 Email auth result: True
+INFO 2025-09-08 16:10:22,323 views 8539 6164934656 User login: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$vaoLYfJLpXPP3IWSMvqQWY$TuHc2j...
+INFO 2025-09-08 16:10:22,331 basehttp 8539 6164934656 "POST /api/auth/login/ HTTP/1.1" 200 1101
+INFO 2025-09-08 16:10:22,594 basehttp 8539 6198587392 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:10:22,595 basehttp 8539 6164934656 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:10:22,602 basehttp 8539 6198587392 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 16:10:22,603 basehttp 8539 6181761024 "GET /api/chat/folders/ HTTP/1.1" 200 2

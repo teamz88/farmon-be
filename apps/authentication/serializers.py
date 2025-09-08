@@ -306,9 +306,9 @@ class MagicUserRegistrationSerializer(serializers.ModelSerializer):
         }
     
     def validate_email(self, value):
-        """Validate email uniqueness across both User and MagicUser models."""
-        if User.objects.filter(email=value).exists():
-            raise serializers.ValidationError("A user with this email already exists.")
+        """Validate email uniqueness in MagicUser model only."""
+        # Allow creating magic user even if User exists (we'll link them)
+        # Only prevent duplicate magic users for the same email
         if MagicUser.objects.filter(email=value).exists():
             raise serializers.ValidationError("A magic link has already been sent to this email.")
         return value
