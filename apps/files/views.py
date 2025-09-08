@@ -32,7 +32,7 @@ class FileUploadView(APIView):
     parser_classes = [MultiPartParser, FormParser]
     
     def post(self, request):
-        serializer = FileUploadSerializer(data=request.data)
+        serializer = FileUploadSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             file_service = FileService()
             

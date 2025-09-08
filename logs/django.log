@@ -2009,3 +2009,357 @@ INFO 2025-09-08 18:02:05,312 services 51294 6233452544 Finished processing 50 li
 INFO 2025-09-08 18:02:05,322 views 51294 6233452544 Stream completed with 26 chunks
 INFO 2025-09-08 18:02:05,322 basehttp 51294 6233452544 "POST /api/chat/stream/ HTTP/1.1" 200 8277
 INFO 2025-09-08 18:02:05,846 basehttp 51294 6216626176 "GET /api/chat/conversations/9c4a15d6-af67-4229-9a98-dbda1b2dfad7/history/ HTTP/1.1" 200 945
+INFO 2025-09-08 18:50:57,453 autoreload 84053 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 18:51:13,103 autoreload 84053 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/files/views.py changed, reloading.
+INFO 2025-09-08 18:51:13,375 autoreload 84101 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 18:53:24,731 basehttp 84101 6135738368 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:53:24,759 basehttp 84101 6135738368 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-09-08 18:53:45,517 basehttp 84101 6135738368 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:53:45,519 serializers 84101 6135738368 Login attempt for: ralfgrugo4567@gmail.com
+INFO 2025-09-08 18:53:45,644 serializers 84101 6135738368 Username auth result: False
+INFO 2025-09-08 18:53:45,645 serializers 84101 6135738368 Found user by email: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$vaoLYfJLpXPP3IWSMvqQWY$TuHc2j...
+INFO 2025-09-08 18:53:45,737 serializers 84101 6135738368 Email auth result: True
+INFO 2025-09-08 18:53:45,737 views 84101 6135738368 User login: bro.ralfgrugo45671, password hash: pbkdf2_sha256$600000$vaoLYfJLpXPP3IWSMvqQWY$TuHc2j...
+INFO 2025-09-08 18:53:45,750 basehttp 84101 6135738368 "POST /api/auth/login/ HTTP/1.1" 200 1151
+INFO 2025-09-08 18:53:46,013 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:53:46,018 basehttp 84101 6135738368 "GET /api/chat/conversations/ HTTP/1.1" 200 1117
+INFO 2025-09-08 18:53:46,032 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:53:46,040 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 1117
+INFO 2025-09-08 18:54:49,485 basehttp 84101 6152564736 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:54:49,485 basehttp 84101 6169391104 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:54:49,503 basehttp 84101 6169391104 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:54:49,536 basehttp 84101 6152564736 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:54:51,954 basehttp 84101 6152564736 "OPTIONS /api/chat/conversations/clear-all/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:54:51,973 basehttp 84101 6152564736 "DELETE /api/chat/conversations/clear-all/ HTTP/1.1" 200 64
+INFO 2025-09-08 18:54:53,777 basehttp 84101 6152564736 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:54:53,777 basehttp 84101 6135738368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:54:53,777 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:54:53,790 basehttp 84101 6203617280 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:54:53,790 basehttp 84101 6186790912 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:54:53,794 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:54:58,411 services 84101 6186790912 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:54:58,416 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:54:58,427 basehttp 84101 6186790912 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:54:58,431 basehttp 84101 6203617280 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:54:58,434 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:54:58,445 basehttp 84101 6152564736 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:55:12,762 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:55:12,767 services 84101 6152564736 Successfully uploaded file: COOLIFY teamz88_fa _ Deployments _ Coolify_1e20caec.pdf
+INFO 2025-09-08 18:55:12,769 services 84101 6152564736 File uploaded successfully: 69852077-0995-4d54-b006-32577d74f3c8
+ERROR 2025-09-08 18:55:14,002 services 84101 6152564736 RAG upload failed with status 500: {"detail":"(psycopg2.OperationalError) SSL connection has been closed unexpectedly\n\n[SQL: INSERT INTO pdf_metadata (filename, email, path, source, total_pages, uploaded_at, embedding_dim) VALUES (%(filename)s, %(email)s, %(path)s, %(source)s, %(total_pages)s, %(uploaded_at)s, %(embedding_dim)s) RETURNING pdf_metadata.id]\n[parameters: {'filename': '[COOLIFY] teamz88_fa... _ Deployments _ Coolify.pdf', 'email': 'ralfgrugo4567@gmail.com', 'path': 'https://boltaiagent.blob.core.windows.net/farmonai/ef6ae83e-3145-469e-9254-b4d96019c93e_%5BCOOLIFY%5D%20teamz88_fa...%20_%20Deployments%20_%20Coolify.pdf?se=2026-09-08T18%3A55%3A14Z&sp=r&sv=2025-07-05&sr=b&sig=3OQRTRJyzAu1o2CH1I2Hu0pqIOq00SN9LnKbymzoFr4%3D', 'source': 'pdf', 'total_pages': 1, 'uploaded_at': datetime.datetime(2025, 9, 8, 18, 55, 14, 664743), 'embedding_dim': 384}]\n(Background on this error at: https://sqlalche.me/e/20/e3q8) - Error processing file upload"}
+INFO 2025-09-08 18:55:14,004 basehttp 84101 6152564736 "POST /api/files/upload/ HTTP/1.1" 201 1965
+INFO 2025-09-08 18:55:14,020 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:55:14,023 services 84101 6152564736 Successfully uploaded file: COOLIFY teamz88_fa _ Deployments _ Coolify_3c407fff.pdf
+INFO 2025-09-08 18:55:14,025 services 84101 6152564736 File uploaded successfully: f812f037-459c-439e-89ce-84616a25cf88
+INFO 2025-09-08 18:55:16,535 services 84101 6152564736 File [COOLIFY] teamz88_fa... _ Deployments _ Coolify.pdf uploaded to RAG successfully
+INFO 2025-09-08 18:55:16,538 basehttp 84101 6152564736 "POST /api/files/upload/ HTTP/1.1" 201 1027
+INFO 2025-09-08 18:55:16,565 basehttp 84101 6152564736 "POST /api/chat/conversations/ HTTP/1.1" 201 325
+INFO 2025-09-08 18:55:16,576 basehttp 84101 6203617280 "OPTIONS /api/chat/conversations/7429e1d0-fbb5-4ff9-ac61-39716c8fed01/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:55:16,611 basehttp 84101 6152564736 "GET /api/chat/conversations/ HTTP/1.1" 200 327
+INFO 2025-09-08 18:55:16,631 basehttp 84101 6203617280 "GET /api/chat/conversations/7429e1d0-fbb5-4ff9-ac61-39716c8fed01/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:55:16,640 views 84101 6152564736 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 18:55:16,640 views 84101 6152564736 Request data: {'message': 'hi bro', 'conversation_id': '7429e1d0-fbb5-4ff9-ac61-39716c8fed01', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 18:55:16,644 views 84101 6152564736 Serializer validated data: OrderedDict({'message': 'hi bro', 'conversation_id': UUID('7429e1d0-fbb5-4ff9-ac61-39716c8fed01'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 18:55:16,645 views 84101 6152564736 Starting generate_stream function
+INFO 2025-09-08 18:55:16,645 views 84101 6152564736 About to call process_chat_message_stream
+ERROR 2025-09-08 18:55:16,655 services 84101 6152564736 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi bro'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 18:55:18,931 services 84101 6152564736 Source document: Sources: Farmon Instant Chat - Omadli Group.pdf
+INFO 2025-09-08 18:55:18,931 services 84101 6152564736 Extracted document list: ['Farmon Instant Chat - Omadli Group.pdf']
+INFO 2025-09-08 18:55:18,932 services 84101 6152564736 Finished processing 68 lines
+INFO 2025-09-08 18:55:18,940 views 84101 6152564736 Stream completed with 35 chunks
+INFO 2025-09-08 18:55:18,940 basehttp 84101 6152564736 "POST /api/chat/stream/ HTTP/1.1" 200 11125
+INFO 2025-09-08 18:55:19,468 basehttp 84101 6203617280 "GET /api/chat/conversations/7429e1d0-fbb5-4ff9-ac61-39716c8fed01/history/ HTTP/1.1" 200 998
+INFO 2025-09-08 18:55:51,214 basehttp 84101 6186790912 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:55:51,217 basehttp 84101 6203617280 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:55:51,230 basehttp 84101 6135738368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:55:51,235 basehttp 84101 6186790912 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:55:52,408 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:55:52,420 basehttp 84101 6186790912 "GET /api/files/ HTTP/1.1" 200 1815
+INFO 2025-09-08 18:55:52,433 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 539
+INFO 2025-09-08 18:55:52,441 services 84101 6186790912 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:55:52,442 basehttp 84101 6203617280 "GET /api/files/ HTTP/1.1" 200 1815
+INFO 2025-09-08 18:55:52,451 basehttp 84101 6186790912 "GET /api/files/stats/ HTTP/1.1" 200 539
+INFO 2025-09-08 18:56:00,804 services 84101 6203617280 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:56:00,827 basehttp 84101 6169391104 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:56:00,830 basehttp 84101 6135738368 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:56:00,831 basehttp 84101 6186790912 "GET /api/files/ HTTP/1.1" 200 1815
+INFO 2025-09-08 18:56:00,842 basehttp 84101 6203617280 "GET /api/files/stats/ HTTP/1.1" 200 539
+INFO 2025-09-08 18:56:00,847 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:56:00,851 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:56:00,854 services 84101 6186790912 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:56:00,857 basehttp 84101 6135738368 "GET /api/files/ HTTP/1.1" 200 1815
+INFO 2025-09-08 18:56:00,867 basehttp 84101 6186790912 "GET /api/files/stats/ HTTP/1.1" 200 539
+INFO 2025-09-08 18:56:05,145 basehttp 84101 6135738368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:56:05,147 basehttp 84101 6186790912 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:56:05,154 basehttp 84101 6169391104 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:56:05,162 basehttp 84101 6135738368 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:56:18,847 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:56:18,851 services 84101 6135738368 Successfully uploaded file: Farmon Instant Chat - Omadli Group_a5379ea8.pdf
+INFO 2025-09-08 18:56:18,852 services 84101 6135738368 File uploaded successfully: 26e1b2b5-9154-498e-95b9-be101c3c1c34
+ERROR 2025-09-08 18:56:20,285 services 84101 6135738368 RAG upload failed with status 500: {"detail":"(psycopg2.OperationalError) SSL connection has been closed unexpectedly\n\n[SQL: INSERT INTO pdf_metadata (filename, email, path, source, total_pages, uploaded_at, embedding_dim) VALUES (%(filename)s, %(email)s, %(path)s, %(source)s, %(total_pages)s, %(uploaded_at)s, %(embedding_dim)s) RETURNING pdf_metadata.id]\n[parameters: {'filename': 'Farmon Instant Chat - Omadli Group.pdf', 'email': 'ralfgrugo4567@gmail.com', 'path': 'https://boltaiagent.blob.core.windows.net/farmonai/b3deb176-33f2-46da-8a5a-8c59a2eea03e_Farmon%20Instant%20Chat%20-%20Omadli%20Group.pdf?se=2026-09-08T18%3A56%3A20Z&sp=r&sv=2025-07-05&sr=b&sig=vWSmrB/s6ZihVxOtLfaOx0e2VpcvTpbtHboZujLm8%2BQ%3D', 'source': 'pdf', 'total_pages': 1, 'uploaded_at': datetime.datetime(2025, 9, 8, 18, 56, 20, 949894), 'embedding_dim': 384}]\n(Background on this error at: https://sqlalche.me/e/20/e3q8) - Error processing file upload"}
+INFO 2025-09-08 18:56:20,286 basehttp 84101 6135738368 "POST /api/files/upload/ HTTP/1.1" 201 1903
+WARNING 2025-09-08 18:56:20,309 log 84101 6135738368 Bad Request: /api/files/upload/
+WARNING 2025-09-08 18:56:20,309 basehttp 84101 6135738368 "POST /api/files/upload/ HTTP/1.1" 400 110
+INFO 2025-09-08 18:56:43,298 services 84101 6169391104 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:56:43,317 basehttp 84101 6135738368 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:56:43,320 basehttp 84101 6169391104 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:56:43,330 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:56:43,342 basehttp 84101 6186790912 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:56:43,346 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:56:50,912 services 84101 6186790912 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:56:50,927 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:56:50,927 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:56:50,937 basehttp 84101 6135738368 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:56:50,942 basehttp 84101 6186790912 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:56:50,949 basehttp 84101 6169391104 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:56:50,951 basehttp 84101 6203617280 "GET /api/chat/conversations/ HTTP/1.1" 200 556
+INFO 2025-09-08 18:56:50,955 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:56:50,965 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:56:50,970 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:57:51,754 basehttp 84101 6135738368 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:57:51,773 basehttp 84101 6152564736 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:57:54,258 basehttp 84101 6152564736 "DELETE /api/chat/conversations/clear-all/ HTTP/1.1" 200 64
+INFO 2025-09-08 18:57:56,034 basehttp 84101 6152564736 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:57:56,035 basehttp 84101 6203617280 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:56,035 basehttp 84101 6135738368 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:56,047 basehttp 84101 6169391104 "GET /api/auth/profile/ HTTP/1.1" 200 604
+INFO 2025-09-08 18:57:56,047 basehttp 84101 6135738368 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:56,050 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:57,394 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:57:57,408 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:57:57,416 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:57:57,424 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:57:57,432 basehttp 84101 6169391104 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:57:57,435 basehttp 84101 6152564736 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:57:58,878 services 84101 6169391104 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:57:58,885 basehttp 84101 6135738368 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:58,887 basehttp 84101 6203617280 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:58,895 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:57:58,901 basehttp 84101 6186790912 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:58,902 basehttp 84101 6135738368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:58,904 basehttp 84101 6169391104 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:57:58,912 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:57:58,917 basehttp 84101 6203617280 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:57:58,921 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:57:59,890 services 84101 6203617280 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:57:59,891 basehttp 84101 6186790912 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:59,902 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:59,909 basehttp 84101 6135738368 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:57:59,914 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:59,917 basehttp 84101 6186790912 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:57:59,919 basehttp 84101 6203617280 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:57:59,926 services 84101 6186790912 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:57:59,931 basehttp 84101 6169391104 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:57:59,935 basehttp 84101 6186790912 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:58:00,965 services 84101 6169391104 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:00,975 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:00,975 basehttp 84101 6203617280 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:00,982 basehttp 84101 6186790912 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:58:00,986 basehttp 84101 6152564736 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:00,987 basehttp 84101 6135738368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:00,989 basehttp 84101 6169391104 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:58:00,996 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:01,004 basehttp 84101 6203617280 "GET /api/files/ HTTP/1.1" 200 2688
+INFO 2025-09-08 18:58:01,005 basehttp 84101 6152564736 "GET /api/files/stats/ HTTP/1.1" 200 684
+INFO 2025-09-08 18:58:06,504 basehttp 84101 6152564736 "OPTIONS /api/files/26e1b2b5-9154-498e-95b9-be101c3c1c34/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:58:06,524 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:06,528 basehttp 84101 6152564736 "DELETE /api/files/26e1b2b5-9154-498e-95b9-be101c3c1c34/ HTTP/1.1" 204 0
+INFO 2025-09-08 18:58:06,555 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 1815
+INFO 2025-09-08 18:58:06,563 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:06,577 basehttp 84101 6152564736 "GET /api/files/stats/ HTTP/1.1" 200 539
+INFO 2025-09-08 18:58:08,349 basehttp 84101 6152564736 "OPTIONS /api/files/f812f037-459c-439e-89ce-84616a25cf88/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:58:08,364 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:08,366 basehttp 84101 6152564736 "DELETE /api/files/f812f037-459c-439e-89ce-84616a25cf88/ HTTP/1.1" 204 0
+INFO 2025-09-08 18:58:08,388 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 908
+INFO 2025-09-08 18:58:08,397 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:08,411 basehttp 84101 6152564736 "GET /api/files/stats/ HTTP/1.1" 200 380
+INFO 2025-09-08 18:58:09,744 basehttp 84101 6152564736 "OPTIONS /api/files/69852077-0995-4d54-b006-32577d74f3c8/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:58:09,770 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:09,773 basehttp 84101 6152564736 "DELETE /api/files/69852077-0995-4d54-b006-32577d74f3c8/ HTTP/1.1" 204 0
+INFO 2025-09-08 18:58:09,797 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:09,806 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:09,821 basehttp 84101 6152564736 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:11,039 services 84101 6203617280 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:11,069 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,070 basehttp 84101 6152564736 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,071 basehttp 84101 6152564736 - Broken pipe from ('127.0.0.1', 50293)
+INFO 2025-09-08 18:58:11,091 basehttp 84101 6135738368 - Broken pipe from ('127.0.0.1', 49513)
+INFO 2025-09-08 18:58:11,097 basehttp 84101 6203617280 - Broken pipe from ('127.0.0.1', 49952)
+INFO 2025-09-08 18:58:11,097 basehttp 84101 6169391104 - Broken pipe from ('127.0.0.1', 49630)
+INFO 2025-09-08 18:58:11,097 basehttp 84101 6186790912 - Broken pipe from ('127.0.0.1', 49951)
+INFO 2025-09-08 18:58:11,256 services 84101 6152564736 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:11,266 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,270 basehttp 84101 6186217472 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,270 basehttp 84101 6135738368 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,281 basehttp 84101 6152564736 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:11,283 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,284 basehttp 84101 6203617280 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,284 basehttp 84101 6135738368 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,292 services 84101 6186217472 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:11,299 basehttp 84101 6186217472 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:11,586 services 84101 6203617280 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:11,591 basehttp 84101 6169391104 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,591 basehttp 84101 6135738368 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,592 basehttp 84101 6186217472 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,601 basehttp 84101 6152564736 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,608 basehttp 84101 6169391104 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,610 basehttp 84101 6203617280 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:11,613 basehttp 84101 6135738368 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,618 services 84101 6169391104 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:11,625 basehttp 84101 6169391104 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:11,943 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,943 basehttp 84101 6169391104 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,945 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:11,948 basehttp 84101 6203617280 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,955 basehttp 84101 6220443648 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,963 basehttp 84101 6152564736 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,964 basehttp 84101 6186217472 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:11,968 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:11,976 services 84101 6186217472 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:11,983 basehttp 84101 6186217472 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:12,268 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:12,270 basehttp 84101 6220443648 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:12,273 basehttp 84101 6186217472 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:12,273 basehttp 84101 6152564736 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:12,292 basehttp 84101 6220443648 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:12,294 basehttp 84101 6152564736 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:12,294 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:12,294 basehttp 84101 6203617280 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:12,302 services 84101 6220443648 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:12,308 basehttp 84101 6220443648 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 18:58:14,228 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:14,234 basehttp 84101 6220443648 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:14,277 basehttp 84101 6152564736 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:14,278 basehttp 84101 6220443648 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:21,635 services 84101 6220443648 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:21,638 services 84101 6220443648 Successfully uploaded file: Farmon Instant Chat - Omadli Group_376f4a77.pdf
+INFO 2025-09-08 18:58:21,639 services 84101 6220443648 File uploaded successfully: 52cac559-fcda-40dd-a95e-3ebe2e216ee8
+INFO 2025-09-08 18:58:23,495 services 84101 6220443648 File Farmon Instant Chat - Omadli Group.pdf uploaded to RAG successfully
+INFO 2025-09-08 18:58:23,498 basehttp 84101 6220443648 "POST /api/files/upload/ HTTP/1.1" 201 993
+INFO 2025-09-08 18:58:23,526 services 84101 6220443648 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:58:23,529 services 84101 6220443648 Successfully uploaded file: Farmon Instant Chat - Omadli Group_0fffc3ab.pdf
+INFO 2025-09-08 18:58:23,531 services 84101 6220443648 File uploaded successfully: b92b4070-29d6-4e18-85a2-b608b13fbf84
+INFO 2025-09-08 18:58:25,219 services 84101 6220443648 File Farmon Instant Chat - Omadli Group.pdf uploaded to RAG successfully
+INFO 2025-09-08 18:58:25,221 basehttp 84101 6220443648 "POST /api/files/upload/ HTTP/1.1" 201 993
+INFO 2025-09-08 18:58:25,248 basehttp 84101 6220443648 "POST /api/chat/conversations/ HTTP/1.1" 201 329
+INFO 2025-09-08 18:58:25,253 basehttp 84101 6152564736 "OPTIONS /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 18:58:25,268 basehttp 84101 6220443648 "GET /api/chat/conversations/ HTTP/1.1" 200 331
+INFO 2025-09-08 18:58:25,272 basehttp 84101 6152564736 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:58:25,294 views 84101 6152564736 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 18:58:25,294 views 84101 6152564736 Request data: {'message': 'explain it', 'conversation_id': '6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 18:58:25,297 views 84101 6152564736 Serializer validated data: OrderedDict({'message': 'explain it', 'conversation_id': UUID('6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 18:58:25,298 views 84101 6152564736 Starting generate_stream function
+INFO 2025-09-08 18:58:25,298 views 84101 6152564736 About to call process_chat_message_stream
+ERROR 2025-09-08 18:58:25,307 services 84101 6152564736 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'explain it'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 18:58:31,632 services 84101 6152564736 Source document: Sources: Atomic habits ( PDFDrive ).pdf
+INFO 2025-09-08 18:58:31,633 services 84101 6152564736 Extracted document list: ['Atomic habits ( PDFDrive ).pdf']
+INFO 2025-09-08 18:58:31,633 services 84101 6152564736 Finished processing 622 lines
+INFO 2025-09-08 18:58:31,647 views 84101 6152564736 Stream completed with 312 chunks
+INFO 2025-09-08 18:58:31,649 basehttp 84101 6152564736 "POST /api/chat/stream/ HTTP/1.1" 200 99290
+INFO 2025-09-08 18:58:32,891 basehttp 84101 6220443648 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 2227
+INFO 2025-09-08 18:59:10,552 services 84101 6220443648 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:59:10,555 services 84101 6220443648 Successfully uploaded file: 2 New Tab_536f75b9.pdf
+INFO 2025-09-08 18:59:10,555 services 84101 6220443648 File uploaded successfully: a86bbd8f-219a-4ae9-9a13-d534b1fbb162
+INFO 2025-09-08 18:59:14,937 services 84101 6220443648 File (2) New Tab.pdf uploaded to RAG successfully
+INFO 2025-09-08 18:59:14,939 basehttp 84101 6220443648 "POST /api/files/upload/ HTTP/1.1" 201 921
+INFO 2025-09-08 18:59:14,964 views 84101 6220443648 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 18:59:14,964 views 84101 6220443648 Request data: {'message': 'best', 'conversation_id': '6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 18:59:14,967 views 84101 6220443648 Serializer validated data: OrderedDict({'message': 'best', 'conversation_id': UUID('6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 18:59:14,967 views 84101 6220443648 Starting generate_stream function
+INFO 2025-09-08 18:59:14,967 views 84101 6220443648 About to call process_chat_message_stream
+ERROR 2025-09-08 18:59:14,976 services 84101 6220443648 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'best'}, {'message_type': 'assistant', 'content': '# Explanation\n\n\nThe core concept is that sustainable change comes from focusing on systems, not just goals. As stated: “You do not rise to the level of your goals. You fall to the level of your systems.” This means that repeated small improvements—“atomic habits”—create significant, compounding results over time. Each habit is a building block in a larger operational system, and consistently refining these systems leads to lasting performance improvements.\n\n\nFor practical application, the framework for building better habits is structured around four laws:\n\n\n1. **Make it obvious**\n2. **Make it attractive**\n3. **Make it easy**\n4. **Make it satisfying**\n\n\nTo break bad habits, invert these laws: make the cue invisible, the craving unattractive, the response difficult, and the reward unsatisfying. This approach is applicable across industries and roles, providing a universal system for behavior change and operational improvement.\n\n\nExample: In the business world, teams that focus on refining their daily processes (systems) rather than chasing only high-level targets (goals) see more consistent, scalable results.\n\n\n**Key takeaway:** Lasting results come from optimizing the underlying systems through continuous, incremental improvements, not from one-off efforts or goal-chasing alone.\n\n\n'}, {'message_type': 'user', 'content': 'explain it'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 18:59:19,772 services 84101 6220443648 Source document: Sources: Atomic habits ( PDFDrive ).pdf 
+INFO 2025-09-08 18:59:19,773 services 84101 6220443648 Extracted document list: ['Atomic habits ( PDFDrive ).pdf']
+INFO 2025-09-08 18:59:19,773 services 84101 6220443648 Finished processing 432 lines
+INFO 2025-09-08 18:59:19,783 views 84101 6220443648 Stream completed with 217 chunks
+INFO 2025-09-08 18:59:19,783 basehttp 84101 6220443648 "POST /api/chat/stream/ HTTP/1.1" 200 68987
+INFO 2025-09-08 18:59:20,256 services 84101 6135738368 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:59:20,269 basehttp 84101 6203617280 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 18:59:20,275 basehttp 84101 6135738368 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 18:59:20,290 services 84101 6203617280 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:59:20,296 basehttp 84101 6186217472 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 18:59:20,301 basehttp 84101 6203617280 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 18:59:20,303 basehttp 84101 6135738368 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 3966
+INFO 2025-09-08 18:59:22,188 services 84101 6203617280 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:59:22,202 basehttp 84101 6169391104 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:59:22,205 basehttp 84101 6186217472 "GET /api/chat/conversations/ HTTP/1.1" 200 561
+INFO 2025-09-08 18:59:22,212 basehttp 84101 6135738368 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 18:59:22,223 basehttp 84101 6152564736 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 18:59:22,223 basehttp 84101 6169391104 "GET /api/chat/conversations/ HTTP/1.1" 200 561
+INFO 2025-09-08 18:59:22,224 basehttp 84101 6203617280 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 18:59:22,232 services 84101 6203617280 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 18:59:22,237 basehttp 84101 6186217472 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 18:59:22,244 basehttp 84101 6203617280 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 19:01:06,644 autoreload 84101 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/files/serializers.py changed, reloading.
+INFO 2025-09-08 19:01:07,030 autoreload 90325 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-08 19:01:40,635 basehttp 90325 6200471552 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 3966
+INFO 2025-09-08 19:01:45,404 basehttp 90325 6200471552 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 3966
+INFO 2025-09-08 19:01:54,078 basehttp 90325 6200471552 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 3966
+INFO 2025-09-08 19:02:11,914 basehttp 90325 6200471552 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 3966
+INFO 2025-09-08 19:02:25,914 basehttp 90325 6200471552 "GET /api/chat/conversations/6b5bbcdd-e036-4b79-9fbe-0e1f2977f3ac/history/ HTTP/1.1" 200 3966
+INFO 2025-09-08 19:03:04,968 services 90325 6217297920 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:03:04,998 basehttp 90325 6217297920 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 19:03:04,998 basehttp 90325 6200471552 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 19:03:05,026 services 90325 6217297920 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:03:05,034 basehttp 90325 6234697728 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 19:03:05,044 basehttp 90325 6217297920 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 19:04:30,752 basehttp 90325 6234697728 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 19:04:30,764 basehttp 90325 6217297920 "GET /api/chat/conversations/ HTTP/1.1" 200 561
+INFO 2025-09-08 19:04:30,770 basehttp 90325 6200471552 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-08 19:04:30,780 basehttp 90325 6234697728 "GET /api/chat/conversations/ HTTP/1.1" 200 561
+WARNING 2025-09-08 19:04:49,273 log 90325 6234697728 Bad Request: /api/files/upload/
+WARNING 2025-09-08 19:04:49,273 basehttp 90325 6234697728 "POST /api/files/upload/ HTTP/1.1" 400 96
+INFO 2025-09-08 19:05:01,379 services 90325 6200471552 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:01,400 basehttp 90325 6234697728 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 19:05:01,405 basehttp 90325 6200471552 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 19:05:01,413 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:01,420 basehttp 90325 6217297920 "GET /api/files/ HTTP/1.1" 200 2548
+INFO 2025-09-08 19:05:01,423 basehttp 90325 6234697728 "GET /api/files/stats/ HTTP/1.1" 200 631
+INFO 2025-09-08 19:05:04,173 basehttp 90325 6234697728 "OPTIONS /api/files/b92b4070-29d6-4e18-85a2-b608b13fbf84/ HTTP/1.1" 200 0
+INFO 2025-09-08 19:05:04,189 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:04,193 basehttp 90325 6234697728 "DELETE /api/files/b92b4070-29d6-4e18-85a2-b608b13fbf84/ HTTP/1.1" 204 0
+INFO 2025-09-08 19:05:04,215 basehttp 90325 6234697728 "GET /api/files/ HTTP/1.1" 200 1675
+INFO 2025-09-08 19:05:04,224 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:04,247 basehttp 90325 6234697728 "GET /api/files/stats/ HTTP/1.1" 200 486
+INFO 2025-09-08 19:05:05,741 basehttp 90325 6234697728 "OPTIONS /api/files/52cac559-fcda-40dd-a95e-3ebe2e216ee8/ HTTP/1.1" 200 0
+INFO 2025-09-08 19:05:05,762 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:05,764 basehttp 90325 6234697728 "DELETE /api/files/52cac559-fcda-40dd-a95e-3ebe2e216ee8/ HTTP/1.1" 204 0
+INFO 2025-09-08 19:05:05,787 basehttp 90325 6234697728 "GET /api/files/ HTTP/1.1" 200 802
+INFO 2025-09-08 19:05:05,807 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:05,829 basehttp 90325 6234697728 "GET /api/files/stats/ HTTP/1.1" 200 339
+INFO 2025-09-08 19:05:07,243 basehttp 90325 6234697728 "OPTIONS /api/files/a86bbd8f-219a-4ae9-9a13-d534b1fbb162/ HTTP/1.1" 200 0
+INFO 2025-09-08 19:05:07,262 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:07,264 basehttp 90325 6234697728 "DELETE /api/files/a86bbd8f-219a-4ae9-9a13-d534b1fbb162/ HTTP/1.1" 204 0
+INFO 2025-09-08 19:05:07,296 basehttp 90325 6234697728 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-08 19:05:07,306 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:07,315 basehttp 90325 6234697728 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-08 19:05:22,028 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:22,035 services 90325 6234697728 Successfully uploaded file: COOLIFY teamz88_fa _ Deployments _ Coolify_9d89fa28.pdf
+INFO 2025-09-08 19:05:22,036 services 90325 6234697728 File uploaded successfully: 5fd08039-effc-46bf-8e1c-39fafc9dfcc2
+INFO 2025-09-08 19:05:23,926 services 90325 6234697728 File [COOLIFY] teamz88_fa... _ Deployments _ Coolify.pdf uploaded to RAG successfully
+INFO 2025-09-08 19:05:23,928 basehttp 90325 6234697728 "POST /api/files/upload/ HTTP/1.1" 201 1027
+INFO 2025-09-08 19:05:23,956 basehttp 90325 6234697728 "POST /api/chat/conversations/ HTTP/1.1" 201 332
+INFO 2025-09-08 19:05:23,965 basehttp 90325 6217297920 "OPTIONS /api/chat/conversations/a50d9513-9b22-41d3-b332-6558705a6566/history/ HTTP/1.1" 200 0
+INFO 2025-09-08 19:05:23,995 basehttp 90325 6234697728 "GET /api/chat/conversations/ HTTP/1.1" 200 894
+INFO 2025-09-08 19:05:24,016 basehttp 90325 6217297920 "GET /api/chat/conversations/a50d9513-9b22-41d3-b332-6558705a6566/history/ HTTP/1.1" 200 2
+INFO 2025-09-08 19:05:24,019 views 90325 6234697728 ChatStreamView POST called by user: bro.ralfgrugo45671 (bro bro)
+INFO 2025-09-08 19:05:24,020 views 90325 6234697728 Request data: {'message': 'what is this?', 'conversation_id': 'a50d9513-9b22-41d3-b332-6558705a6566', 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 19:05:24,022 views 90325 6234697728 Serializer validated data: OrderedDict({'message': 'what is this?', 'conversation_id': UUID('a50d9513-9b22-41d3-b332-6558705a6566'), 'user_info': {'email': 'ralfgrugo4567@gmail.com'}})
+INFO 2025-09-08 19:05:24,023 views 90325 6234697728 Starting generate_stream function
+INFO 2025-09-08 19:05:24,023 views 90325 6234697728 About to call process_chat_message_stream
+ERROR 2025-09-08 19:05:24,033 services 90325 6234697728 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'what is this?'}], 'user_info': {'email': 'ralfgrugo4567@gmail.com'}}
+INFO 2025-09-08 19:05:28,676 services 90325 6234697728 Source document: Sources: Atomic habits ( PDFDrive ).pdf, test.pdf, test2.pdf, Uzbek-English Translation Help - Grok.pdf, Audit of Issues &amp; Proposed Solutions.pdf, (2) New Tab.pdf 
+INFO 2025-09-08 19:05:28,676 services 90325 6234697728 Extracted document list: ['Atomic habits ( PDFDrive ).pdf', 'test.pdf', 'test2.pdf', 'Uzbek-English Translation Help - Grok.pdf', 'Audit of Issues &amp; Proposed Solutions.pdf', '(2) New Tab.pdf']
+INFO 2025-09-08 19:05:28,676 services 90325 6234697728 Finished processing 348 lines
+INFO 2025-09-08 19:05:28,690 views 90325 6234697728 Stream completed with 175 chunks
+INFO 2025-09-08 19:05:28,690 basehttp 90325 6234697728 "POST /api/chat/stream/ HTTP/1.1" 200 55981
+INFO 2025-09-08 19:05:29,216 basehttp 90325 6217297920 "GET /api/chat/conversations/a50d9513-9b22-41d3-b332-6558705a6566/history/ HTTP/1.1" 200 1779
+INFO 2025-09-08 19:05:31,611 services 90325 6200471552 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:31,625 basehttp 90325 6217297920 "GET /api/files/ HTTP/1.1" 200 908
+INFO 2025-09-08 19:05:31,631 basehttp 90325 6200471552 "GET /api/files/stats/ HTTP/1.1" 200 380
+INFO 2025-09-08 19:05:31,640 services 90325 6234697728 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:05:31,646 basehttp 90325 6217297920 "GET /api/files/ HTTP/1.1" 200 908
+INFO 2025-09-08 19:05:31,652 basehttp 90325 6234697728 "GET /api/files/stats/ HTTP/1.1" 200 380
+INFO 2025-09-08 19:08:39,947 services 90325 6216724480 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
+INFO 2025-09-08 19:08:39,958 basehttp 90325 6199898112 "GET /api/files/ HTTP/1.1" 200 908
+INFO 2025-09-08 19:08:39,962 basehttp 90325 6216724480 "GET /api/files/stats/ HTTP/1.1" 200 380

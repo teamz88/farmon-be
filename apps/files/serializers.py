@@ -30,11 +30,11 @@ class FileUploadSerializer(serializers.Serializer):
     
     def validate_file(self, value):
         """Validate file size and type"""
-        # Check file size (50MB limit)
-        max_size = 50 * 1024 * 1024  # 50MB
+        # Check file size (5MB limit)
+        max_size = 5 * 1024 * 1024  # 5MB
         if value.size > max_size:
             raise serializers.ValidationError(
-                f"File size cannot exceed {max_size // (1024 * 1024)}MB"
+                f"File size must not exceed {max_size // (1024 * 1024)}MB"
             )
         
         # Check if file is not empty
@@ -42,6 +42,29 @@ class FileUploadSerializer(serializers.Serializer):
             raise serializers.ValidationError("File cannot be empty")
         
         return value
+    
+    def validate(self, attrs):
+        """Validate user file upload limits"""
+        # Get current user from context
+        request = self.context.get('request')
+        if request and hasattr(request, 'user'):
+            user = request.user
+            
+            # Check user's current file count (excluding deleted files)
+            from .models import File
+            user_file_count = File.objects.filter(
+                user=user, 
+                deleted_at__isnull=True
+            ).count()
+            
+            # Maximum 3 files per user
+            max_files_per_user = 3
+            if user_file_count >= max_files_per_user:
+                raise serializers.ValidationError(
+                    f"Each user can upload a maximum of {max_files_per_user} files. Your limit has been reached."
+                )
+        
+        return attrs
     
     def validate_tags(self, value):
         """Validate tags"""
