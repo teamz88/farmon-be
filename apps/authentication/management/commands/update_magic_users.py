@@ -131,7 +131,7 @@ class Command(BaseCommand):
                         
                         # Update magic link
                         frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
-                        magic_user.magic_link = f"{frontend_url}/magic-login?token={magic_user.magic_token}"
+                        magic_user.magic_link = f"{frontend_url}/magic-link/set-password?token={magic_user.magic_token}"
                     
                     # Update data
                     magic_user.first_name = user.first_name or magic_user.first_name

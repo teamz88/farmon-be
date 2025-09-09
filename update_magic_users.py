@@ -64,7 +64,7 @@ def update_magic_users_from_auth_users():
             if created:
                 # Generate magic link
                 frontend_url = os.getenv('FRONTEND_URL', 'http://localhost:3000')
-                magic_user.magic_link = f"{frontend_url}/magic-link/reset-password/{magic_user.magic_token}"
+                magic_user.magic_link = f"{frontend_url}/magic-link/set-password?token={magic_user.magic_token}"
                 magic_user.save()
                 
                 created_count += 1
