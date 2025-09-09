@@ -2363,3 +2363,110 @@ INFO 2025-09-08 19:05:31,652 basehttp 90325 6234697728 "GET /api/files/stats/ HT
 INFO 2025-09-08 19:08:39,947 services 90325 6216724480 Storage directory ready: /Users/bro/PROJECTS/farmon/farmon-be/media/uploads
 INFO 2025-09-08 19:08:39,958 basehttp 90325 6199898112 "GET /api/files/ HTTP/1.1" 200 908
 INFO 2025-09-08 19:08:39,962 basehttp 90325 6216724480 "GET /api/files/stats/ HTTP/1.1" 200 380
+INFO 2025-09-09 10:22:59,704 autoreload 48254 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-09 10:27:56,880 basehttp 48254 6172258304 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-09 10:27:56,888 serializers 48254 6172258304 Login attempt for: bro
+INFO 2025-09-09 10:27:57,019 serializers 48254 6172258304 Username auth result: False
+INFO 2025-09-09 10:27:57,020 serializers 48254 6172258304 No user found with email: bro
+WARNING 2025-09-09 10:27:57,020 log 48254 6172258304 Bad Request: /api/auth/login/
+WARNING 2025-09-09 10:27:57,020 basehttp 48254 6172258304 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-09 10:27:59,919 serializers 48254 6172258304 Login attempt for: bro
+INFO 2025-09-09 10:28:00,035 serializers 48254 6172258304 Username auth result: True
+INFO 2025-09-09 10:28:00,035 views 48254 6172258304 User login: bro, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-09 10:28:00,080 basehttp 48254 6172258304 "POST /api/auth/login/ HTTP/1.1" 200 1149
+INFO 2025-09-09 10:28:00,344 basehttp 48254 6172258304 "OPTIONS /api/analytics/dashboard/?start_date=2025-08-10&end_date=2025-09-09 HTTP/1.1" 200 0
+INFO 2025-09-09 10:28:00,346 basehttp 48254 6189084672 "OPTIONS /api/analytics/subscription-stats/?start_date=2025-08-10&end_date=2025-09-09 HTTP/1.1" 200 0
+INFO 2025-09-09 10:28:00,373 basehttp 48254 6222737408 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:28:00,390 basehttp 48254 6205911040 "GET /api/chat/conversations/ HTTP/1.1" 200 4187
+INFO 2025-09-09 10:28:00,393 basehttp 48254 6239563776 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:28:00,393 basehttp 48254 6189084672 "GET /api/analytics/subscription-stats/?start_date=2025-08-10&end_date=2025-09-09 HTTP/1.1" 200 181
+INFO 2025-09-09 10:28:00,413 basehttp 48254 6222737408 "GET /api/chat/conversations/ HTTP/1.1" 200 4187
+INFO 2025-09-09 10:28:00,475 basehttp 48254 6172258304 "GET /api/analytics/dashboard/?start_date=2025-08-10&end_date=2025-09-09 HTTP/1.1" 200 5106
+INFO 2025-09-09 10:28:03,374 basehttp 48254 6172258304 "GET /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 757
+INFO 2025-09-09 10:42:12,794 basehttp 48254 6172258304 "GET /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 757
+INFO 2025-09-09 10:49:49,725 basehttp 48254 6189084672 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+ERROR 2025-09-09 10:49:49,794 log 48254 6189084672 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'password_confirm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/views.py", line 43, in create
+    user = serializer.save()
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `User.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `User.objects.create()`. You may need to make the field read-only, or override the UserRegistrationSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+  File "/Users/bro/PROJECTS/farmon/farmon-be/venv/lib/python3.13/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'password_confirm'
+
+ERROR 2025-09-09 10:49:49,796 basehttp 48254 6189084672 "POST /api/auth/register/ HTTP/1.1" 500 171812
+INFO 2025-09-09 10:50:42,392 autoreload 48254 8420224128 /Users/bro/PROJECTS/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-09-09 10:50:42,862 autoreload 59607 8420224128 Watching for file changes with StatReloader
+INFO 2025-09-09 10:51:12,226 basehttp 59607 6190247936 "POST /api/auth/register/ HTTP/1.1" 201 1109
+WARNING 2025-09-09 10:51:12,310 log 59607 6207074304 Forbidden: /api/analytics/subscription-stats/
+WARNING 2025-09-09 10:51:12,313 basehttp 59607 6207074304 "GET /api/analytics/subscription-stats/?start_date=2025-08-10&end_date=2025-09-09 HTTP/1.1" 403 63
+INFO 2025-09-09 10:51:12,316 basehttp 59607 6223900672 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:51:12,316 basehttp 59607 6240727040 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:51:12,332 basehttp 59607 6207074304 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:51:12,342 basehttp 59607 6240727040 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:51:12,401 basehttp 59607 6190247936 "GET /api/analytics/dashboard/?start_date=2025-08-10&end_date=2025-09-09 HTTP/1.1" 200 5106
+WARNING 2025-09-09 10:51:13,326 log 59607 6190247936 Forbidden: /api/analytics/subscription-stats/
+WARNING 2025-09-09 10:51:13,326 basehttp 59607 6190247936 "GET /api/analytics/subscription-stats/?start_date=2025-08-10&end_date=2025-09-09 HTTP/1.1" 403 63
+INFO 2025-09-09 10:51:19,277 basehttp 59607 6190247936 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-09-09 10:51:19,285 basehttp 59607 6190247936 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-09-09 10:51:27,810 serializers 59607 6190247936 Login attempt for: test@test.com
+INFO 2025-09-09 10:51:27,933 serializers 59607 6190247936 Username auth result: True
+INFO 2025-09-09 10:51:27,933 views 59607 6190247936 User login: test@test.com, password hash: pbkdf2_sha256$600000$6cMim0rNENN7jGwdh85eZr$t6O1yv...
+INFO 2025-09-09 10:51:27,945 basehttp 59607 6190247936 "POST /api/auth/login/ HTTP/1.1" 200 1138
+INFO 2025-09-09 10:51:28,213 basehttp 59607 6240727040 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:51:28,217 basehttp 59607 6190247936 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:51:28,226 basehttp 59607 6207074304 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-09 10:51:28,228 basehttp 59607 6240727040 "GET /api/chat/conversations/ HTTP/1.1" 200 2

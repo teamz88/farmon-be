@@ -47,6 +47,12 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         if attrs['password'] != attrs['password_confirm']:
             raise serializers.ValidationError("Password confirmation doesn't match.")
         return attrs
+    
+    def create(self, validated_data):
+        """Create new user."""
+        validated_data.pop('password_confirm')
+        user = User.objects.create_user(**validated_data)
+        return user
 
 
 class ForgotPasswordSerializer(serializers.Serializer):
