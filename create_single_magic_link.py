@@ -62,7 +62,7 @@ def create_magic_link_for_user(email):
         
         # Generate magic link
         frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
-        magic_user.magic_link = f"{frontend_url}/magic-login?token={magic_user.magic_token}"
+        magic_user.magic_link = f"{frontend_url}/magic-link/set-password?token={magic_user.magic_token}"
         magic_user.save()
         
         action = "created" if created else "updated"

@@ -79,7 +79,7 @@ def update_magic_users_from_auth_users():
                     
                     # Update magic link
                     frontend_url = os.getenv('FRONTEND_URL', 'http://localhost:3000')
-                    magic_user.magic_link = f"{frontend_url}/magic-login?token={magic_user.magic_token}"
+                    magic_user.magic_link = f"{frontend_url}/magic-link/set-password?token={magic_user.magic_token}"
                 
                 # Update data
                 magic_user.first_name = user.first_name or magic_user.first_name
@@ -127,7 +127,7 @@ def generate_magic_links_for_all():
             
             # Generate magic link
             frontend_url = os.getenv('FRONTEND_URL', 'http://localhost:3000')
-            magic_user.magic_link = f"{frontend_url}/magic-login?token={magic_user.magic_token}"
+            magic_user.magic_link = f"{frontend_url}/magic-link/set-password?token={magic_user.magic_token}"
             magic_user.webhook_sent = False  # Webhook needs to be resent
             magic_user.save()
             

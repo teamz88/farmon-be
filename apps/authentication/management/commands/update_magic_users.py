@@ -117,7 +117,7 @@ class Command(BaseCommand):
                     # New magic_user created
                     # Generate magic link
                     frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
-                    magic_user.magic_link = f"{frontend_url}/magic-login?token={magic_user.magic_token}"
+                    magic_user.magic_link = f"{frontend_url}/magic-link/set-password?token={magic_user.magic_token}"
                     magic_user.save()
                     
                     created_count += 1
@@ -178,7 +178,7 @@ class Command(BaseCommand):
                 
                 # Update magic link
                 frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
-                magic_user.magic_link = f"{frontend_url}/magic-login?token={magic_user.magic_token}"
+                magic_user.magic_link = f"{frontend_url}/magic-link/set-password?token={magic_user.magic_token}"
                 
                 # Reset webhook status
                 magic_user.webhook_sent = False

@@ -141,12 +141,12 @@ export N8N_WEBHOOK_URL="https://your-n8n-instance.com/webhook/magic-link"
 ### Magic Link Format
 
 ```
-{FRONTEND_URL}/magic-login?token={magic_token}
+{FRONTEND_URL}/magic-link/set-password?token={magic_token}
 ```
 
 **Example:**
 ```
-http://localhost:3000/magic-login?token=abc123def456...
+http://localhost:3000/magic-link/set-password?token=abc123def456...
 ```
 
 ### Database Tables
