@@ -259,31 +259,41 @@ class MagicLinkRegistrationView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
     
     def create(self, request, *args, **kwargs):
+        logger.info(f'Magic link registration started for data: {request.data}')
+        
         try:
+            # Validate serializer
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
+            logger.info('Serializer validation passed')
             
             # Create magic user
             magic_user = serializer.save()
+            logger.info(f'MagicUser created successfully with ID: {magic_user.id}, email: {magic_user.email}')
             
             # Check if user already exists with this email
             existing_user = User.objects.filter(email=magic_user.email).first()
             
             if existing_user:
+                logger.info(f'Existing user found: {existing_user.id}, linking to magic user')
                 # Link existing user to magic user
                 user = existing_user
                 magic_user.created_user = user
                 magic_user.is_account_created = True
                 magic_user.save()
+                logger.info(f'Magic user {magic_user.id} linked to existing user {user.id}')
             else:
+                logger.info('No existing user found, creating new user account')
                 # Automatically create user account and sign in
                 user = magic_user.create_user_account(magic_user.generated_password)
                 magic_user.is_account_created = True
                 magic_user.save()
+                logger.info(f'New user created: {user.id}, magic user updated')
             
             # Generate JWT tokens for automatic sign in
             refresh = RefreshToken.for_user(user)
             access_token = refresh.access_token
+            logger.info(f'JWT tokens generated for user {user.id}')
             
             # Create user session
             session = UserSession.objects.create(
@@ -291,10 +301,13 @@ class MagicLinkRegistrationView(generics.CreateAPIView):
                 ip_address=self.get_client_ip(request),
                 user_agent=request.META.get('HTTP_USER_AGENT', '')
             )
+            logger.info(f'User session created: {session.id}')
             
             # Send webhook to n8n
+            logger.info(f'Attempting to send webhook for magic user {magic_user.id}')
             self.send_webhook(magic_user)
             
+            logger.info(f'Magic link registration completed successfully for user {user.id}')
             return Response({
                 'message': 'Account created and signed in successfully',
                 'magic_link': magic_user.magic_link,
@@ -311,21 +324,24 @@ class MagicLinkRegistrationView(generics.CreateAPIView):
             }, status=status.HTTP_201_CREATED)
             
         except Exception as e:
-            logger.error(f'Error in magic link registration: {str(e)}')
+            logger.error(f'Error in magic link registration: {str(e)}', exc_info=True)
             
             # Handle specific database constraint errors
             if 'duplicate key value violates unique constraint' in str(e):
                 if 'username' in str(e):
+                    logger.error('Username constraint violation')
                     return Response({
                         'error': 'Username already exists. Please try again.'
                     }, status=status.HTTP_400_BAD_REQUEST)
                 elif 'email' in str(e):
+                    logger.error('Email constraint violation')
                     return Response({
                         'error': 'Email already exists. Please try again.'
                     }, status=status.HTTP_400_BAD_REQUEST)
             
             return Response({
-                'error': 'Failed to create magic link registration'
+                'error': 'Failed to create magic link registration',
+                'details': str(e) if settings.DEBUG else None
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
     def get_client_ip(self, request):
@@ -345,6 +361,8 @@ class MagicLinkRegistrationView(generics.CreateAPIView):
                 logger.warning('N8N_WEBHOOK_URL not configured in settings')
                 return
             
+            logger.info(f'Sending webhook to: {webhook_url}')
+            
             webhook_data = {
                 'magic_link': magic_user.magic_link,
                 'first_name': magic_user.first_name,
@@ -355,21 +373,25 @@ class MagicLinkRegistrationView(generics.CreateAPIView):
                 'created_at': magic_user.created_at.isoformat(),
             }
             
+            logger.info(f'Webhook data prepared for magic user {magic_user.id}: {webhook_data}')
+            
             response = requests.post(
                 webhook_url,
                 json=webhook_data,
                 timeout=10
             )
             
+            logger.info(f'Webhook response status: {response.status_code}')
+            
             if response.status_code == 200:
                 magic_user.webhook_sent = True
                 magic_user.save(update_fields=['webhook_sent'])
-                logger.info(f'Webhook sent successfully for magic user {magic_user.id}')
+                logger.info(f'Webhook sent successfully for magic user {magic_user.id}, webhook_sent flag updated')
             else:
-                logger.error(f'Webhook failed with status {response.status_code} for magic user {magic_user.id}')
+                logger.error(f'Webhook failed with status {response.status_code} for magic user {magic_user.id}. Response: {response.text}')
                 
         except Exception as e:
-            logger.error(f'Error sending webhook for magic user {magic_user.id}: {str(e)}')
+            logger.error(f'Error sending webhook for magic user {magic_user.id}: {str(e)}', exc_info=True)
 
 
 class MagicLinkValidationView(APIView):
