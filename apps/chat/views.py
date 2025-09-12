@@ -382,7 +382,8 @@ class FeedbackView(APIView):
             question=question,
             answer=answer,
             feedback_type=feedback_type,
-            comment=comment
+            comment=comment,
+            user=request.user
         )
         
         if result['success']:

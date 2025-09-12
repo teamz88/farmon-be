@@ -37,6 +37,7 @@ jedi==0.19.2
 kombu==5.5.4
 markdownify==0.11.6
 matplotlib-inline==0.1.7
+ntfybro==1.0.0
 mccabe==0.7.0
 mypy_extensions==1.1.0
 packaging==25.0

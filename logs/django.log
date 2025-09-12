@@ -1,0 +1,150 @@
+INFO 2025-09-12 20:23:21,439 autoreload 54284 8411393152 Watching for file changes with StatReloader
+WARNING 2025-09-12 20:24:04,873 log 54284 6165491712 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-12 20:24:04,873 log 54284 6182318080 Unauthorized: /api/chat/folders/
+WARNING 2025-09-12 20:24:04,873 log 54284 6199144448 Unauthorized: /api/chat/conversations/ecd4da09-4703-487a-94e8-7346411bab36/history/
+WARNING 2025-09-12 20:24:04,873 basehttp 54284 6165491712 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-12 20:24:04,874 basehttp 54284 6199144448 "GET /api/chat/conversations/ecd4da09-4703-487a-94e8-7346411bab36/history/ HTTP/1.1" 401 172
+WARNING 2025-09-12 20:24:04,874 basehttp 54284 6182318080 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-09-12 20:24:04,878 log 54284 6165491712 Unauthorized: /api/chat/conversations/
+WARNING 2025-09-12 20:24:04,881 log 54284 6215970816 Unauthorized: /api/chat/folders/
+WARNING 2025-09-12 20:24:04,881 basehttp 54284 6165491712 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-09-12 20:24:04,882 basehttp 54284 6215970816 "GET /api/chat/folders/ HTTP/1.1" 401 172
+INFO 2025-09-12 20:24:12,264 serializers 54284 6215970816 Login attempt for: bro
+INFO 2025-09-12 20:24:12,394 serializers 54284 6215970816 Username auth result: False
+INFO 2025-09-12 20:24:12,395 serializers 54284 6215970816 No user found with email: bro
+WARNING 2025-09-12 20:24:12,395 log 54284 6215970816 Bad Request: /api/auth/login/
+WARNING 2025-09-12 20:24:12,395 basehttp 54284 6215970816 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-12 20:24:35,553 serializers 54284 6215970816 Login attempt for: bro
+INFO 2025-09-12 20:24:35,687 serializers 54284 6215970816 Username auth result: True
+INFO 2025-09-12 20:24:35,687 views 54284 6215970816 User login: bro, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-12 20:24:35,708 basehttp 54284 6215970816 "POST /api/auth/login/ HTTP/1.1" 200 1149
+INFO 2025-09-12 20:24:35,932 basehttp 54284 6199144448 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:24:35,944 basehttp 54284 6165491712 "GET /api/analytics/subscription-stats/?start_date=2025-08-14&end_date=2025-09-13 HTTP/1.1" 200 181
+INFO 2025-09-12 20:24:35,952 basehttp 54284 6232797184 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:24:35,955 basehttp 54284 6182318080 "GET /api/chat/conversations/ HTTP/1.1" 200 4187
+INFO 2025-09-12 20:24:35,968 basehttp 54284 6232797184 "GET /api/chat/conversations/ HTTP/1.1" 200 4187
+INFO 2025-09-12 20:24:36,028 basehttp 54284 6215970816 "GET /api/analytics/dashboard/?start_date=2025-08-14&end_date=2025-09-13 HTTP/1.1" 200 5106
+INFO 2025-09-12 20:24:42,277 services 54284 6232797184 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-12 20:24:42,295 basehttp 54284 6232797184 "GET /api/files/stats/ HTTP/1.1" 200 1756
+INFO 2025-09-12 20:24:42,299 basehttp 54284 6215970816 "GET /api/files/ HTTP/1.1" 200 10730
+INFO 2025-09-12 20:24:42,303 services 54284 6182318080 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-12 20:24:42,311 basehttp 54284 6182318080 "GET /api/files/stats/ HTTP/1.1" 200 1756
+INFO 2025-09-12 20:24:42,321 basehttp 54284 6232797184 "GET /api/files/ HTTP/1.1" 200 10730
+INFO 2025-09-12 20:24:55,939 basehttp 54284 6232797184 "OPTIONS /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 0
+INFO 2025-09-12 20:24:55,964 basehttp 54284 6232797184 "GET /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 2088
+INFO 2025-09-12 20:25:08,614 basehttp 54284 6182318080 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:25:08,626 basehttp 54284 6215970816 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:25:08,626 basehttp 54284 6232797184 "GET /api/chat/conversations/ HTTP/1.1" 200 4187
+INFO 2025-09-12 20:25:08,650 basehttp 54284 6182318080 "GET /api/chat/conversations/ HTTP/1.1" 200 4187
+INFO 2025-09-12 20:25:16,870 basehttp 54284 6182318080 "POST /api/chat/conversations/ HTTP/1.1" 201 314
+INFO 2025-09-12 20:25:16,874 basehttp 54284 6215970816 "OPTIONS /api/chat/conversations/8c2a3664-4358-4720-b858-d31c45334aa1/history/ HTTP/1.1" 200 0
+INFO 2025-09-12 20:25:16,882 basehttp 54284 6215970816 "GET /api/chat/conversations/8c2a3664-4358-4720-b858-d31c45334aa1/history/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:25:16,886 basehttp 54284 6182318080 "GET /api/chat/conversations/ HTTP/1.1" 200 4502
+INFO 2025-09-12 20:25:16,900 views 54284 6182318080 ChatStreamView POST called by user: bro (bro1 sultan)
+INFO 2025-09-12 20:25:16,901 views 54284 6182318080 Request data: {'message': 'hi big bos', 'conversation_id': '8c2a3664-4358-4720-b858-d31c45334aa1', 'user_info': {'email': 'oshomurotov@omadligroup.com'}}
+INFO 2025-09-12 20:25:16,903 views 54284 6182318080 Serializer validated data: OrderedDict({'message': 'hi big bos', 'conversation_id': UUID('8c2a3664-4358-4720-b858-d31c45334aa1'), 'user_info': {'email': 'oshomurotov@omadligroup.com'}})
+INFO 2025-09-12 20:25:16,904 views 54284 6182318080 Starting generate_stream function
+INFO 2025-09-12 20:25:16,904 views 54284 6182318080 About to call process_chat_message_stream
+ERROR 2025-09-12 20:25:16,914 services 54284 6182318080 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big bos'}], 'user_info': {'email': 'oshomurotov@omadligroup.com'}}
+ERROR 2025-09-12 20:26:17,524 services 54284 6182318080 RAG API streaming request failed: HTTPSConnectionPool(host='farmonrag.omadligrouphq.com', port=443): Read timed out. (read timeout=60)
+INFO 2025-09-12 20:26:17,527 views 54284 6182318080 Stream completed with 1 chunks
+INFO 2025-09-12 20:26:17,527 basehttp 54284 6182318080 "POST /api/chat/stream/ HTTP/1.1" 200 592
+INFO 2025-09-12 20:26:30,384 basehttp 54284 6215970816 "GET /api/auth/profile/ HTTP/1.1" 200 602
+INFO 2025-09-12 20:26:30,404 basehttp 54284 6232797184 "GET /api/auth/profile/ HTTP/1.1" 200 602
+INFO 2025-09-12 20:26:39,059 basehttp 54284 6215970816 "GET /api/analytics/subscription-stats/?start_date=2025-08-14&end_date=2025-09-13 HTTP/1.1" 200 181
+INFO 2025-09-12 20:26:39,126 basehttp 54284 6232797184 "GET /api/analytics/dashboard/?start_date=2025-08-14&end_date=2025-09-13 HTTP/1.1" 200 5106
+INFO 2025-09-12 20:26:39,663 basehttp 54284 6215970816 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:26:39,676 basehttp 54284 6165491712 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:26:39,680 basehttp 54284 6232797184 "GET /api/chat/conversations/ HTTP/1.1" 200 4729
+INFO 2025-09-12 20:26:39,699 basehttp 54284 6165491712 "GET /api/chat/conversations/ HTTP/1.1" 200 4729
+INFO 2025-09-12 20:27:06,110 basehttp 54284 6165491712 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-09-12 20:27:06,128 basehttp 54284 6165491712 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-09-12 20:27:56,110 basehttp 54284 6165491712 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+INFO 2025-09-12 20:27:56,254 basehttp 54284 6165491712 "POST /api/auth/register/ HTTP/1.1" 201 1117
+INFO 2025-09-12 20:27:56,323 basehttp 54284 6165491712 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:27:56,324 basehttp 54284 6232797184 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:27:56,336 basehttp 54284 6199144448 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:27:56,340 basehttp 54284 6215970816 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:28:38,121 autoreload 57625 8411393152 Watching for file changes with StatReloader
+INFO 2025-09-12 20:28:50,270 basehttp 57625 6156316672 "POST /api/chat/conversations/ HTTP/1.1" 201 328
+INFO 2025-09-12 20:28:50,276 basehttp 57625 6173143040 "OPTIONS /api/chat/conversations/f33fa414-0f75-457a-b58d-ca94de76ffcb/history/ HTTP/1.1" 200 0
+INFO 2025-09-12 20:28:50,286 basehttp 57625 6156316672 "GET /api/chat/conversations/ HTTP/1.1" 200 330
+INFO 2025-09-12 20:28:50,295 basehttp 57625 6173143040 "GET /api/chat/conversations/f33fa414-0f75-457a-b58d-ca94de76ffcb/history/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:28:50,317 views 57625 6156316672 ChatStreamView POST called by user: tester@gmail.com (sadf sdfa)
+INFO 2025-09-12 20:28:50,317 views 57625 6156316672 Request data: {'message': 'hi big boss', 'conversation_id': 'f33fa414-0f75-457a-b58d-ca94de76ffcb', 'user_info': {'email': 'tester@gmail.com'}}
+INFO 2025-09-12 20:28:50,320 views 57625 6156316672 Serializer validated data: OrderedDict({'message': 'hi big boss', 'conversation_id': UUID('f33fa414-0f75-457a-b58d-ca94de76ffcb'), 'user_info': {'email': 'tester@gmail.com'}})
+INFO 2025-09-12 20:28:50,321 views 57625 6156316672 Starting generate_stream function
+INFO 2025-09-12 20:28:50,321 views 57625 6156316672 About to call process_chat_message_stream
+ERROR 2025-09-12 20:28:50,330 services 57625 6156316672 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big boss'}], 'user_info': {'email': 'tester@gmail.com'}}
+ERROR 2025-09-12 20:29:50,720 services 57625 6156316672 RAG API streaming request failed: HTTPSConnectionPool(host='farmonrag.omadligrouphq.com', port=443): Read timed out. (read timeout=60)
+INFO 2025-09-12 20:29:50,725 views 57625 6156316672 Stream completed with 1 chunks
+INFO 2025-09-12 20:29:50,725 basehttp 57625 6156316672 "POST /api/chat/stream/ HTTP/1.1" 200 592
+INFO 2025-09-12 20:30:48,732 autoreload 57625 8411393152 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-12 20:30:49,061 autoreload 58629 8411393152 Watching for file changes with StatReloader
+INFO 2025-09-12 20:30:58,788 basehttp 58629 6215348224 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:30:58,799 basehttp 58629 6232174592 "GET /api/chat/conversations/f33fa414-0f75-457a-b58d-ca94de76ffcb/history/ HTTP/1.1" 200 1120
+INFO 2025-09-12 20:30:58,800 basehttp 58629 6198521856 "GET /api/chat/conversations/ HTTP/1.1" 200 557
+INFO 2025-09-12 20:30:58,808 basehttp 58629 6215348224 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:30:58,811 basehttp 58629 6249000960 "GET /api/chat/conversations/ HTTP/1.1" 200 557
+INFO 2025-09-12 20:31:01,634 autoreload 58629 8411393152 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-12 20:31:01,981 autoreload 58695 8411393152 Watching for file changes with StatReloader
+INFO 2025-09-12 20:31:22,725 autoreload 58695 8411393152 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-12 20:31:23,016 autoreload 58846 8411393152 Watching for file changes with StatReloader
+INFO 2025-09-12 20:31:43,676 autoreload 58846 8411393152 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-12 20:31:43,895 autoreload 58907 8411393152 Watching for file changes with StatReloader
+INFO 2025-09-12 20:31:59,494 autoreload 58907 8411393152 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/chat/services.py changed, reloading.
+INFO 2025-09-12 20:31:59,788 autoreload 59023 8411393152 Watching for file changes with StatReloader
+INFO 2025-09-12 20:32:18,441 autoreload 59023 8411393152 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-09-12 20:32:18,740 autoreload 59158 8411393152 Watching for file changes with StatReloader
+INFO 2025-09-12 20:37:51,054 basehttp 59158 6123155456 - Broken pipe from ('127.0.0.1', 54597)
+INFO 2025-09-12 20:37:51,254 basehttp 59158 6123155456 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:37:51,257 basehttp 59158 6139981824 "GET /api/chat/conversations/ HTTP/1.1" 200 557
+INFO 2025-09-12 20:37:51,265 basehttp 59158 6123155456 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:37:51,270 basehttp 59158 6139981824 "GET /api/chat/conversations/ HTTP/1.1" 200 557
+INFO 2025-09-12 20:37:54,124 basehttp 59158 6139981824 "POST /api/chat/conversations/ HTTP/1.1" 201 319
+INFO 2025-09-12 20:37:54,128 basehttp 59158 6123155456 "OPTIONS /api/chat/conversations/71437f67-88bd-4e4b-a597-0f013dbd46b6/history/ HTTP/1.1" 200 0
+INFO 2025-09-12 20:37:54,139 basehttp 59158 6139981824 "GET /api/chat/conversations/ HTTP/1.1" 200 877
+INFO 2025-09-12 20:37:54,140 basehttp 59158 6123155456 "GET /api/chat/conversations/71437f67-88bd-4e4b-a597-0f013dbd46b6/history/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:37:54,154 views 59158 6123155456 ChatStreamView POST called by user: tester@gmail.com (sadf sdfa)
+INFO 2025-09-12 20:37:54,155 views 59158 6123155456 Request data: {'message': 'hi', 'conversation_id': '71437f67-88bd-4e4b-a597-0f013dbd46b6', 'user_info': {'email': 'tester@gmail.com'}}
+INFO 2025-09-12 20:37:54,156 views 59158 6123155456 Serializer validated data: OrderedDict({'message': 'hi', 'conversation_id': UUID('71437f67-88bd-4e4b-a597-0f013dbd46b6'), 'user_info': {'email': 'tester@gmail.com'}})
+INFO 2025-09-12 20:37:54,157 views 59158 6123155456 Starting generate_stream function
+INFO 2025-09-12 20:37:54,157 views 59158 6123155456 About to call process_chat_message_stream
+INFO 2025-09-12 20:37:54,164 notifications 59158 6123155456 Attempting to send notification: RAG API Call - Streaming_Chat - RAG API called by: tester@gmail.com
+Question: hi
+User ID: 9...
+INFO 2025-09-12 20:37:54,855 notifications 59158 6123155456 Notification sent successfully: RAG API Call - Streaming_Chat - RAG API called by: tester@gmail.com
+Question: hi
+U...
+ERROR 2025-09-12 20:37:54,856 services 59158 6123155456 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi'}], 'user_info': {'email': 'tester@gmail.com'}}
+INFO 2025-09-12 20:37:56,738 services 59158 6123155456 Source document: Sources:
+INFO 2025-09-12 20:37:56,738 services 59158 6123155456 Finished processing 26 lines
+INFO 2025-09-12 20:37:56,749 views 59158 6123155456 Stream completed with 13 chunks
+INFO 2025-09-12 20:37:56,749 basehttp 59158 6123155456 "POST /api/chat/stream/ HTTP/1.1" 200 4141
+INFO 2025-09-12 20:37:57,277 basehttp 59158 6139981824 "GET /api/chat/conversations/71437f67-88bd-4e4b-a597-0f013dbd46b6/history/ HTTP/1.1" 200 890
+INFO 2025-09-12 20:38:13,844 basehttp 59158 6156808192 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:38:13,861 basehttp 59158 6139981824 "GET /api/chat/conversations/ HTTP/1.1" 200 1036
+INFO 2025-09-12 20:38:13,869 basehttp 59158 6156808192 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:38:13,874 basehttp 59158 6123155456 "GET /api/chat/conversations/ HTTP/1.1" 200 1036
+INFO 2025-09-12 20:38:19,107 basehttp 59158 6123155456 "POST /api/chat/conversations/ HTTP/1.1" 201 328
+INFO 2025-09-12 20:38:19,112 basehttp 59158 6156808192 "OPTIONS /api/chat/conversations/bb79c0b1-71ce-4382-99d5-e84651ecc254/history/ HTTP/1.1" 200 0
+INFO 2025-09-12 20:38:19,121 basehttp 59158 6123155456 "GET /api/chat/conversations/ HTTP/1.1" 200 1365
+INFO 2025-09-12 20:38:19,122 basehttp 59158 6156808192 "GET /api/chat/conversations/bb79c0b1-71ce-4382-99d5-e84651ecc254/history/ HTTP/1.1" 200 2
+INFO 2025-09-12 20:38:19,139 views 59158 6156808192 ChatStreamView POST called by user: tester@gmail.com (sadf sdfa)
+INFO 2025-09-12 20:38:19,139 views 59158 6156808192 Request data: {'message': 'hi big boss', 'conversation_id': 'bb79c0b1-71ce-4382-99d5-e84651ecc254', 'user_info': {'email': 'tester@gmail.com'}}
+INFO 2025-09-12 20:38:19,142 views 59158 6156808192 Serializer validated data: OrderedDict({'message': 'hi big boss', 'conversation_id': UUID('bb79c0b1-71ce-4382-99d5-e84651ecc254'), 'user_info': {'email': 'tester@gmail.com'}})
+INFO 2025-09-12 20:38:19,143 views 59158 6156808192 Starting generate_stream function
+INFO 2025-09-12 20:38:19,143 views 59158 6156808192 About to call process_chat_message_stream
+INFO 2025-09-12 20:38:19,169 notifications 59158 6156808192 Attempting to send notification: RAG API Call - Streaming_Chat - RAG API called by: tester@gmail.com
+Question: hi big boss
+User ID: 9...
+INFO 2025-09-12 20:38:19,593 notifications 59158 6156808192 Notification sent successfully: RAG API Call - Streaming_Chat - RAG API called by: tester@gmail.com
+Question: hi b...
+ERROR 2025-09-12 20:38:19,595 services 59158 6156808192 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi big boss'}], 'user_info': {'email': 'tester@gmail.com'}}
+ERROR 2025-09-12 20:39:19,982 services 59158 6156808192 RAG API streaming request failed: HTTPSConnectionPool(host='farmonrag.omadligrouphq.com', port=443): Read timed out. (read timeout=60)
+INFO 2025-09-12 20:39:19,982 notifications 59158 6156808192 Attempting to send notification: RAG API Error - Streaming - RAG API error for user: tester@gmail.com
+Error: HTTPSConnectionPool(host='farmonrag.omadligrouphq.co...
+INFO 2025-09-12 20:39:20,558 notifications 59158 6156808192 Notification sent successfully: RAG API Error - Streaming - RAG API error for user: tester@gmail.com
+Error: HT...
+INFO 2025-09-12 20:39:20,565 views 59158 6156808192 Stream completed with 1 chunks
+INFO 2025-09-12 20:39:20,565 basehttp 59158 6156808192 "POST /api/chat/stream/ HTTP/1.1" 200 592

@@ -122,6 +122,17 @@ class AIService:
     def _call_rag_api(self, message: str, conversation_history: list = None, user=None) -> Dict[str, Any]:
         """Call external RAG API to get AI response and sources (non-streaming)."""
         try:
+            # Send notification for RAG API call
+            from apps.core.notifications import notification_service
+            user_email = user.email if user else 'anonymous'
+            user_id = user.id if user else None
+            notification_service.send_rag_api_call_notification(
+                user_email=user_email,
+                question=message,
+                api_type="chat",
+                user_id=user_id
+            )
+            
             url = "https://farmonrag.omadligrouphq.com/ask-question/"
             headers = {
                 "Content-Type": "application/json"
@@ -173,6 +184,22 @@ class AIService:
             
         except requests.exceptions.RequestException as e:
             logger.error(f"RAG API request failed: {str(e)}")
+            
+            # Send error notification
+            try:
+                from apps.core.notifications import notification_service
+                user_email = getattr(user, 'email', 'Unknown')
+                user_id = getattr(user, 'id', None)
+                notification_service.send_rag_api_error_notification(
+                    user_email=user_email,
+                    error_message=str(e),
+                    api_type="chat",
+                    question=question_data.get('question', '') if isinstance(question_data, dict) else str(question_data),
+                    user_id=user_id
+                )
+            except Exception as notification_error:
+                logger.error(f"Failed to send error notification: {notification_error}")
+            
             error_response = """## Apologies, but that question seems too general or outside my trained scope based on internal documents.
 
 **Here are some ways I can provide more helpful answers:**
@@ -189,6 +216,22 @@ Try rephrasing your question with specific business context or terminology from 
             }
         except Exception as e:
             logger.error(f"RAG API processing error: {str(e)}")
+            
+            # Send error notification
+            try:
+                from apps.core.notifications import notification_service
+                user_email = getattr(user, 'email', 'Unknown')
+                user_id = getattr(user, 'id', None)
+                notification_service.send_rag_api_error_notification(
+                    user_email=user_email,
+                    error_message=str(e),
+                    api_type="chat",
+                    question=question_data.get('question', '') if isinstance(question_data, dict) else str(question_data),
+                    user_id=user_id
+                )
+            except Exception as notification_error:
+                logger.error(f"Failed to send error notification: {notification_error}")
+            
             error_response = """## Apologies, but that question seems too general or outside my trained scope based on internal documents.
 
 **Here are some ways I can provide more helpful answers:**
@@ -207,6 +250,17 @@ Try rephrasing your question with specific business context or terminology from 
     def _call_rag_api_stream(self, message: str, conversation_history: list = None, user=None, user_info: Optional[Dict[str, Any]] = None) -> Iterator[Dict[str, Any]]:
         """Call external RAG API to get streaming AI response and sources."""
         try:
+            # Send notification for RAG API streaming call
+            from apps.core.notifications import notification_service
+            user_email = user.email if user else 'anonymous'
+            user_id = user.id if user else None
+            notification_service.send_rag_api_call_notification(
+                user_email=user_email,
+                question=message,
+                api_type="streaming_chat",
+                user_id=user_id
+            )
+            
             url = "https://farmonrag.omadligrouphq.com/ask-question/"
             headers = {
                 "Content-Type": "application/json",
@@ -318,6 +372,22 @@ Try rephrasing your question with specific business context or terminology from 
 
         except requests.exceptions.RequestException as e:
             logger.error(f"RAG API streaming request failed: {str(e)}")
+            
+            # Send error notification
+            try:
+                from apps.core.notifications import notification_service
+                user_email = getattr(user, 'email', 'Unknown')
+                user_id = getattr(user, 'id', None)
+                notification_service.send_rag_api_error_notification(
+                    user_email=user_email,
+                    error_message=str(e),
+                    api_type="streaming",
+                    question=question_data.get('question', '') if isinstance(question_data, dict) else str(question_data),
+                    user_id=user_id
+                )
+            except Exception as notification_error:
+                logger.error(f"Failed to send error notification: {notification_error}")
+            
             # Check if user has uploaded files
             yield {
                 'type': 'error',
@@ -328,6 +398,22 @@ Try rephrasing your question with specific business context or terminology from 
         except Exception as e:
             logger.error(f"RAG API streaming processing error: {str(e)}")
             logger.error(f"Exception type: {type(e).__name__}")
+            
+            # Send error notification
+            try:
+                from apps.core.notifications import notification_service
+                user_email = getattr(user, 'email', 'Unknown')
+                user_id = getattr(user, 'id', None)
+                notification_service.send_rag_api_error_notification(
+                    user_email=user_email,
+                    error_message=str(e),
+                    api_type="streaming",
+                    question=question_data.get('question', '') if isinstance(question_data, dict) else str(question_data),
+                    user_id=user_id
+                )
+            except Exception as notification_error:
+                logger.error(f"Failed to send error notification: {notification_error}")
+            
             # Check if user has uploaded files
             from apps.files.models import File
             user_files_count = File.objects.filter(user=user, deleted_at__isnull=True, status='completed').count()
@@ -927,7 +1013,7 @@ class FeedbackService:
     def __init__(self):
         self.rag_base_url = "https://farmonrag.omadligrouphq.com"
     
-    def submit_thumbs_feedback(self, question: str, answer: str, feedback_type: str, comment: str = None) -> Dict[str, Any]:
+    def submit_thumbs_feedback(self, question: str, answer: str, feedback_type: str, comment: str = None, user=None) -> Dict[str, Any]:
         """Submit thumbs up/down feedback to RAG API.
         
         Args:
@@ -935,6 +1021,7 @@ class FeedbackService:
             answer: The AI's response that was rated
             feedback_type: 'thumbs_up' or 'thumbs_down'
             comment: Optional comment for thumbs down feedback
+            user: User instance for notification
             
         Returns:
             Dict containing success status and response data
@@ -942,6 +1029,18 @@ class FeedbackService:
         start_time = time.time()
         
         try:
+            # Send notification for feedback submission
+            from apps.core.notifications import notification_service
+            user_email = getattr(user, 'email', 'Unknown') if user else 'anonymous'
+            user_id = getattr(user, 'id', None) if user else None
+            notification_service.send_rag_feedback_notification(
+                user_email=user_email,
+                question=question,
+                feedback_type=feedback_type,
+                comment=comment,
+                user_id=user_id
+            )
+            
             # Prepare feedback data for RAG API
             feedback_data = {
                 "question": question,
@@ -974,6 +1073,21 @@ class FeedbackService:
         except Exception as e:
             logger.error(f"Feedback service error: {str(e)}")
             response_time_ms = int((time.time() - start_time) * 1000)
+            
+            # Send error notification
+            try:
+                from apps.core.notifications import notification_service
+                user_email = getattr(user, 'email', 'Unknown') if user else 'anonymous'
+                user_id = getattr(user, 'id', None) if user else None
+                notification_service.send_rag_api_error_notification(
+                    user_email=user_email,
+                    error_message=str(e),
+                    api_type="feedback",
+                    question=question,
+                    user_id=user_id
+                )
+            except Exception as notification_error:
+                logger.error(f"Failed to send error notification: {notification_error}")
             
             return {
                 'success': False,
