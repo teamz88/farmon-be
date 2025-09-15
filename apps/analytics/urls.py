@@ -44,4 +44,8 @@ urlpatterns = [
     path('payment-stats/', views.payment_stats, name='payment-stats'),
     path('user-dashboard-stats/', views.user_dashboard_stats, name='user-dashboard-stats'),
     path('users-list-stats/', views.users_list_stats, name='users-list-stats'),
+    
+    # User Statistics and Q/A Data (Admin only)
+    path('user-statistics/', views.user_statistics, name='user-statistics'),
+    path('qa-data/', views.qa_data, name='qa-data'),
 ]

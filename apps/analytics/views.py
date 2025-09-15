@@ -22,6 +22,8 @@ from .serializers import (
 )
 from .services import AnalyticsService, ReportService, ErrorTrackingService
 from apps.authentication.permissions import IsAdminUser, IsActiveSubscription
+from apps.chat.models import ChatMessage
+from apps.files.models import File
 
 User = get_user_model()
 
@@ -598,6 +600,12 @@ def users_list_stats(request):
                 activity.total_session_time for activity in recent_activity
             )
             
+            # Count user's questions (messages with message_type='user')
+            question_count = ChatMessage.objects.filter(
+                user=user,
+                message_type=ChatMessage.MessageType.USER
+            ).count()
+            
             users_data.append({
                 'id': user.id,
                 'username': user.username,
@@ -610,6 +618,7 @@ def users_list_stats(request):
                 'date_joined': user.date_joined,
                 'last_login': user.last_login,
                 'total_time_spent': total_time,
+                'total_messages': question_count,  # Add question count here
                 'payment_history': [
                     {
                         'amount': payment.amount,
@@ -841,3 +850,166 @@ def generate_system_metrics(request):
         SystemMetricsSerializer(metrics).data,
         status=status.HTTP_201_CREATED
     )
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def user_statistics(request):
+    """Get user statistics including question count and file upload count"""
+    try:
+        users = User.objects.all()
+        user_stats = []
+        
+        for user in users:
+            # Count user questions (messages from user)
+            question_count = ChatMessage.objects.filter(
+                user=user,
+                message_type='user'
+            ).count()
+            
+            # Count user file uploads
+            file_count = File.objects.filter(
+                user=user,
+                status='completed'
+            ).count()
+            
+            user_stats.append({
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'date_joined': user.date_joined,
+                'last_login': user.last_login,
+                'question_count': question_count,
+                'file_count': file_count,
+                'is_active': user.is_active,
+                'role': user.role,
+                'subscription_type': user.subscription_type,
+            })
+        
+        # Sort by question count descending
+        user_stats.sort(key=lambda x: x['question_count'], reverse=True)
+        
+        return Response({
+            'success': True,
+            'data': user_stats,
+            'total_users': len(user_stats)
+        })
+        
+    except Exception as e:
+        return Response({
+            'success': False,
+            'error': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def qa_data(request):
+    """Get Q/A data with pagination showing user questions and answers with timestamps"""
+    try:
+        # Get pagination parameters
+        page = int(request.query_params.get('page', 1))
+        page_size = int(request.query_params.get('page_size', 20))
+        search = request.query_params.get('search', '')
+        user_filter = request.query_params.get('user')
+        date_from = request.query_params.get('date_from')
+        date_to = request.query_params.get('date_to')
+        
+        # Base queryset for user messages (questions)
+        questions_query = ChatMessage.objects.filter(
+            message_type='user'
+        ).select_related('user', 'conversation')
+        
+        # Apply filters
+        if search:
+            questions_query = questions_query.filter(
+                Q(content__icontains=search) |
+                Q(user__username__icontains=search) |
+                Q(user__email__icontains=search)
+            )
+        
+        if user_filter:
+            questions_query = questions_query.filter(user_id=user_filter)
+        
+        if date_from:
+            try:
+                date_from_parsed = datetime.strptime(date_from, '%Y-%m-%d').date()
+                questions_query = questions_query.filter(created_at__date__gte=date_from_parsed)
+            except ValueError:
+                pass
+        
+        if date_to:
+            try:
+                date_to_parsed = datetime.strptime(date_to, '%Y-%m-%d').date()
+                questions_query = questions_query.filter(created_at__date__lte=date_to_parsed)
+            except ValueError:
+                pass
+        
+        # Order by creation date descending
+        questions_query = questions_query.order_by('-created_at')
+        
+        # Get total count
+        total_count = questions_query.count()
+        
+        # Apply pagination
+        start_index = (page - 1) * page_size
+        end_index = start_index + page_size
+        questions = questions_query[start_index:end_index]
+        
+        qa_data = []
+        for question in questions:
+            # Find the corresponding assistant answer
+            answer = ChatMessage.objects.filter(
+                conversation=question.conversation,
+                message_type='assistant',
+                created_at__gt=question.created_at
+            ).order_by('created_at').first()
+            
+            qa_data.append({
+                'id': question.id,
+                'question': question.content,
+                'question_created_at': question.created_at,
+                'user': {
+                    'id': question.user.id,
+                    'username': question.user.username,
+                    'email': question.user.email,
+                    'first_name': question.user.first_name,
+                    'last_name': question.user.last_name,
+                },
+                'conversation_id': question.conversation.id,
+                'conversation_title': question.conversation.title,
+                'answer': answer.content if answer else None,
+                'answer_created_at': answer.created_at if answer else None,
+                'response_time_seconds': (
+                    (answer.created_at - question.created_at).total_seconds() 
+                    if answer else None
+                ),
+                'tokens_used': answer.tokens_used if answer else None,
+                'model_used': answer.model_used if answer else None,
+            })
+        
+        # Calculate pagination info
+        total_pages = (total_count + page_size - 1) // page_size
+        has_next = page < total_pages
+        has_previous = page > 1
+        
+        return Response({
+            'success': True,
+            'data': qa_data,
+            'pagination': {
+                'page': page,
+                'page_size': page_size,
+                'total_count': total_count,
+                'total_pages': total_pages,
+                'has_next': has_next,
+                'has_previous': has_previous,
+            }
+        })
+        
+    except Exception as e:
+        return Response({
+            'success': False,
+            'error': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
