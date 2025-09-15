@@ -50,6 +50,10 @@ class FileUploadSerializer(serializers.Serializer):
         if request and hasattr(request, 'user'):
             user = request.user
             
+            # Skip file limit validation for admin users
+            if hasattr(user, 'is_admin') and user.is_admin:
+                return attrs
+            
             # Check user's current file count (excluding deleted files)
             from .models import File
             user_file_count = File.objects.filter(
