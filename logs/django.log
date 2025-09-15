@@ -1224,3 +1224,13 @@ INFO 2025-09-15 17:38:55,586 basehttp 13893 6237368320 "POST /api/files/admin/bu
 INFO 2025-09-15 17:38:55,602 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 2
 INFO 2025-09-15 17:38:55,612 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
 INFO 2025-09-15 17:38:55,630 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-15 17:49:57,956 services 13893 6186889216 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:49:57,957 basehttp 13893 6220541952 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-15 17:49:57,961 basehttp 13893 6170062848 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-15 17:49:57,972 basehttp 13893 6220541952 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-15 17:49:57,977 basehttp 13893 6186889216 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-15 17:49:58,000 basehttp 13893 6203715584 "GET /api/chat/conversations/ HTTP/1.1" 200 4852
+INFO 2025-09-15 17:49:58,019 services 13893 6186889216 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:49:58,028 basehttp 13893 6186889216 "GET /api/files/stats/ HTTP/1.1" 200 174
+INFO 2025-09-15 17:50:22,266 autoreload 13893 8754080896 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/ai_agent/settings.py changed, reloading.
+INFO 2025-09-15 17:50:22,641 autoreload 19046 8754080896 Watching for file changes with StatReloader

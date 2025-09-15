@@ -240,6 +240,10 @@ NTFY_SERVER_URL = env('NTFY_SERVER_URL', default='https://ntfy.hvacvoice.com')
 NTFY_DEFAULT_TOPIC = env('NTFY_DEFAULT_TOPIC', default='farmon')
 NTFY_DEFAULT_EMAIL = env('NTFY_DEFAULT_EMAIL', default=None)
 
+# File Upload Size Limits
+DATA_UPLOAD_MAX_MEMORY_SIZE = 200 * 1024 * 1024  # 200MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 200 * 1024 * 1024  # 200MB
+
 # Logging
 # Ensure logs directory exists
 LOGS_DIR = BASE_DIR / 'logs'
