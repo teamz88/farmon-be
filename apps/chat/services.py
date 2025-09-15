@@ -133,7 +133,7 @@ class AIService:
                 user_id=user_id
             )
             
-            url = "https://farmonrag.omadligrouphq.com/ask-question/"
+            url = "https://farmonpagerag.omadligrouphq.com/chat/ask/"
             headers = {
                 "Content-Type": "application/json"
             }
@@ -261,7 +261,7 @@ Try rephrasing your question with specific business context or terminology from 
                 user_id=user_id
             )
             
-            url = "https://farmonrag.omadligrouphq.com/ask-question/"
+            url = "https://farmonpagerag.omadligrouphq.com/chat/ask/"
             headers = {
                 "Content-Type": "application/json",
                 "Accept": "text/event-stream"
@@ -326,27 +326,55 @@ Try rephrasing your question with specific business context or terminology from 
                             if json_data.get('type') == 'sources':
                                 # This is source information
                                 source_doc = json_data['content']
+                                matches = json_data.get('matches', [])
                                 logger.info(f"Source document: {source_doc}")
+                                logger.info(f"Matches with page numbers: {matches}")
                                 
-                                # Extract document names from source string into list format
+                                # Extract document names and create object format with page numbers
                                 if source_doc.startswith("Sources: "):
                                     # Remove "Sources: " prefix and split by comma
                                     sources_text = source_doc.replace("Sources: ", "")
                                     document_list = [doc.strip() for doc in sources_text.split(",")]
                                     logger.info(f"Extracted document list: {document_list}")
                                     
-                                    # Add each document to sources if not already present
+                                    # Create source objects with filename and page from matches
                                     for doc in document_list:
-                                        if doc not in sources:
-                                            sources.append(doc)
+                                        # Find matching page number from matches array
+                                        page_number = None
+                                        for match in matches:
+                                            if match.get('filename') == doc:
+                                                page_number = match.get('page_number')
+                                                break
+                                        
+                                        # Create source object
+                                        source_obj = {
+                                            'filename': doc,
+                                            'page': page_number
+                                        }
+                                        
+                                        # Add to sources if not already present (check by filename)
+                                        if not any(s.get('filename') == doc for s in sources):
+                                            sources.append(source_obj)
                                 else:
                                     # Handle single source document
-                                    if source_doc not in sources:
-                                        sources.append(source_doc)
+                                    page_number = None
+                                    for match in matches:
+                                        if match.get('filename') == source_doc:
+                                            page_number = match.get('page_number')
+                                            break
+                                    
+                                    source_obj = {
+                                        'filename': source_doc,
+                                        'page': page_number
+                                    }
+                                    
+                                    if not any(s.get('filename') == source_doc for s in sources):
+                                        sources.append(source_obj)
                                     
                                 yield {
                                     'type': 'source_document',
-                                    'source': sources
+                                    'source': sources,
+                                    'matches': matches
                                 }
                                     
                         except json.JSONDecodeError as e:
@@ -536,7 +564,7 @@ Try rephrasing your question with specific business context or terminology from 
             source_document: String like "Sources: Meeting Rhythms & GSRs.docx, Q3 Strategy Planning _ Mid-Year Review Guide.docx"
             
         Returns:
-            List of document names: ["Meeting Rhythms & GSRs.docx", "Q3 Strategy Planning _ Mid-Year Review Guide.docx"]
+            List of source objects with filename and page: [{"filename": "doc.docx", "page": 1}, ...]
         """
         if not source_document:
             return []
@@ -549,10 +577,16 @@ Try rephrasing your question with specific business context or terminology from 
             # Split by comma and clean up each document name
             documents = [doc.strip() for doc in source_document.split(',')]
             
-            # Filter out empty strings
-            documents = [doc for doc in documents if doc]
+            # Filter out empty strings and create source objects
+            source_objects = []
+            for doc in documents:
+                if doc:
+                    source_objects.append({
+                        'filename': doc,
+                        'page': None  # Page number will be added later if available
+                    })
             
-            return documents
+            return source_objects
             
         except Exception as e:
             logger.error(f"Error extracting sources from document: {str(e)}")
@@ -598,7 +632,7 @@ Try rephrasing your question with specific business context or terminology from 
                 
                 # Upload to RAG API
                 response = requests.post(
-                    'https://farmonrag.omadligrouphq.com/upload/',
+                    'https://farmonpagerag.omadligrouphq.com/files/upload/',
                     files=files,
                     data=data,
                     timeout=60
@@ -1011,7 +1045,7 @@ class FeedbackService:
     """Service for handling feedback interactions with RAG API."""
     
     def __init__(self):
-        self.rag_base_url = "https://farmonrag.omadligrouphq.com"
+        self.rag_base_url = "https://farmonpagerag.omadligrouphq.com"
     
     def submit_thumbs_feedback(self, question: str, answer: str, feedback_type: str, comment: str = None, user=None) -> Dict[str, Any]:
         """Submit thumbs up/down feedback to RAG API.
@@ -1256,7 +1290,7 @@ class FeedbackService:
                 
                 # Upload to RAG API
                 response = requests.post(
-                    'https://farmonrag.omadligrouphq.com/upload/',
+                    'https://farmonpagerag.omadligrouphq.com/files/upload/',
                     files=files,
                     data=data,
                     timeout=60
