@@ -1129,3 +1129,98 @@ INFO 2025-09-15 16:43:49,205 basehttp 3852 6142242816 "GET /api/chat/conversatio
 INFO 2025-09-15 16:43:49,205 basehttp 3852 6159069184 "GET /api/auth/profile/ HTTP/1.1" 200 602
 INFO 2025-09-15 16:43:49,209 basehttp 3852 6125416448 "GET /api/chat/folders/ HTTP/1.1" 200 2
 INFO 2025-09-15 16:43:49,226 basehttp 3852 6193868800 "GET /api/chat/conversations/ HTTP/1.1" 200 4852
+INFO 2025-09-15 17:14:08,148 basehttp 3852 6124843008 "OPTIONS /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 0
+INFO 2025-09-15 17:14:08,148 basehttp 3852 6141669376 "OPTIONS /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 0
+WARNING 2025-09-15 17:14:08,159 log 3852 6141669376 Unauthorized: /api/analytics/qa-data/
+WARNING 2025-09-15 17:14:08,160 basehttp 3852 6141669376 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 401 172
+WARNING 2025-09-15 17:14:08,168 log 3852 6124843008 Unauthorized: /api/analytics/qa-data/
+WARNING 2025-09-15 17:14:08,168 basehttp 3852 6124843008 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 401 172
+INFO 2025-09-15 17:14:22,280 basehttp 3852 6124843008 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:14:22,284 serializers 3852 6124843008 Login attempt for: farmon
+INFO 2025-09-15 17:14:22,513 serializers 3852 6124843008 Username auth result: False
+INFO 2025-09-15 17:14:22,514 serializers 3852 6124843008 No user found with email: farmon
+WARNING 2025-09-15 17:14:22,514 log 3852 6124843008 Bad Request: /api/auth/login/
+WARNING 2025-09-15 17:14:22,514 basehttp 3852 6124843008 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-09-15 17:34:14,712 autoreload 3852 8754080896 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/files/views.py changed, reloading.
+INFO 2025-09-15 17:34:16,041 autoreload 13726 8754080896 Watching for file changes with StatReloader
+INFO 2025-09-15 17:34:33,627 autoreload 13726 8754080896 /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/apps/files/urls.py changed, reloading.
+INFO 2025-09-15 17:34:33,984 autoreload 13893 8754080896 Watching for file changes with StatReloader
+INFO 2025-09-15 17:38:18,207 serializers 13893 6170062848 Login attempt for: bro
+INFO 2025-09-15 17:38:18,331 serializers 13893 6170062848 Username auth result: True
+INFO 2025-09-15 17:38:18,331 views 13893 6170062848 User login: bro, password hash: pbkdf2_sha256$600000$kgfYv4M7y4h7uY4i8znasy$pAKncL...
+INFO 2025-09-15 17:38:18,355 basehttp 13893 6170062848 "POST /api/auth/login/ HTTP/1.1" 200 1149
+INFO 2025-09-15 17:38:18,783 basehttp 13893 6170062848 "OPTIONS /api/analytics/dashboard/?start_date=2025-08-16&end_date=2025-09-15 HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:18,788 basehttp 13893 6186889216 "OPTIONS /api/analytics/subscription-stats/?start_date=2025-08-16&end_date=2025-09-15 HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:18,812 basehttp 13893 6220541952 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-15 17:38:18,828 basehttp 13893 6186889216 "GET /api/analytics/subscription-stats/?start_date=2025-08-16&end_date=2025-09-15 HTTP/1.1" 200 181
+INFO 2025-09-15 17:38:18,833 basehttp 13893 6237368320 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-09-15 17:38:18,835 basehttp 13893 6203715584 "GET /api/chat/conversations/ HTTP/1.1" 200 4852
+INFO 2025-09-15 17:38:18,850 basehttp 13893 6237368320 "GET /api/chat/conversations/ HTTP/1.1" 200 4852
+INFO 2025-09-15 17:38:18,900 basehttp 13893 6170062848 "GET /api/analytics/dashboard/?start_date=2025-08-16&end_date=2025-09-15 HTTP/1.1" 200 5105
+INFO 2025-09-15 17:38:20,875 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:20,898 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 2056
+INFO 2025-09-15 17:38:20,905 basehttp 13893 6170062848 "GET /api/files/ HTTP/1.1" 200 13928
+INFO 2025-09-15 17:38:20,906 services 13893 6203715584 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:20,956 basehttp 13893 6203715584 "GET /api/files/stats/ HTTP/1.1" 200 2056
+INFO 2025-09-15 17:38:20,969 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 13928
+INFO 2025-09-15 17:38:30,844 basehttp 13893 6237368320 "OPTIONS /api/files/admin/1fd0ffdb-4ad5-4aba-a0c9-e87ed7e24899/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:30,855 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:30,862 basehttp 13893 6237368320 "DELETE /api/files/admin/1fd0ffdb-4ad5-4aba-a0c9-e87ed7e24899/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:30,895 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 12966
+INFO 2025-09-15 17:38:30,904 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:30,917 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1959
+INFO 2025-09-15 17:38:32,542 basehttp 13893 6237368320 "OPTIONS /api/files/admin/a108acda-be32-4099-acc2-89bd361d60cc/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:32,555 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:32,562 basehttp 13893 6237368320 "DELETE /api/files/admin/a108acda-be32-4099-acc2-89bd361d60cc/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:32,594 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 11827
+INFO 2025-09-15 17:38:32,604 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:32,616 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1852
+INFO 2025-09-15 17:38:33,976 basehttp 13893 6237368320 "OPTIONS /api/files/admin/95d14f06-7386-45be-b80f-fdc53785ba2e/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:33,990 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:33,990 services 13893 6237368320 Successfully deleted file: ТЗ_Автоматизированныи_торговыи_робот_для_Binance_Spot_8aa85ee8.docx
+INFO 2025-09-15 17:38:33,996 basehttp 13893 6237368320 "DELETE /api/files/admin/95d14f06-7386-45be-b80f-fdc53785ba2e/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:34,027 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 10730
+INFO 2025-09-15 17:38:34,037 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:34,047 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1756
+INFO 2025-09-15 17:38:35,353 basehttp 13893 6237368320 "OPTIONS /api/files/admin/5fd08039-effc-46bf-8e1c-39fafc9dfcc2/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:35,365 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:35,366 services 13893 6237368320 Successfully deleted file: COOLIFY teamz88_fa _ Deployments _ Coolify_9d89fa28.pdf
+INFO 2025-09-15 17:38:35,392 basehttp 13893 6237368320 "DELETE /api/files/admin/5fd08039-effc-46bf-8e1c-39fafc9dfcc2/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:35,419 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 9823
+INFO 2025-09-15 17:38:35,427 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:35,435 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1756
+INFO 2025-09-15 17:38:37,007 basehttp 13893 6237368320 "OPTIONS /api/files/admin/602f7d90-5ba9-4c18-bca7-a187e9922df7/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:37,016 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:37,029 basehttp 13893 6237368320 "DELETE /api/files/admin/602f7d90-5ba9-4c18-bca7-a187e9922df7/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:37,053 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 8957
+INFO 2025-09-15 17:38:37,064 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:37,072 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1777
+INFO 2025-09-15 17:38:38,322 basehttp 13893 6237368320 "OPTIONS /api/files/admin/6eca6cc9-1f33-4242-b73d-f6b551bf1e02/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:38,337 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:38,352 basehttp 13893 6237368320 "DELETE /api/files/admin/6eca6cc9-1f33-4242-b73d-f6b551bf1e02/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:38,381 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 8091
+INFO 2025-09-15 17:38:38,391 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:38,400 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1628
+INFO 2025-09-15 17:38:40,440 basehttp 13893 6237368320 "OPTIONS /api/files/admin/0d012334-16f3-4d6f-8a49-fedb9a252d8d/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:40,452 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:40,460 basehttp 13893 6237368320 "DELETE /api/files/admin/0d012334-16f3-4d6f-8a49-fedb9a252d8d/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:40,491 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 7165
+INFO 2025-09-15 17:38:40,501 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:40,517 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1462
+INFO 2025-09-15 17:38:43,208 basehttp 13893 6237368320 "OPTIONS /api/files/admin/df8111e7-1c5f-43f8-9e6b-1796e3f2dc2a/delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:43,220 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:43,229 basehttp 13893 6237368320 "DELETE /api/files/admin/df8111e7-1c5f-43f8-9e6b-1796e3f2dc2a/delete/ HTTP/1.1" 200 38
+INFO 2025-09-15 17:38:43,277 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 6239
+INFO 2025-09-15 17:38:43,286 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:43,298 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 1296
+INFO 2025-09-15 17:38:52,949 basehttp 13893 6237368320 "OPTIONS /api/files/admin/bulk-delete/ HTTP/1.1" 200 0
+INFO 2025-09-15 17:38:52,957 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:52,981 basehttp 13893 6237368320 "POST /api/files/admin/bulk-delete/ HTTP/1.1" 200 100
+INFO 2025-09-15 17:38:53,001 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 927
+INFO 2025-09-15 17:38:53,012 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:53,026 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 387
+INFO 2025-09-15 17:38:55,568 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:55,586 basehttp 13893 6237368320 "POST /api/files/admin/bulk-delete/ HTTP/1.1" 200 100
+INFO 2025-09-15 17:38:55,602 basehttp 13893 6237368320 "GET /api/files/ HTTP/1.1" 200 2
+INFO 2025-09-15 17:38:55,612 services 13893 6237368320 Storage directory ready: /Users/bro/PROJECTS/boltfarmon/farmon/farmon-be/media/uploads
+INFO 2025-09-15 17:38:55,630 basehttp 13893 6237368320 "GET /api/files/stats/ HTTP/1.1" 200 174

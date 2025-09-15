@@ -27,6 +27,10 @@ urlpatterns = [
     path('stats/', views.file_stats, name='file_stats'),
     path('bulk-action/', views.bulk_file_action, name='bulk_file_action'),
     
+    # Admin-only endpoints
+    path('admin/<uuid:file_id>/delete/', views.admin_delete_file, name='admin_delete_file'),
+    path('admin/bulk-delete/', views.admin_bulk_delete, name='admin_bulk_delete'),
+    
     # Admin analytics
     path('admin/analytics/', views.AdminFileAnalyticsView.as_view(), name='admin_file_analytics'),
 ]

@@ -334,6 +334,81 @@ def bulk_file_action(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['DELETE'])
+@permission_classes([permissions.IsAuthenticated])
+def admin_delete_file(request, file_id):
+    """Admin-only hard delete file endpoint"""
+    if not request.user.is_admin:
+        return Response(
+            {'error': 'Admin access required'}, 
+            status=status.HTTP_403_FORBIDDEN
+        )
+    
+    try:
+        file_obj = get_object_or_404(File, id=file_id)
+        file_service = FileService()
+        
+        # Hard delete for admin
+        success, message = file_service.delete_file(
+            file_obj, request.user, hard_delete=True
+        )
+        
+        if success:
+            return Response({'message': message})
+        else:
+            return Response(
+                {'error': message}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
+    except Exception as e:
+        return Response(
+            {'error': f'Failed to delete file: {str(e)}'}, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def admin_bulk_delete(request):
+    """Admin-only bulk hard delete files"""
+    if not request.user.is_admin:
+        return Response(
+            {'error': 'Admin access required'}, 
+            status=status.HTTP_403_FORBIDDEN
+        )
+    
+    file_ids = request.data.get('file_ids', [])
+    if not file_ids:
+        return Response(
+            {'error': 'No file IDs provided'}, 
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    files = File.objects.filter(id__in=file_ids)
+    file_service = FileService()
+    
+    success_count = 0
+    error_count = 0
+    
+    for file_obj in files:
+        try:
+            success, message = file_service.delete_file(
+                file_obj, request.user, hard_delete=True
+            )
+            if success:
+                success_count += 1
+            else:
+                error_count += 1
+        except Exception:
+            error_count += 1
+    
+    return Response({
+        'message': f'Admin delete completed. {success_count} files permanently deleted.',
+        'success_count': success_count,
+        'error_count': error_count
+    })
+
+
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def get_download_url(request, file_id):
