@@ -411,6 +411,19 @@ class AnalyticsService:
         # Current stats
         today = timezone.now().date()
         
+        # Token usage stats
+        total_tokens_used = User.objects.aggregate(
+            total=Sum('total_tokens_used')
+        )['total'] or 0
+        
+        total_input_tokens = User.objects.aggregate(
+            total=Sum('input_tokens_used')
+        )['total'] or 0
+        
+        total_output_tokens = User.objects.aggregate(
+            total=Sum('output_tokens_used')
+        )['total'] or 0
+
         stats = {
             # User stats
             'total_users': User.objects.count(),
@@ -433,6 +446,11 @@ class AnalyticsService:
             ).aggregate(
                 total=Sum('file_size')
             )['total'] or 0,
+            
+            # Token usage stats
+            'total_tokens_used': total_tokens_used,
+            'total_input_tokens': total_input_tokens,
+            'total_output_tokens': total_output_tokens,
             
             # Performance stats (from latest system metrics)
             'avg_response_time': 0.0,

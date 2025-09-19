@@ -43,12 +43,14 @@ class AIService:
             response_time_ms = int((time.time() - start_time) * 1000)
             
             # Mock token calculation
-            tokens_used = self._calculate_tokens(message, rag_result['response'])
+            token_data = self._calculate_tokens(message, rag_result['response'])
             
             return {
                 'response': rag_result['response'],
                 'sources': rag_result['sources'],
-                'tokens_used': tokens_used,
+                'tokens_used': token_data['total_tokens'],
+                'input_tokens': token_data['input_tokens'],
+                'output_tokens': token_data['output_tokens'],
                 'response_time_ms': response_time_ms,
                 'model_used': 'rag-ai',
                 'success': True,
@@ -100,7 +102,10 @@ class AIService:
                 
                 # Calculate tokens for complete responses
                 if chunk.get('type') == 'success':
-                    chunk['tokens_used'] = self._calculate_tokens(message, chunk.get('accumulated_response', ''))
+                    token_data = self._calculate_tokens(message, chunk.get('accumulated_response', ''))
+                    chunk['tokens_used'] = token_data['total_tokens']
+                    chunk['input_tokens'] = token_data['input_tokens']
+                    chunk['output_tokens'] = token_data['output_tokens']
                 
                 yield chunk
                 
@@ -592,10 +597,21 @@ Try rephrasing your question with specific business context or terminology from 
             logger.error(f"Error extracting sources from document: {str(e)}")
             return []
     
-    def _calculate_tokens(self, input_text: str, output_text: str) -> int:
-        """Mock token calculation (roughly 4 characters per token)."""
-        total_chars = len(input_text) + len(output_text)
-        return max(1, total_chars // 4)
+    def _calculate_tokens(self, input_text: str, output_text: str) -> Dict[str, int]:
+        """Mock token calculation (roughly 4 characters per token).
+        
+        Returns:
+            Dict with input_tokens, output_tokens, and total_tokens
+        """
+        input_tokens = max(1, len(input_text) // 4)
+        output_tokens = max(1, len(output_text) // 4)
+        total_tokens = input_tokens + output_tokens
+        
+        return {
+            'input_tokens': input_tokens,
+            'output_tokens': output_tokens,
+            'total_tokens': total_tokens
+        }
     
     def upload_file_to_rag(self, file_obj: File, user_email: str) -> Dict[str, Any]:
         """Upload file to RAG API for processing.
@@ -744,6 +760,8 @@ class ChatService:
                 sources=ai_result.get('sources', []),
                 status=ChatMessage.MessageStatus.COMPLETED if ai_result['success'] else ChatMessage.MessageStatus.FAILED,
                 tokens_used=ai_result['tokens_used'],
+                input_tokens=ai_result.get('input_tokens'),
+                output_tokens=ai_result.get('output_tokens'),
                 model_used=ai_result['model_used'],
                 response_time_ms=ai_result['response_time_ms'],
                 error_message=ai_result['error'] or ''
@@ -865,6 +883,8 @@ class ChatService:
                     assistant_message.sources = sources
                     assistant_message.status = ChatMessage.MessageStatus.COMPLETED
                     assistant_message.tokens_used = chunk.get('tokens_used', 0)
+                    assistant_message.input_tokens = chunk.get('input_tokens')
+                    assistant_message.output_tokens = chunk.get('output_tokens')
                     assistant_message.model_used = chunk.get('model_used', '')
                     assistant_message.response_time_ms = chunk.get('response_time_ms', 0)
                     assistant_message.save()

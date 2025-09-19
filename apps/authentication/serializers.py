@@ -224,19 +224,20 @@ class UserListSerializer(serializers.ModelSerializer):
             'is_subscription_active', 'days_until_expiry',
             'total_time_spent', 'last_activity', 'date_joined',
             'total_files', 'total_chat_messages', 'total_payments',
-            'is_active'
+            'total_tokens_used', 'input_tokens_used', 'output_tokens_used',
+            'last_token_usage_date', 'is_active'
         )
     
     def get_total_files(self, obj):
-        """Get total number of files uploaded by user."""
+        """Get total files uploaded by user."""
         return obj.files.count()
     
     def get_total_chat_messages(self, obj):
-        """Get total number of chat messages sent by user."""
+        """Get total chat messages sent by user."""
         return obj.chat_messages.count()
     
     def get_total_payments(self, obj):
-        """Get total number of payments made by user."""
+        """Get total payments made by user."""
         return obj.payments.count()
 
 

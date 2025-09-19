@@ -801,6 +801,12 @@ def user_stats(request):
         'total_time_spent_seconds': user.total_time_spent.total_seconds(),
         'total_files': user.files.count(),
         'total_chat_messages': user.chat_messages.count(),
+        'token_usage': {
+            'total_tokens_used': user.total_tokens_used,
+            'input_tokens_used': user.input_tokens_used,
+            'output_tokens_used': user.output_tokens_used,
+            'last_token_usage_date': user.last_token_usage_date,
+        },
         'subscription_info': {
             'type': user.subscription_type,
             'status': user.subscription_status,
