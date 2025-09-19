@@ -101,7 +101,7 @@ class AIService:
                 })
                 
                 # Calculate tokens for complete responses
-                if chunk.get('type') == 'success':
+                if chunk.get('type') == 'complete':
                     token_data = self._calculate_tokens(message, chunk.get('accumulated_response', ''))
                     chunk['tokens_used'] = token_data['total_tokens']
                     chunk['input_tokens'] = token_data['input_tokens']
@@ -303,13 +303,20 @@ Try rephrasing your question with specific business context or terminology from 
                         data_content = line[6:]  # Remove 'data: ' prefix
                         
                         if data_content.strip() == '[DONE]':
-                            # Final event - yield complete response
+                            # Final event - yield complete response with token calculation
                             markdown_response = md(accumulated_response, heading_style="ATX", bullets="-")
+                            
+                            # Calculate tokens for the complete response
+                            token_data = self._calculate_tokens(message, accumulated_response)
+                            
                             yield {
                                 'type': 'complete',
                                 'response': markdown_response,
                                 'sources': sources,
-                                'accumulated_response': accumulated_response
+                                'accumulated_response': accumulated_response,
+                                'tokens_used': token_data['total_tokens'],
+                                'input_tokens': token_data['input_tokens'],
+                                'output_tokens': token_data['output_tokens']
                             }
                             break
                         
@@ -396,11 +403,18 @@ Try rephrasing your question with specific business context or terminology from 
             # If we have accumulated response but no final complete event was sent
             if accumulated_response:
                 markdown_response = md(accumulated_response, heading_style="ATX", bullets="-")
+                
+                # Calculate tokens for the complete response
+                token_data = self._calculate_tokens(message, accumulated_response)
+                
                 yield {
                     'type': 'complete',
                     'response': markdown_response,
                     'sources': sources,
-                    'accumulated_response': accumulated_response
+                    'accumulated_response': accumulated_response,
+                    'tokens_used': token_data['total_tokens'],
+                    'input_tokens': token_data['input_tokens'],
+                    'output_tokens': token_data['output_tokens']
                 }
 
         except requests.exceptions.RequestException as e:
@@ -887,6 +901,13 @@ class ChatService:
                     assistant_message.output_tokens = chunk.get('output_tokens')
                     assistant_message.model_used = chunk.get('model_used', '')
                     assistant_message.response_time_ms = chunk.get('response_time_ms', 0)
+                    
+                    # Debug log
+                    print(f"DEBUG: Saving assistant message with tokens:")
+                    print(f"  tokens_used: {assistant_message.tokens_used}")
+                    print(f"  input_tokens: {assistant_message.input_tokens}")
+                    print(f"  output_tokens: {assistant_message.output_tokens}")
+                    
                     assistant_message.save()
                     
                     # Update conversation stats

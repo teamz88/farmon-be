@@ -411,7 +411,7 @@ class AnalyticsService:
         # Current stats
         today = timezone.now().date()
         
-        # Token usage stats
+        # Token usage stats from User model
         total_tokens_used = User.objects.aggregate(
             total=Sum('total_tokens_used')
         )['total'] or 0
@@ -421,6 +421,33 @@ class AnalyticsService:
         )['total'] or 0
         
         total_output_tokens = User.objects.aggregate(
+            total=Sum('output_tokens_used')
+        )['total'] or 0
+        
+        # Token usage stats from ChatMessage model
+        chat_tokens_total = ChatMessage.objects.aggregate(
+            total=Sum('tokens_used')
+        )['total'] or 0
+        
+        chat_input_tokens = ChatMessage.objects.aggregate(
+            total=Sum('input_tokens')
+        )['total'] or 0
+        
+        chat_output_tokens = ChatMessage.objects.aggregate(
+            total=Sum('output_tokens')
+        )['total'] or 0
+        
+        # Admin token usage stats
+        admin_users = User.objects.filter(role=User.Role.ADMIN)
+        admin_tokens_used = admin_users.aggregate(
+            total=Sum('total_tokens_used')
+        )['total'] or 0
+        
+        admin_input_tokens = admin_users.aggregate(
+            total=Sum('input_tokens_used')
+        )['total'] or 0
+        
+        admin_output_tokens = admin_users.aggregate(
             total=Sum('output_tokens_used')
         )['total'] or 0
 
@@ -447,10 +474,20 @@ class AnalyticsService:
                 total=Sum('file_size')
             )['total'] or 0,
             
-            # Token usage stats
+            # Token usage stats from User model
             'total_tokens_used': total_tokens_used,
             'total_input_tokens': total_input_tokens,
             'total_output_tokens': total_output_tokens,
+            
+            # Token usage stats from ChatMessage model
+            'chat_tokens_total': chat_tokens_total,
+            'chat_input_tokens': chat_input_tokens,
+            'chat_output_tokens': chat_output_tokens,
+            
+            # Admin token usage stats
+            'admin_tokens_used': admin_tokens_used,
+            'admin_input_tokens': admin_input_tokens,
+            'admin_output_tokens': admin_output_tokens,
             
             # Performance stats (from latest system metrics)
             'avg_response_time': 0.0,
@@ -502,7 +539,73 @@ class AnalyticsService:
         })
         
         return stats
-    
+
+    @staticmethod
+    def get_token_usage_by_user(
+        start_date: date = None,
+        end_date: date = None
+    ) -> List[Dict[str, Any]]:
+        """Get token usage statistics aggregated by user ID"""
+        if not start_date:
+            start_date = timezone.now().date() - timedelta(days=30)
+        if not end_date:
+            end_date = timezone.now().date()
+        
+        from apps.authentication.models import User
+        from apps.chat.models import ChatMessage
+        
+        # Get token usage from ChatMessage model grouped by user
+        user_token_stats = []
+        
+        # Get all users who have sent messages
+        users_with_messages = User.objects.filter(
+            chat_messages__created_at__date__gte=start_date,
+            chat_messages__created_at__date__lte=end_date
+        ).distinct()
+        
+        for user in users_with_messages:
+            # Get messages for this user in the date range
+            user_messages = ChatMessage.objects.filter(
+                user=user,
+                created_at__date__gte=start_date,
+                created_at__date__lte=end_date
+            )
+            
+            # Calculate token statistics
+            total_tokens = user_messages.aggregate(
+                total=Sum('tokens_used')
+            )['total'] or 0
+            
+            input_tokens = user_messages.aggregate(
+                total=Sum('input_tokens')
+            )['total'] or 0
+            
+            output_tokens = user_messages.aggregate(
+                total=Sum('output_tokens')
+            )['total'] or 0
+            
+            message_count = user_messages.count()
+            
+            # Only include users with actual token usage
+            if total_tokens > 0 or input_tokens > 0 or output_tokens > 0:
+                user_token_stats.append({
+                    'user_id': user.id,
+                    'username': user.username,
+                    'email': user.email,
+                    'full_name': user.get_full_name() or user.username,
+                    'role': user.role,
+                    'total_tokens': total_tokens,
+                    'input_tokens': input_tokens,
+                    'output_tokens': output_tokens,
+                    'message_count': message_count,
+                    'avg_tokens_per_message': round(total_tokens / message_count, 2) if message_count > 0 else 0
+                })
+        
+        # Sort by total tokens used (descending)
+        user_token_stats.sort(key=lambda x: x['total_tokens'], reverse=True)
+        
+        return user_token_stats
+
     @staticmethod
     def _get_user_growth_chart(
         start_date: date, 

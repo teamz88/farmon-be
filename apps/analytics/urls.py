@@ -48,4 +48,5 @@ urlpatterns = [
     # User Statistics and Q/A Data (Admin only)
     path('user-statistics/', views.user_statistics, name='user-statistics'),
     path('qa-data/', views.qa_data, name='qa-data'),
+    path('token-usage-by-user/', views.token_usage_by_user, name='token-usage-by-user'),
 ]

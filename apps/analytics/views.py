@@ -906,6 +906,53 @@ def user_statistics(request):
 
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
+def token_usage_by_user(request):
+    """Get token usage statistics by user ID"""
+    try:
+        # Get date range from query params
+        start_date_str = request.GET.get('start_date')
+        end_date_str = request.GET.get('end_date')
+        
+        start_date = None
+        end_date = None
+        
+        if start_date_str:
+            try:
+                start_date = datetime.strptime(start_date_str, '%Y-%m-%d').date()
+            except ValueError:
+                pass
+        
+        if end_date_str:
+            try:
+                end_date = datetime.strptime(end_date_str, '%Y-%m-%d').date()
+            except ValueError:
+                pass
+        
+        # Get token usage statistics by user
+        token_stats = AnalyticsService.get_token_usage_by_user(
+            start_date=start_date,
+            end_date=end_date
+        )
+        
+        return Response({
+            'success': True,
+            'data': token_stats,
+            'total_users': len(token_stats),
+            'date_range': {
+                'start_date': start_date.isoformat() if start_date else None,
+                'end_date': end_date.isoformat() if end_date else None
+            }
+        }, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        return Response({
+            'success': False,
+            'error': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
 def qa_data(request):
     """Get Q/A data with pagination showing user questions and answers with timestamps"""
     try:

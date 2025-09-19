@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
+from django.db.models import Sum
 from .models import User, UserSession, ClientInfo, MagicUser, PasswordReset
 
 
@@ -214,6 +215,7 @@ class UserListSerializer(serializers.ModelSerializer):
     total_files = serializers.SerializerMethodField()
     total_chat_messages = serializers.SerializerMethodField()
     total_payments = serializers.SerializerMethodField()
+    chat_tokens_used = serializers.SerializerMethodField()
     
     class Meta:
         model = User
@@ -225,7 +227,7 @@ class UserListSerializer(serializers.ModelSerializer):
             'total_time_spent', 'last_activity', 'date_joined',
             'total_files', 'total_chat_messages', 'total_payments',
             'total_tokens_used', 'input_tokens_used', 'output_tokens_used',
-            'last_token_usage_date', 'is_active'
+            'last_token_usage_date', 'is_active', 'chat_tokens_used'
         )
     
     def get_total_files(self, obj):
@@ -239,6 +241,16 @@ class UserListSerializer(serializers.ModelSerializer):
     def get_total_payments(self, obj):
         """Get total payments made by user."""
         return obj.payments.count()
+    
+    def get_chat_tokens_used(self, obj):
+        """Get total tokens used from ChatMessage model by user."""
+        from apps.chat.models import ChatMessage
+        result = ChatMessage.objects.filter(
+            conversation__user=obj
+        ).aggregate(
+            total_tokens=Sum('tokens_used')
+        )
+        return result['total_tokens'] or 0
 
 
 class ChangePasswordSerializer(serializers.Serializer):

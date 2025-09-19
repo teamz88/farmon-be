@@ -288,8 +288,13 @@ class ChatMessage(models.Model):
             if (self.message_type == self.MessageType.ASSISTANT and 
                 self.tokens_used is not None and self.user):
                 
+                # Debug log
+                print(f"DEBUG: Updating user tokens for message {self.id}")
+                print(f"DEBUG: tokens_used={self.tokens_used}, input_tokens={self.input_tokens}, output_tokens={self.output_tokens}")
+                
                 # Update user's token usage
                 user = self.user
+                old_total = user.total_tokens_used
                 user.total_tokens_used += self.tokens_used or 0
                 
                 if self.input_tokens:
@@ -304,6 +309,8 @@ class ChatMessage(models.Model):
                     'output_tokens_used', 
                     'last_token_usage_date'
                 ])
+                
+                print(f"DEBUG: User {user.id} tokens updated: {old_total} -> {user.total_tokens_used}")
         
         # Update conversation timestamp when message is saved
         if self.conversation_id:
