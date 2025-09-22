@@ -25,6 +25,91 @@ class FileStatus(models.TextChoices):
     DELETED = 'deleted', 'Deleted'
 
 
+class Folder(models.Model):
+    """Model for folder organization"""
+    
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='folders'
+    )
+    parent = models.ForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='subfolders'
+    )
+    
+    # Metadata
+    description = models.TextField(blank=True)
+    color = models.CharField(max_length=7, blank=True, help_text="Hex color code for folder")
+    
+    # Timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    
+    class Meta:
+        db_table = 'folders'
+        ordering = ['name']
+        unique_together = ['user', 'parent', 'name']  # Prevent duplicate folder names in same location
+        indexes = [
+            models.Index(fields=['user', 'parent']),
+            models.Index(fields=['created_at']),
+        ]
+    
+    def __str__(self):
+        return f"{self.name} ({self.user.username})"
+    
+    @property
+    def is_deleted(self):
+        """Check if folder is soft deleted"""
+        return self.deleted_at is not None
+    
+    def soft_delete(self):
+        """Soft delete the folder and all its contents"""
+        self.deleted_at = timezone.now()
+        self.save(update_fields=['deleted_at'])
+        
+        # Soft delete all files in this folder
+        self.files.update(deleted_at=timezone.now(), status=FileStatus.DELETED)
+        
+        # Soft delete all subfolders recursively
+        for subfolder in self.subfolders.all():
+            subfolder.soft_delete()
+    
+    def restore(self):
+        """Restore soft deleted folder"""
+        self.deleted_at = None
+        self.save(update_fields=['deleted_at'])
+    
+    def get_full_path(self):
+        """Get the full path of the folder"""
+        if self.parent:
+            return f"{self.parent.get_full_path()}/{self.name}"
+        return self.name
+    
+    def get_ancestors(self):
+        """Get all parent folders up to root"""
+        ancestors = []
+        current = self.parent
+        while current:
+            ancestors.append(current)
+            current = current.parent
+        return reversed(ancestors)
+    
+    def get_descendants(self):
+        """Get all subfolders recursively"""
+        descendants = []
+        for subfolder in self.subfolders.all():
+            descendants.append(subfolder)
+            descendants.extend(subfolder.get_descendants())
+        return descendants
+
+
 class File(models.Model):
     """Model for file management with local storage"""
     
@@ -33,6 +118,14 @@ class File(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='files'
+    )
+    folder = models.ForeignKey(
+        'Folder',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='files',
+        help_text="Folder containing this file"
     )
     
     # File information
@@ -90,6 +183,8 @@ class File(models.Model):
         ordering = ['-created_at']
         indexes = [
             models.Index(fields=['user', 'status']),
+            models.Index(fields=['user', 'folder']),
+            models.Index(fields=['folder', 'created_at']),
             models.Index(fields=['category', 'created_at']),
             models.Index(fields=['file_type']),
             models.Index(fields=['is_public', 'is_shared']),

@@ -1,15 +1,26 @@
 from django.urls import path
 from . import views
+from . import folder_views
 
 app_name = 'files'
 
 urlpatterns = [
+    # Folder management
+    path('folders/', folder_views.FolderListCreateView.as_view(), name='folder_list_create'),
+    path('folders/tree/', folder_views.FolderTreeView.as_view(), name='folder_tree'),
+    path('folders/<uuid:id>/', folder_views.FolderDetailView.as_view(), name='folder_detail'),
+    path('folders/<uuid:folder_id>/move/', folder_views.MoveFolderView.as_view(), name='move_folder'),
+    path('folders/<uuid:folder_id>/restore/', folder_views.restore_folder, name='restore_folder'),
+    path('folders/<uuid:folder_id>/contents/', folder_views.folder_contents, name='folder_contents'),
+    path('folders/<uuid:folder_id>/breadcrumbs/', folder_views.folder_breadcrumbs, name='folder_breadcrumbs'),
+    
     # File management
     path('upload/', views.FileUploadView.as_view(), name='file_upload'),
     path('', views.FileListView.as_view(), name='file_list'),
     path('<uuid:id>/', views.FileDetailView.as_view(), name='file_detail'),
     path('<uuid:file_id>/download/', views.FileDownloadView.as_view(), name='file_download'),
     path('<uuid:file_id>/download-url/', views.get_download_url, name='get_download_url'),
+    path('<uuid:file_id>/move/', views.move_file_to_folder, name='move_file_to_folder'),
     
     # File sharing
     path('share/', views.FileShareView.as_view(), name='file_share'),

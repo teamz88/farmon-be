@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.core.validators import FileExtensionValidator
-from .models import File, FileShare, FileVersion, FileComment
+from .models import File, FileShare, FileVersion, FileComment, Folder
 
 User = get_user_model()
 
@@ -27,6 +27,7 @@ class FileUploadSerializer(serializers.Serializer):
         allow_empty=True
     )
     is_public = serializers.BooleanField(default=False)
+    folder = serializers.UUIDField(required=False, allow_null=True)
     
     def validate_file(self, value):
         """Validate file size and type"""
@@ -41,6 +42,24 @@ class FileUploadSerializer(serializers.Serializer):
         if value.size == 0:
             raise serializers.ValidationError("File cannot be empty")
         
+        return value
+    
+    def validate_folder(self, value):
+        """Validate folder exists and belongs to user"""
+        if value:
+            request = self.context.get('request')
+            if request and request.user:
+                try:
+                    folder = Folder.objects.get(
+                        id=value,
+                        user=request.user,
+                        deleted_at__isnull=True
+                    )
+                    return folder
+                except Folder.DoesNotExist:
+                    raise serializers.ValidationError(
+                        "Folder not found or access denied"
+                    )
         return value
     
     def validate(self, attrs):
@@ -212,6 +231,8 @@ class FileShareSerializer(serializers.ModelSerializer):
 class FileSerializer(serializers.ModelSerializer):
     """Serializer for file listing and details"""
     user = UserBasicSerializer(read_only=True)
+    folder = serializers.SerializerMethodField()
+    folder_path = serializers.SerializerMethodField()
     file_size_human = serializers.CharField(read_only=True)
     shared_with_count = serializers.SerializerMethodField()
     comments_count = serializers.SerializerMethodField()
@@ -223,7 +244,7 @@ class FileSerializer(serializers.ModelSerializer):
     class Meta:
         model = File
         fields = [
-            'id', 'user', 'original_name', 'file_name', 'file_size',
+            'id', 'user', 'folder', 'folder_path', 'original_name', 'file_name', 'file_size',
             'file_size_human', 'file_type', 'file_extension', 'category',
             'description', 'tags', 'is_public', 'is_shared',
             'download_count', 'last_accessed', 'status', 'upload_progress',
@@ -236,6 +257,22 @@ class FileSerializer(serializers.ModelSerializer):
             'file_extension', 'category', 'download_count', 'last_accessed',
             'status', 'upload_progress', 'created_at', 'updated_at'
         ]
+    
+    def get_folder(self, obj):
+        """Get folder information"""
+        if obj.folder:
+            return {
+                'id': obj.folder.id,
+                'name': obj.folder.name,
+                'color': obj.folder.color
+            }
+        return None
+    
+    def get_folder_path(self, obj):
+        """Get full folder path"""
+        if obj.folder:
+            return obj.folder.get_full_path()
+        return "/"
     
     def get_shared_with_count(self, obj):
         """Get number of users file is shared with"""

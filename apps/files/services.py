@@ -226,7 +226,8 @@ class FileService:
         uploaded_file: UploadedFile, 
         description: str = "",
         tags: list = None,
-        is_public: bool = False
+        is_public: bool = False,
+        folder=None
     ) -> Tuple[bool, File, str]:
         """Upload and process file"""
         if tags is None:
@@ -246,6 +247,7 @@ class FileService:
             # Create file record
             file_obj = File.objects.create(
                 user=user,
+                folder=folder,
                 original_name=uploaded_file.name,
                 file_name=os.path.basename(file_path),
                 file_size=uploaded_file.size,

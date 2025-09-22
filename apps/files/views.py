@@ -19,6 +19,7 @@ from .serializers import (
     FileShareSerializer, FileCommentSerializer, FileVersionSerializer,
     FileStatsSerializer, BulkFileActionSerializer
 )
+from .move_serializers import MoveFileToFolderSerializer
 from .services import FileService
 from .filters import FileFilter
 from apps.chat.services import AIService
@@ -41,7 +42,8 @@ class FileUploadView(APIView):
                 uploaded_file=serializer.validated_data['file'],
                 description=serializer.validated_data.get('description', ''),
                 tags=serializer.validated_data.get('tags', []),
-                is_public=serializer.validated_data.get('is_public', False)
+                is_public=serializer.validated_data.get('is_public', False),
+                folder=serializer.validated_data.get('folder')
             )
             
             if success:
@@ -92,6 +94,7 @@ class FileListView(generics.ListAPIView):
     
     def get_queryset(self):
         user = self.request.user
+        folder_id = self.request.query_params.get('folder')
         
         if user.is_admin:
             # Admin can see all files
@@ -105,7 +108,16 @@ class FileListView(generics.ListAPIView):
                 deleted_at__isnull=True
             ).distinct()
         
-        return queryset.select_related('user').prefetch_related('shares', 'comments')
+        # Filter by folder if specified
+        if folder_id:
+            if folder_id == 'root':
+                # Show files in root (no folder)
+                queryset = queryset.filter(folder__isnull=True)
+            else:
+                # Show files in specific folder
+                queryset = queryset.filter(folder__id=folder_id)
+        
+        return queryset.select_related('user', 'folder').prefetch_related('shares', 'comments')
 
 
 class FileDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -269,6 +281,42 @@ class FileVersionListView(generics.ListAPIView):
             return FileVersion.objects.none()
         
         return file_obj.versions.all()
+
+
+@api_view(['PATCH'])
+@permission_classes([permissions.IsAuthenticated])
+def move_file_to_folder(request, file_id):
+    """Move a file to a specific folder"""
+    try:
+        file_obj = get_object_or_404(
+            File,
+            id=file_id,
+            user=request.user,
+            deleted_at__isnull=True
+        )
+        
+        serializer = MoveFileToFolderSerializer(
+            data=request.data,
+            context={'request': request}
+        )
+        
+        if serializer.is_valid():
+            updated_file = serializer.save(file_obj)
+            
+            # Return updated file data
+            file_serializer = FileSerializer(updated_file, context={'request': request})
+            return Response({
+                'message': 'File moved successfully',
+                'file': file_serializer.data
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+    except Exception as e:
+        return Response({
+            'error': 'Failed to move file',
+            'detail': str(e)
+        }, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
