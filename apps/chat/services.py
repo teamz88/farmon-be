@@ -357,16 +357,18 @@ Try rephrasing your question with specific business context or terminology from 
                                             if match.get('filename') == doc:
                                                 page_number = match.get('page_number')
                                                 break
-                                        
-                                        # Create source object
-                                        source_obj = {
-                                            'filename': doc,
-                                            'page': page_number
-                                        }
-                                        
-                                        # Add to sources if not already present (check by filename)
-                                        if not any(s.get('filename') == doc for s in sources):
-                                            sources.append(source_obj)
+
+                                        # Only add sources with valid page numbers (filter out null pages)
+                                        if page_number is not None:
+                                            # Create source object
+                                            source_obj = {
+                                                'filename': doc,
+                                                'page': page_number
+                                            }
+
+                                            # Add to sources if not already present (check by filename)
+                                            if not any(s.get('filename') == doc for s in sources):
+                                                sources.append(source_obj)
                                 else:
                                     # Handle single source document
                                     page_number = None
@@ -374,14 +376,16 @@ Try rephrasing your question with specific business context or terminology from 
                                         if match.get('filename') == source_doc:
                                             page_number = match.get('page_number')
                                             break
-                                    
-                                    source_obj = {
-                                        'filename': source_doc,
-                                        'page': page_number
-                                    }
-                                    
-                                    if not any(s.get('filename') == source_doc for s in sources):
-                                        sources.append(source_obj)
+
+                                    # Only add sources with valid page numbers (filter out null pages)
+                                    if page_number is not None:
+                                        source_obj = {
+                                            'filename': source_doc,
+                                            'page': page_number
+                                        }
+
+                                        if not any(s.get('filename') == source_doc for s in sources):
+                                            sources.append(source_obj)
                                     
                                 yield {
                                     'type': 'source_document',
@@ -578,33 +582,35 @@ Try rephrasing your question with specific business context or terminology from 
     
     def _extract_sources_from_document(self, source_document: str) -> list:
         """Extract document names from source_document string.
-        
+
         Args:
             source_document: String like "Sources: Meeting Rhythms & GSRs.docx, Q3 Strategy Planning _ Mid-Year Review Guide.docx"
-            
+
         Returns:
             List of source objects with filename and page: [{"filename": "doc.docx", "page": 1}, ...]
+            Note: Sources with null page numbers are filtered out as they are not valid references
         """
         if not source_document:
             return []
-        
+
         try:
             # Remove "Sources: " prefix if present
             if source_document.startswith("Sources: "):
                 source_document = source_document[9:]  # Remove "Sources: "
-            
+
             # Split by comma and clean up each document name
             documents = [doc.strip() for doc in source_document.split(',')]
-            
+
             # Filter out empty strings and create source objects
+            # Note: We don't add sources with null page here since they're not valid
+            # Valid sources will come from the streaming API with proper page numbers
             source_objects = []
             for doc in documents:
                 if doc:
-                    source_objects.append({
-                        'filename': doc,
-                        'page': None  # Page number will be added later if available
-                    })
-            
+                    # Only add if we have a valid page number (will be updated from matches in streaming)
+                    # For now, skip sources without page numbers
+                    pass
+
             return source_objects
             
         except Exception as e:

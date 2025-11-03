@@ -4,9 +4,9 @@ from .models import Conversation, ChatMessage, ChatTemplate, Folder
 
 class ChatMessageSerializer(serializers.ModelSerializer):
     """Serializer for chat messages."""
-    
+
     user_username = serializers.CharField(source='user.username', read_only=True)
-    
+
     class Meta:
         model = ChatMessage
         fields = (
@@ -21,15 +21,23 @@ class ChatMessageSerializer(serializers.ModelSerializer):
             'model_used', 'response_time_ms', 'error_message',
             'created_at', 'updated_at'
         )
-    
+
+    def to_representation(self, instance):
+        """Custom representation to exclude empty sources."""
+        data = super().to_representation(instance)
+        # Remove sources field if it's empty
+        if 'sources' in data and (not data['sources'] or len(data['sources']) == 0):
+            data.pop('sources')
+        return data
+
     def validate_content(self, value):
         """Validate message content."""
         if not value or not value.strip():
             raise serializers.ValidationError("Message content cannot be empty.")
-        
+
         if len(value) > 10000:  # 10KB limit
             raise serializers.ValidationError("Message content is too long (max 10,000 characters).")
-        
+
         return value.strip()
 
 
