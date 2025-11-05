@@ -240,7 +240,7 @@ class UserListSerializer(serializers.ModelSerializer):
     
     def get_total_payments(self, obj):
         """Get total payments made by user."""
-        return obj.payments.count()
+        return obj.payment_records.count()
     
     def get_chat_tokens_used(self, obj):
         """Get total tokens used from ChatMessage model by user."""

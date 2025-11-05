@@ -3543,3 +3543,709 @@ INFO 2025-11-05 15:22:04,040 autoreload 72981 8460142592 /Users/uzmacbook/PROJEC
 INFO 2025-11-05 15:22:04,451 autoreload 73092 8460142592 Watching for file changes with StatReloader
 INFO 2025-11-05 15:22:22,730 basehttp 73092 6205386752 "GET /api/chat/conversations/257e43eb-42ac-4d89-8e56-c18fe5befcdf/history/ HTTP/1.1" 200 865
 INFO 2025-11-05 15:36:35,816 basehttp 73092 6205386752 "GET /api/chat/conversations/257e43eb-42ac-4d89-8e56-c18fe5befcdf/history/ HTTP/1.1" 200 865
+INFO 2025-11-05 15:37:10,469 basehttp 73092 6204813312 "GET /api/auth/profile/ HTTP/1.1" 200 567
+INFO 2025-11-05 15:37:10,503 basehttp 73092 6204813312 "GET /api/auth/profile/ HTTP/1.1" 200 567
+INFO 2025-11-05 15:37:29,732 basehttp 73092 6204813312 "OPTIONS /api/chat/conversations/clear-all/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:37:29,783 basehttp 73092 6204813312 "DELETE /api/chat/conversations/clear-all/ HTTP/1.1" 200 65
+INFO 2025-11-05 15:37:31,723 basehttp 73092 6239612928 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:37:31,726 basehttp 73092 6222786560 "GET /api/auth/profile/ HTTP/1.1" 200 567
+INFO 2025-11-05 15:37:31,728 basehttp 73092 6256439296 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:37:31,742 basehttp 73092 6239612928 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:37:31,746 basehttp 73092 6222786560 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:37:31,746 basehttp 73092 6273265664 "GET /api/auth/profile/ HTTP/1.1" 200 567
+INFO 2025-11-05 15:37:35,799 basehttp 73092 6273265664 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 7618
+INFO 2025-11-05 15:37:35,828 basehttp 73092 6222786560 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 7618
+INFO 2025-11-05 15:37:39,951 basehttp 73092 6204813312 "GET /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 428
+INFO 2025-11-05 15:37:42,017 basehttp 73092 6256439296 "OPTIONS /api/files/folders/tree/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:37:42,017 basehttp 73092 6204813312 "OPTIONS /api/files/folders/tree/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:37:42,017 basehttp 73092 6222786560 "OPTIONS /api/files/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:37:42,018 basehttp 73092 6273265664 "OPTIONS /api/files/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:37:42,018 basehttp 73092 6239612928 "OPTIONS /api/files/stats/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:37:42,019 basehttp 73092 6290092032 "OPTIONS /api/files/stats/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:37:42,041 services 73092 6290092032 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:37:42,047 basehttp 73092 6273265664 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:37:42,063 basehttp 73092 6222786560 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:37:42,066 basehttp 73092 6290092032 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:37:42,068 basehttp 73092 6204813312 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:37:42,075 services 73092 6222786560 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:37:42,083 basehttp 73092 6273265664 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:37:42,086 basehttp 73092 6222786560 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:37:47,416 basehttp 73092 6204813312 "GET /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 428
+INFO 2025-11-05 15:41:18,711 basehttp 73092 6222786560 "OPTIONS /api/auth/users/?page=1&search= HTTP/1.1" 200 0
+INFO 2025-11-05 15:41:18,711 basehttp 73092 6239612928 "OPTIONS /api/auth/users/?page=1&search= HTTP/1.1" 200 0
+INFO 2025-11-05 15:41:18,932 notifications 73092 6239612928 Attempting to send notification: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: AttributeError
+Message: 'User' object has no attribute '...
+INFO 2025-11-05 15:41:19,523 basehttp 73092 6256439296 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:41:19,527 basehttp 73092 6204813312 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:41:19,532 notifications 73092 6222786560 Attempting to send notification: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: AttributeError
+Message: 'User' object has no attribute '...
+INFO 2025-11-05 15:41:19,535 basehttp 73092 6256439296 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:41:19,535 basehttp 73092 6273265664 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+ERROR 2025-11-05 15:41:28,945 notifications 73092 6239612928 Notification failed (returned False): Error: Unhandled Server Exception - System error occurred: Unhandled Exception: Attrib...
+ERROR 2025-11-05 15:41:28,945 middleware 73092 6239612928 Unhandled exception: 'User' object has no attribute 'payments'
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:41:28,981 log 73092 6239612928 Internal Server Error: /api/auth/users/
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:41:28,983 basehttp 73092 6239612928 "GET /api/auth/users/?page=1&search= HTTP/1.1" 500 139259
+INFO 2025-11-05 15:41:28,983 basehttp 73092 6239612928 - Broken pipe from ('127.0.0.1', 64901)
+ERROR 2025-11-05 15:41:29,539 notifications 73092 6222786560 Notification failed (returned False): Error: Unhandled Server Exception - System error occurred: Unhandled Exception: Attrib...
+ERROR 2025-11-05 15:41:29,540 middleware 73092 6222786560 Unhandled exception: 'User' object has no attribute 'payments'
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:41:29,569 log 73092 6222786560 Internal Server Error: /api/auth/users/
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:41:29,571 basehttp 73092 6222786560 "GET /api/auth/users/?page=1&search= HTTP/1.1" 500 139259
+INFO 2025-11-05 15:41:29,572 basehttp 73092 6222786560 - Broken pipe from ('127.0.0.1', 64900)
+INFO 2025-11-05 15:41:29,576 notifications 73092 6204813312 Attempting to send notification: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: AttributeError
+Message: 'User' object has no attribute '...
+ERROR 2025-11-05 15:41:39,581 notifications 73092 6204813312 Notification failed (returned False): Error: Unhandled Server Exception - System error occurred: Unhandled Exception: Attrib...
+ERROR 2025-11-05 15:41:39,582 middleware 73092 6204813312 Unhandled exception: 'User' object has no attribute 'payments'
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:41:39,614 log 73092 6204813312 Internal Server Error: /api/auth/users/
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:41:39,617 basehttp 73092 6204813312 "GET /api/auth/users/?page=1&search= HTTP/1.1" 500 139259
+INFO 2025-11-05 15:41:39,617 basehttp 73092 6204813312 - Broken pipe from ('127.0.0.1', 65026)
+INFO 2025-11-05 15:43:15,846 services 73092 6273265664 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:43:15,855 basehttp 73092 6222213120 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:43:15,872 basehttp 73092 6273265664 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:43:15,874 basehttp 73092 6256439296 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:43:15,883 basehttp 73092 6222213120 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:43:15,889 services 73092 6290092032 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:43:15,897 basehttp 73092 6273265664 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:43:15,898 basehttp 73092 6290092032 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:43:16,897 notifications 73092 6222213120 Attempting to send notification: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: AttributeError
+Message: 'User' object has no attribute '...
+INFO 2025-11-05 15:43:17,324 notifications 73092 6222213120 Notification sent successfully: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: Attrib...
+ERROR 2025-11-05 15:43:17,324 middleware 73092 6222213120 Unhandled exception: 'User' object has no attribute 'payments'
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:17,351 log 73092 6222213120 Internal Server Error: /api/auth/users/
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:17,353 basehttp 73092 6222213120 "GET /api/auth/users/?page=1&search= HTTP/1.1" 500 139259
+INFO 2025-11-05 15:43:17,378 notifications 73092 6256439296 Attempting to send notification: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: AttributeError
+Message: 'User' object has no attribute '...
+INFO 2025-11-05 15:43:17,778 notifications 73092 6256439296 Notification sent successfully: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: Attrib...
+ERROR 2025-11-05 15:43:17,778 middleware 73092 6256439296 Unhandled exception: 'User' object has no attribute 'payments'
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:17,793 log 73092 6256439296 Internal Server Error: /api/auth/users/
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:17,794 basehttp 73092 6256439296 "GET /api/auth/users/?page=1&search= HTTP/1.1" 500 139259
+INFO 2025-11-05 15:43:29,024 basehttp 73092 6290092032 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:43:29,024 basehttp 73092 6273265664 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:43:29,035 notifications 73092 6221639680 Attempting to send notification: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: AttributeError
+Message: 'User' object has no attribute '...
+INFO 2025-11-05 15:43:29,046 basehttp 73092 6290092032 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:43:29,050 basehttp 73092 6273265664 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:43:29,449 notifications 73092 6221639680 Notification sent successfully: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: Attrib...
+ERROR 2025-11-05 15:43:29,449 middleware 73092 6221639680 Unhandled exception: 'User' object has no attribute 'payments'
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:29,473 log 73092 6221639680 Internal Server Error: /api/auth/users/
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:29,475 basehttp 73092 6221639680 "GET /api/auth/users/?page=1&search= HTTP/1.1" 500 139259
+INFO 2025-11-05 15:43:29,513 notifications 73092 6273265664 Attempting to send notification: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: AttributeError
+Message: 'User' object has no attribute '...
+INFO 2025-11-05 15:43:30,901 notifications 73092 6273265664 Notification sent successfully: Error: Unhandled Server Exception - System error occurred: Unhandled Exception: Attrib...
+ERROR 2025-11-05 15:43:30,901 middleware 73092 6273265664 Unhandled exception: 'User' object has no attribute 'payments'
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:30,921 log 73092 6273265664 Internal Server Error: /api/auth/users/
+Traceback (most recent call last):
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/venv/lib/python3.14/site-packages/rest_framework/fields.py", line 1838, in to_representation
+    return method(value)
+  File "/Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py", line 243, in get_total_payments
+    return obj.payments.count()
+           ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'payments'
+ERROR 2025-11-05 15:43:30,923 basehttp 73092 6273265664 "GET /api/auth/users/?page=1&search= HTTP/1.1" 500 139259
+INFO 2025-11-05 15:43:43,724 autoreload 73092 8460142592 /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/authentication/serializers.py changed, reloading.
+INFO 2025-11-05 15:43:44,289 autoreload 80554 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 15:44:07,370 basehttp 80554 6202372096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:44:07,370 basehttp 80554 6185545728 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:44:07,382 basehttp 80554 6185545728 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:44:07,382 basehttp 80554 6202372096 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:44:07,383 basehttp 80554 6168719360 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:44:07,405 basehttp 80554 6185545728 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:44:57,735 basehttp 80554 6168719360 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:45:01,934 basehttp 80554 6185545728 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:45:17,796 basehttp 80554 6202372096 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:45:19,481 basehttp 80554 6202372096 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:45:24,597 basehttp 80554 6168719360 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:45:24,604 services 80554 6202372096 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:45:24,615 basehttp 80554 6168719360 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:45:24,618 basehttp 80554 6185545728 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:45:24,618 basehttp 80554 6202372096 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:45:24,628 services 80554 6219198464 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:45:24,637 basehttp 80554 6168719360 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:45:24,639 basehttp 80554 6219198464 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:45:29,181 basehttp 80554 6168719360 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 7618
+INFO 2025-11-05 15:45:29,220 basehttp 80554 6168719360 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 7618
+INFO 2025-11-05 15:45:35,456 basehttp 80554 6202372096 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:45:35,457 basehttp 80554 6168145920 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 15:45:35,633 basehttp 80554 6185545728 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:46:05,712 basehttp 80554 6184972288 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:46:05,887 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
