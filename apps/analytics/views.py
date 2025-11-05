@@ -952,6 +952,79 @@ def token_usage_by_user(request):
 
 
 @api_view(['GET'])
+@permission_classes([permissions.AllowAny])
+def daily_token_usage(request):
+    """Get daily token usage statistics by date range (Public API - No authentication required)"""
+    try:
+        # Get date range from query params
+        start_date_str = request.GET.get('start_date')
+        end_date_str = request.GET.get('end_date')
+
+        start_date = None
+        end_date = None
+
+        if start_date_str:
+            try:
+                start_date = datetime.strptime(start_date_str, '%Y-%m-%d').date()
+            except ValueError:
+                return Response({
+                    'success': False,
+                    'error': 'Invalid start_date format. Use YYYY-MM-DD'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+        if end_date_str:
+            try:
+                end_date = datetime.strptime(end_date_str, '%Y-%m-%d').date()
+            except ValueError:
+                return Response({
+                    'success': False,
+                    'error': 'Invalid end_date format. Use YYYY-MM-DD'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Validate date range
+        if start_date and end_date and start_date > end_date:
+            return Response({
+                'success': False,
+                'error': 'start_date must be before or equal to end_date'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Get daily token usage statistics
+        token_stats = AnalyticsService.get_daily_token_usage(
+            start_date=start_date,
+            end_date=end_date
+        )
+
+        # Calculate summary statistics
+        total_input_tokens = sum(day['input_tokens'] for day in token_stats)
+        total_output_tokens = sum(day['output_tokens'] for day in token_stats)
+        total_tokens = sum(day['total_tokens'] for day in token_stats)
+        total_messages = sum(day['message_count'] for day in token_stats)
+
+        return Response({
+            'success': True,
+            'data': token_stats,
+            'summary': {
+                'total_input_tokens': total_input_tokens,
+                'total_output_tokens': total_output_tokens,
+                'total_tokens': total_tokens,
+                'total_messages': total_messages,
+                'total_days': len(token_stats),
+                'avg_tokens_per_day': round(total_tokens / len(token_stats), 2) if len(token_stats) > 0 else 0
+            },
+            'date_range': {
+                'start_date': start_date.isoformat() if start_date else (timezone.now().date() - timedelta(days=30)).isoformat(),
+                'end_date': end_date.isoformat() if end_date else timezone.now().date().isoformat()
+            }
+        }, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response({
+            'success': False,
+            'error': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
 @permission_classes([IsAdminUser])
 def qa_data(request):
     """Get Q/A data with pagination showing user questions and answers with timestamps"""

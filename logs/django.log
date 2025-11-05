@@ -4249,3 +4249,196 @@ INFO 2025-11-05 15:45:35,457 basehttp 80554 6168145920 "GET /api/analytics/token
 INFO 2025-11-05 15:45:35,633 basehttp 80554 6185545728 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
 INFO 2025-11-05 15:46:05,712 basehttp 80554 6184972288 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
 INFO 2025-11-05 15:46:05,887 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:46:35,723 basehttp 80554 6219198464 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:46:35,917 basehttp 80554 6202372096 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:47:05,735 basehttp 80554 6184972288 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:47:05,940 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:47:35,754 basehttp 80554 6219198464 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:47:35,913 basehttp 80554 6202372096 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:48:05,717 basehttp 80554 6236024832 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:48:05,899 basehttp 80554 6201798656 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:48:35,734 basehttp 80554 6269677568 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:48:35,952 basehttp 80554 6252851200 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:49:07,729 basehttp 80554 6186119168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:49:07,897 basehttp 80554 6169292800 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:50:07,725 basehttp 80554 6219771904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:50:07,933 basehttp 80554 6202945536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:51:07,715 basehttp 80554 6185545728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:51:07,837 basehttp 80554 6168719360 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:52:07,744 basehttp 80554 6202945536 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:52:07,974 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:52:28,320 basehttp 80554 6184972288 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:28,320 basehttp 80554 6202945536 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:28,330 basehttp 80554 6202945536 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:28,330 basehttp 80554 6184972288 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:28,331 basehttp 80554 6168145920 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:52:28,345 basehttp 80554 6184972288 "GET /api/auth/users/?page=1&search= HTTP/1.1" 200 1155
+INFO 2025-11-05 15:52:34,023 basehttp 80554 6219771904 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:34,036 basehttp 80554 6236598272 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:34,038 basehttp 80554 6202945536 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:52:34,038 basehttp 80554 6168145920 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 15:52:34,043 basehttp 80554 6253424640 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:34,047 basehttp 80554 6219771904 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:52:34,123 basehttp 80554 6184972288 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:53:04,928 basehttp 80554 6184972288 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:53:05,203 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:53:34,738 basehttp 80554 6219771904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:53:34,933 basehttp 80554 6202945536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:54:04,732 basehttp 80554 6185545728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:54:04,881 basehttp 80554 6168719360 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:54:34,757 basehttp 80554 6219198464 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:54:34,934 basehttp 80554 6202372096 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:55:04,745 basehttp 80554 6186119168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:55:04,916 basehttp 80554 6169292800 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:55:34,739 basehttp 80554 6219771904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:55:34,854 basehttp 80554 6202945536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:56:07,930 basehttp 80554 6185545728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:56:08,089 basehttp 80554 6168719360 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:57:07,868 basehttp 80554 6202945536 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:57:07,995 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:58:01,176 basehttp 80554 6186119168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:58:01,288 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:58:03,277 basehttp 80554 6202945536 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:58:03,277 services 80554 6236598272 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:58:03,298 basehttp 80554 6202945536 "GET /api/files/folders/tree/ HTTP/1.1" 200 32
+INFO 2025-11-05 15:58:03,301 basehttp 80554 6219771904 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:58:03,301 basehttp 80554 6236598272 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:58:03,308 services 80554 6202945536 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:58:03,342 basehttp 80554 6168145920 "GET /api/files/ HTTP/1.1" 200 3229
+INFO 2025-11-05 15:58:03,363 basehttp 80554 6202945536 "GET /api/files/stats/ HTTP/1.1" 200 457
+INFO 2025-11-05 15:58:08,046 basehttp 80554 6186119168 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:58:08,046 basehttp 80554 6168145920 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:58:08,062 basehttp 80554 6202945536 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:58:08,063 basehttp 80554 6168145920 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:58:14,792 basehttp 80554 6219771904 "POST /api/chat/conversations/ HTTP/1.1" 201 322
+INFO 2025-11-05 15:58:14,803 basehttp 80554 6236598272 "OPTIONS /api/chat/conversations/615c212f-2499-4649-ae55-76a7efa9e32f/history/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:58:14,829 basehttp 80554 6219771904 "GET /api/chat/conversations/ HTTP/1.1" 200 324
+INFO 2025-11-05 15:58:14,837 basehttp 80554 6236598272 "GET /api/chat/conversations/615c212f-2499-4649-ae55-76a7efa9e32f/history/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:58:14,857 views 80554 6219771904 ChatStreamView POST called by user: bro (bro bro)
+INFO 2025-11-05 15:58:14,857 views 80554 6219771904 Request data: {'message': 'What is cyberflow?', 'conversation_id': '615c212f-2499-4649-ae55-76a7efa9e32f', 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:58:14,861 views 80554 6219771904 Serializer validated data: OrderedDict({'message': 'What is cyberflow?', 'conversation_id': UUID('615c212f-2499-4649-ae55-76a7efa9e32f'), 'user_info': {'email': 'bro@gmail.com'}})
+INFO 2025-11-05 15:58:14,862 views 80554 6219771904 Starting generate_stream function
+INFO 2025-11-05 15:58:14,862 views 80554 6219771904 About to call process_chat_message_stream
+INFO 2025-11-05 15:58:14,873 notifications 80554 6219771904 Attempting to send notification: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: What is cyberflow?
+User ID: 2...
+INFO 2025-11-05 15:58:15,423 notifications 80554 6219771904 Notification sent successfully: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: What is...
+ERROR 2025-11-05 15:58:15,432 services 80554 6219771904 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'What is cyberflow?'}], 'user_info': {'email': 'bro@gmail.com'}}
+ERROR 2025-11-05 15:58:16,138 services 80554 6219771904 RAG API streaming request failed: 503 Server Error: Service Unavailable for url: https://farmonpagerag.omadligrouphq.com/chat/ask/
+INFO 2025-11-05 15:58:16,138 notifications 80554 6219771904 Attempting to send notification: RAG API Error - Streaming - RAG API error for user: bro@gmail.com
+Error: 503 Server Error: Service Unavailable for url: https://...
+INFO 2025-11-05 15:58:16,512 notifications 80554 6219771904 Notification sent successfully: RAG API Error - Streaming - RAG API error for user: bro@gmail.com
+Error: 503 S...
+INFO 2025-11-05 15:58:16,527 views 80554 6219771904 Stream completed with 1 chunks
+INFO 2025-11-05 15:58:16,527 basehttp 80554 6219771904 "POST /api/chat/stream/ HTTP/1.1" 200 587
+INFO 2025-11-05 15:58:16,558 basehttp 80554 6236598272 "GET /api/chat/conversations/ HTTP/1.1" 200 551
+INFO 2025-11-05 15:58:16,558 basehttp 80554 6168145920 "GET /api/chat/conversations/615c212f-2499-4649-ae55-76a7efa9e32f/history/ HTTP/1.1" 200 1071
+WARNING 2025-11-05 16:18:24,061 log 80554 6186119168 Unauthorized: /api/analytics/token-usage-by-user/
+WARNING 2025-11-05 16:18:24,061 log 80554 6202945536 Unauthorized: /api/analytics/dashboard/
+WARNING 2025-11-05 16:18:24,061 log 80554 6219771904 Unauthorized: /api/analytics/subscription-stats/
+WARNING 2025-11-05 16:18:24,062 basehttp 80554 6219771904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 401 172
+WARNING 2025-11-05 16:18:24,062 basehttp 80554 6186119168 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 401 172
+WARNING 2025-11-05 16:18:24,062 basehttp 80554 6202945536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 401 172
+INFO 2025-11-05 16:18:32,949 serializers 80554 6168145920 Login attempt for: bro
+INFO 2025-11-05 16:18:33,480 serializers 80554 6168145920 Username auth result: True
+INFO 2025-11-05 16:18:33,480 views 80554 6168145920 User login: bro, password hash: pbkdf2_sha256$1000000$gQPS5J0v0bPlnjYzmstnSw$OEwzQ...
+INFO 2025-11-05 16:18:33,533 basehttp 80554 6168145920 "POST /api/auth/login/ HTTP/1.1" 200 1113
+INFO 2025-11-05 16:18:33,771 basehttp 80554 6236598272 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 16:18:33,777 basehttp 80554 6219771904 "GET /api/chat/conversations/ HTTP/1.1" 200 551
+INFO 2025-11-05 16:18:33,778 basehttp 80554 6202945536 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:18:33,779 basehttp 80554 6168145920 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 16:18:33,789 basehttp 80554 6236598272 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 16:18:33,789 basehttp 80554 6253424640 "GET /api/chat/conversations/ HTTP/1.1" 200 551
+INFO 2025-11-05 16:18:33,862 basehttp 80554 6186119168 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:19:03,779 basehttp 80554 6185545728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:19:03,950 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:19:33,749 basehttp 80554 6219198464 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:19:33,924 basehttp 80554 6202372096 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:20:04,745 basehttp 80554 6185545728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:20:04,919 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:20:34,712 basehttp 80554 6219198464 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:20:34,960 basehttp 80554 6202372096 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:21:04,751 basehttp 80554 6185545728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:21:04,930 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:21:34,750 basehttp 80554 6202945536 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:21:34,991 basehttp 80554 6184972288 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:22:07,717 basehttp 80554 6184972288 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:22:07,975 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:23:07,749 basehttp 80554 6219771904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:23:07,958 basehttp 80554 6202945536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:24:07,911 basehttp 80554 6184972288 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:24:08,182 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:25:07,973 basehttp 80554 6219771904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:25:08,249 basehttp 80554 6202945536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:26:06,650 basehttp 80554 6185545728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:26:06,771 basehttp 80554 6168719360 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:26:34,741 basehttp 80554 6202945536 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:26:34,876 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:27:04,728 basehttp 80554 6186119168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:27:04,895 basehttp 80554 6168145920 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:28:07,735 basehttp 80554 6219771904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:28:07,877 basehttp 80554 6202945536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:28:52,699 autoreload 80554 8460142592 /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/analytics/services.py changed, reloading.
+INFO 2025-11-05 16:28:53,244 autoreload 94951 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 16:29:07,771 basehttp 94951 6206304256 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:29:07,890 basehttp 94951 6189477888 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:29:15,212 autoreload 94951 8460142592 /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/analytics/views.py changed, reloading.
+INFO 2025-11-05 16:29:15,612 autoreload 95056 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 16:29:35,416 autoreload 95056 8460142592 /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/analytics/urls.py changed, reloading.
+INFO 2025-11-05 16:29:35,822 autoreload 95226 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 16:30:00,489 basehttp 95226 6188167168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:30:00,791 basehttp 95226 6171340800 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:30:03,809 basehttp 95226 6188167168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:30:03,993 basehttp 95226 6171340800 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:30:34,834 basehttp 95226 6221819904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:30:34,992 basehttp 95226 6204993536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:31:04,713 basehttp 95226 6188740608 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:31:04,883 basehttp 95226 6171914240 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:33:29,535 basehttp 95226 6239219712 "OPTIONS /api/analytics/daily-token-usage/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 0
+INFO 2025-11-05 16:33:29,570 basehttp 95226 6188167168 "GET /api/chat/conversations/ HTTP/1.1" 200 551
+INFO 2025-11-05 16:33:29,571 basehttp 95226 6256046080 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 16:33:29,585 basehttp 95226 6171340800 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 16:33:29,587 basehttp 95226 6222393344 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:33:29,590 basehttp 95226 6188167168 "GET /api/chat/conversations/ HTTP/1.1" 200 551
+INFO 2025-11-05 16:33:29,590 basehttp 95226 6256046080 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 16:33:29,659 basehttp 95226 6239219712 "GET /api/analytics/daily-token-usage/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 4462
+INFO 2025-11-05 16:33:29,671 basehttp 95226 6205566976 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:33:36,954 basehttp 95226 6256046080 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 16:33:36,963 basehttp 95226 6239219712 "GET /api/chat/conversations/ HTTP/1.1" 200 551
+INFO 2025-11-05 16:33:36,966 basehttp 95226 6170767360 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 16:33:36,966 basehttp 95226 6205566976 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:33:36,977 basehttp 95226 6256046080 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 16:33:36,985 basehttp 95226 6239219712 "GET /api/chat/conversations/ HTTP/1.1" 200 551
+INFO 2025-11-05 16:33:37,055 basehttp 95226 6222393344 "GET /api/analytics/daily-token-usage/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 4462
+INFO 2025-11-05 16:33:37,096 basehttp 95226 6187593728 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:34:07,760 basehttp 95226 6187593728 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:34:07,979 basehttp 95226 6170767360 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:34:37,818 basehttp 95226 6221819904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:34:38,026 basehttp 95226 6204993536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:35:06,930 basehttp 95226 6188167168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:35:07,179 basehttp 95226 6171340800 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:35:14,801 basehttp 95226 6221819904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:35:14,807 basehttp 95226 6238646272 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 16:35:14,915 basehttp 95226 6255472640 "GET /api/analytics/daily-token-usage/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 4462
+INFO 2025-11-05 16:35:14,927 basehttp 95226 6204993536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:35:44,805 basehttp 95226 6188740608 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:35:45,042 basehttp 95226 6171914240 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:36:14,798 basehttp 95226 6222393344 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:36:14,945 basehttp 95226 6205566976 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:36:44,806 basehttp 95226 6239219712 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:36:45,089 basehttp 95226 6171340800 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:37:14,811 basehttp 95226 6289125376 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:37:15,152 basehttp 95226 6272299008 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:37:44,854 basehttp 95226 6188167168 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:37:45,076 basehttp 95226 6171340800 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:38:14,785 basehttp 95226 6221819904 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:38:14,959 basehttp 95226 6204993536 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:38:44,777 basehttp 95226 6188740608 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:38:44,958 basehttp 95226 6171914240 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:39:14,819 basehttp 95226 6222393344 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:39:14,945 basehttp 95226 6205566976 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:39:44,805 basehttp 95226 6188740608 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:39:44,978 basehttp 95226 6171914240 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 16:40:15,883 basehttp 95226 6222393344 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 16:40:15,986 basehttp 95226 6205566976 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313

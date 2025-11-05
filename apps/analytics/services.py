@@ -603,8 +603,64 @@ class AnalyticsService:
         
         # Sort by total tokens used (descending)
         user_token_stats.sort(key=lambda x: x['total_tokens'], reverse=True)
-        
+
         return user_token_stats
+
+    @staticmethod
+    def get_daily_token_usage(
+        start_date: date = None,
+        end_date: date = None
+    ) -> List[Dict[str, Any]]:
+        """Get daily token usage statistics"""
+        if not start_date:
+            start_date = timezone.now().date() - timedelta(days=30)
+        if not end_date:
+            end_date = timezone.now().date()
+
+        from apps.chat.models import ChatMessage
+
+        # Get daily token statistics
+        daily_stats = []
+        current_date = start_date
+
+        while current_date <= end_date:
+            # Get messages for this date
+            messages_today = ChatMessage.objects.filter(
+                created_at__date=current_date,
+                message_type=ChatMessage.MessageType.ASSISTANT  # Only count assistant messages
+            )
+
+            # Calculate token statistics for the day
+            total_tokens = messages_today.aggregate(
+                total=Sum('tokens_used')
+            )['total'] or 0
+
+            input_tokens = messages_today.aggregate(
+                total=Sum('input_tokens')
+            )['total'] or 0
+
+            output_tokens = messages_today.aggregate(
+                total=Sum('output_tokens')
+            )['total'] or 0
+
+            message_count = messages_today.count()
+
+            # Get unique users count for the day
+            unique_users = messages_today.values('user').distinct().count()
+
+            daily_stats.append({
+                'date': current_date.isoformat(),
+                'input_tokens': input_tokens,
+                'output_tokens': output_tokens,
+                'total_tokens': total_tokens,
+                'message_count': message_count,
+                'unique_users': unique_users,
+                'avg_tokens_per_message': round(total_tokens / message_count, 2) if message_count > 0 else 0
+            })
+
+            current_date += timedelta(days=1)
+
+        return daily_stats
 
     @staticmethod
     def _get_user_growth_chart(
