@@ -3350,3 +3350,196 @@ INFO 2025-11-03 19:46:36,755 views 56918 6185824256 Stream completed with 203 ch
 INFO 2025-11-03 19:46:36,755 basehttp 56918 6185824256 "POST /api/chat/stream/ HTTP/1.1" 200 66376
 INFO 2025-11-03 19:46:36,806 basehttp 56918 6202650624 "GET /api/chat/conversations/b8f71b2c-08a4-4ae0-8be2-5ea2f7bcd75f/history/ HTTP/1.1" 200 1922
 INFO 2025-11-03 19:46:36,812 basehttp 56918 6151024640 "GET /api/chat/conversations/ HTTP/1.1" 200 4266
+INFO 2025-11-03 19:54:51,808 basehttp 56918 6134198272 "OPTIONS /api/auth/me HTTP/1.1" 200 0
+INFO 2025-11-05 15:03:41,241 autoreload 64082 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 15:03:45,423 basehttp 64082 6195376128 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:03:45,423 basehttp 64082 6212202496 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:03:45,426 basehttp 64082 6229028864 "OPTIONS /api/chat/conversations/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:03:45,427 basehttp 64082 6245855232 "OPTIONS /api/chat/folders/ HTTP/1.1" 200 0
+WARNING 2025-11-05 15:03:45,456 log 64082 6195376128 Unauthorized: /api/chat/conversations/
+WARNING 2025-11-05 15:03:45,456 log 64082 6212202496 Unauthorized: /api/chat/folders/
+WARNING 2025-11-05 15:03:45,457 basehttp 64082 6195376128 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+WARNING 2025-11-05 15:03:45,457 basehttp 64082 6212202496 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-11-05 15:03:45,459 log 64082 6245855232 Unauthorized: /api/chat/conversations/
+WARNING 2025-11-05 15:03:45,460 log 64082 6229028864 Unauthorized: /api/chat/folders/
+WARNING 2025-11-05 15:03:45,460 basehttp 64082 6229028864 "GET /api/chat/folders/ HTTP/1.1" 401 172
+WARNING 2025-11-05 15:03:45,460 basehttp 64082 6245855232 "GET /api/chat/conversations/ HTTP/1.1" 401 172
+INFO 2025-11-05 15:03:45,490 basehttp 64082 6212202496 "OPTIONS /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 0
+INFO 2025-11-05 15:03:45,490 basehttp 64082 6229028864 "OPTIONS /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 0
+INFO 2025-11-05 15:03:45,490 basehttp 64082 6245855232 "OPTIONS /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 0
+WARNING 2025-11-05 15:03:45,507 log 64082 6229028864 Unauthorized: /api/analytics/subscription-stats/
+WARNING 2025-11-05 15:03:45,508 log 64082 6245855232 Unauthorized: /api/analytics/token-usage-by-user/
+WARNING 2025-11-05 15:03:45,509 log 64082 6212202496 Unauthorized: /api/analytics/dashboard/
+WARNING 2025-11-05 15:03:45,509 basehttp 64082 6229028864 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 401 172
+WARNING 2025-11-05 15:03:45,510 basehttp 64082 6245855232 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 401 172
+WARNING 2025-11-05 15:03:45,511 basehttp 64082 6212202496 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 401 172
+INFO 2025-11-05 15:07:39,449 basehttp 64082 6194802688 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:07:39,455 serializers 64082 6194802688 Login attempt for: bro
+INFO 2025-11-05 15:07:39,688 serializers 64082 6194802688 Username auth result: False
+INFO 2025-11-05 15:07:39,739 serializers 64082 6194802688 No user found with email: bro
+WARNING 2025-11-05 15:07:39,741 log 64082 6194802688 Bad Request: /api/auth/login/
+WARNING 2025-11-05 15:07:39,741 basehttp 64082 6194802688 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-11-05 15:07:50,215 serializers 64082 6194802688 Login attempt for: brodev
+INFO 2025-11-05 15:07:50,380 serializers 64082 6194802688 Username auth result: False
+INFO 2025-11-05 15:07:50,425 serializers 64082 6194802688 No user found with email: brodev
+WARNING 2025-11-05 15:07:50,426 log 64082 6194802688 Bad Request: /api/auth/login/
+WARNING 2025-11-05 15:07:50,426 basehttp 64082 6194802688 "POST /api/auth/login/ HTTP/1.1" 400 45
+INFO 2025-11-05 15:08:30,302 serializers 64082 6211629056 Login attempt for: tester
+INFO 2025-11-05 15:08:30,472 serializers 64082 6211629056 Username auth result: True
+INFO 2025-11-05 15:08:30,472 views 64082 6211629056 User login: tester, password hash: pbkdf2_sha256$1000000$PLUk5ymXuvbeVyDGlfDkkM$//Jwx...
+INFO 2025-11-05 15:08:30,549 basehttp 64082 6211629056 "POST /api/auth/login/ HTTP/1.1" 200 1120
+INFO 2025-11-05 15:08:30,891 basehttp 64082 6228455424 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:08:30,902 basehttp 64082 6211629056 "GET /api/chat/conversations/ HTTP/1.1" 200 4266
+INFO 2025-11-05 15:08:30,905 basehttp 64082 6228455424 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:08:30,927 basehttp 64082 6194802688 "GET /api/chat/conversations/ HTTP/1.1" 200 4266
+INFO 2025-11-05 15:08:37,866 basehttp 64082 6211629056 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:08:37,908 basehttp 64082 6211629056 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-11-05 15:08:56,298 basehttp 64082 6228455424 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:08:56,520 basehttp 64082 6228455424 "POST /api/auth/register/ HTTP/1.1" 201 1084
+INFO 2025-11-05 15:08:56,704 basehttp 64082 6194802688 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:08:56,705 basehttp 64082 6228455424 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:08:56,759 basehttp 64082 6194802688 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:08:56,759 basehttp 64082 6228455424 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:18,500 basehttp 64082 6211629056 "POST /api/auth/logout/ HTTP/1.1" 200 31
+INFO 2025-11-05 15:09:22,943 serializers 64082 6228455424 Login attempt for: bro
+INFO 2025-11-05 15:09:23,104 serializers 64082 6228455424 Username auth result: True
+INFO 2025-11-05 15:09:23,104 views 64082 6228455424 User login: bro, password hash: pbkdf2_sha256$1000000$gQPS5J0v0bPlnjYzmstnSw$OEwzQ...
+INFO 2025-11-05 15:09:23,153 basehttp 64082 6228455424 "POST /api/auth/login/ HTTP/1.1" 200 1113
+INFO 2025-11-05 15:09:23,410 basehttp 64082 6211629056 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:23,415 basehttp 64082 6262108160 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:23,421 basehttp 64082 6228455424 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 15:09:23,421 basehttp 64082 6194802688 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:09:23,422 basehttp 64082 6211629056 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:23,426 basehttp 64082 6279507968 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:23,523 basehttp 64082 6245281792 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:09:32,337 basehttp 64082 6211055616 "OPTIONS /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 0
+INFO 2025-11-05 15:09:32,338 basehttp 64082 6194229248 "OPTIONS /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 0
+INFO 2025-11-05 15:09:32,376 basehttp 64082 6194229248 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 7618
+INFO 2025-11-05 15:09:32,443 basehttp 64082 6211055616 "GET /api/analytics/qa-data/?page=1&page_size=10 HTTP/1.1" 200 7618
+INFO 2025-11-05 15:09:35,640 basehttp 64082 6227881984 "OPTIONS /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 0
+INFO 2025-11-05 15:09:35,700 basehttp 64082 6227881984 "GET /api/analytics/users-list-stats/?page=1&page_size=10&search=&subscription_status=&subscription_type=&role=user HTTP/1.1" 200 428
+INFO 2025-11-05 15:09:42,609 basehttp 64082 6211055616 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:09:42,609 basehttp 64082 6194229248 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:09:42,632 basehttp 64082 6194229248 "GET /api/auth/profile/ HTTP/1.1" 200 567
+INFO 2025-11-05 15:09:42,651 basehttp 64082 6211055616 "GET /api/auth/profile/ HTTP/1.1" 200 567
+INFO 2025-11-05 15:09:44,530 basehttp 64082 6211055616 "GET /api/analytics/token-usage-by-user/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 310
+INFO 2025-11-05 15:09:44,531 basehttp 64082 6227881984 "GET /api/analytics/subscription-stats/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 181
+INFO 2025-11-05 15:09:44,644 basehttp 64082 6194229248 "GET /api/analytics/dashboard/?start_date=2025-10-06&end_date=2025-11-05 HTTP/1.1" 200 5313
+INFO 2025-11-05 15:09:52,488 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:52,488 basehttp 64082 6211055616 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:52,510 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:09:52,510 basehttp 64082 6227881984 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:14:30,426 basehttp 64082 6244708352 "OPTIONS /api/files/upload/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:14:30,460 services 64082 6244708352 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:14:30,473 services 64082 6244708352 Successfully uploaded file: CyberFlow_df4d851b.pdf
+INFO 2025-11-05 15:14:30,477 services 64082 6244708352 File uploaded successfully: 8cd170c9-e07b-49cb-a282-0cc0e91e2288
+ERROR 2025-11-05 15:14:34,789 services 64082 6244708352 RAG upload failed with status 500: {"detail":"Error processing file: (psycopg2.OperationalError) SSL SYSCALL error: EOF detected\n\n[SQL: SELECT pdf_metadata.id AS pdf_metadata_id, pdf_metadata.email AS pdf_metadata_email, pdf_metadata.filename AS pdf_metadata_filename, pdf_metadata.path AS pdf_metadata_path, pdf_metadata.source AS pdf_metadata_source, pdf_metadata.total_pages AS pdf_metadata_total_pages, pdf_metadata.uploaded_at AS pdf_metadata_uploaded_at, pdf_metadata.embedding_dim AS pdf_metadata_embedding_dim \nFROM pdf_metadata \nWHERE pdf_metadata.filename = %(filename_1)s \n LIMIT %(param_1)s]\n[parameters: {'filename_1': 'CyberFlow.pdf', 'param_1': 1}]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"}
+INFO 2025-11-05 15:14:34,792 basehttp 64082 6244708352 "POST /api/files/upload/ HTTP/1.1" 201 1634
+INFO 2025-11-05 15:14:34,867 basehttp 64082 6244708352 "POST /api/chat/conversations/ HTTP/1.1" 201 322
+INFO 2025-11-05 15:14:34,874 basehttp 64082 6194229248 "OPTIONS /api/chat/conversations/3b1dd5ab-7c07-42e1-bcef-a7264db873a7/history/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:14:34,885 basehttp 64082 6244708352 "GET /api/chat/conversations/ HTTP/1.1" 200 324
+INFO 2025-11-05 15:14:34,889 basehttp 64082 6194229248 "GET /api/chat/conversations/3b1dd5ab-7c07-42e1-bcef-a7264db873a7/history/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:14:34,899 basehttp 64082 6194229248 "OPTIONS /api/chat/stream/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:14:34,915 views 64082 6194229248 ChatStreamView POST called by user: bro (bro bro)
+INFO 2025-11-05 15:14:34,915 views 64082 6194229248 Request data: {'message': 'what is cyberflow?', 'conversation_id': '3b1dd5ab-7c07-42e1-bcef-a7264db873a7', 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:14:34,919 views 64082 6194229248 Serializer validated data: OrderedDict({'message': 'what is cyberflow?', 'conversation_id': UUID('3b1dd5ab-7c07-42e1-bcef-a7264db873a7'), 'user_info': {'email': 'bro@gmail.com'}})
+INFO 2025-11-05 15:14:34,920 views 64082 6194229248 Starting generate_stream function
+INFO 2025-11-05 15:14:34,920 views 64082 6194229248 About to call process_chat_message_stream
+INFO 2025-11-05 15:14:34,930 notifications 64082 6194229248 Attempting to send notification: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: what is cyberflow?
+User ID: 2...
+INFO 2025-11-05 15:14:35,591 notifications 64082 6194229248 Notification sent successfully: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: what is...
+ERROR 2025-11-05 15:14:35,597 services 64082 6194229248 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'what is cyberflow?'}], 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:14:37,523 services 64082 6194229248 Source document: Sources:
+INFO 2025-11-05 15:14:37,523 services 64082 6194229248 Matches with page numbers: []
+INFO 2025-11-05 15:14:37,524 services 64082 6194229248 Finished processing 24 lines
+INFO 2025-11-05 15:14:37,541 views 64082 6194229248 Stream completed with 13 chunks
+INFO 2025-11-05 15:14:37,541 basehttp 64082 6194229248 "POST /api/chat/stream/ HTTP/1.1" 200 4274
+INFO 2025-11-05 15:14:37,613 basehttp 64082 6211055616 "GET /api/chat/conversations/ HTTP/1.1" 200 513
+INFO 2025-11-05 15:14:37,615 basehttp 64082 6227881984 "GET /api/chat/conversations/3b1dd5ab-7c07-42e1-bcef-a7264db873a7/history/ HTTP/1.1" 200 874
+INFO 2025-11-05 15:14:51,978 views 64082 6194229248 ChatStreamView POST called by user: bro (bro bro)
+INFO 2025-11-05 15:14:51,979 views 64082 6194229248 Request data: {'message': 'test', 'conversation_id': '3b1dd5ab-7c07-42e1-bcef-a7264db873a7', 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:14:51,984 views 64082 6194229248 Serializer validated data: OrderedDict({'message': 'test', 'conversation_id': UUID('3b1dd5ab-7c07-42e1-bcef-a7264db873a7'), 'user_info': {'email': 'bro@gmail.com'}})
+INFO 2025-11-05 15:14:51,986 views 64082 6194229248 Starting generate_stream function
+INFO 2025-11-05 15:14:51,987 views 64082 6194229248 About to call process_chat_message_stream
+INFO 2025-11-05 15:14:52,004 notifications 64082 6194229248 Attempting to send notification: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: test
+User ID: 2...
+INFO 2025-11-05 15:14:52,409 notifications 64082 6194229248 Notification sent successfully: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: test
+Us...
+ERROR 2025-11-05 15:14:52,427 services 64082 6194229248 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'test'}, {'message_type': 'assistant', 'content': 'The provided context does not contain information on this topic.'}, {'message_type': 'user', 'content': 'what is cyberflow?'}], 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:14:54,281 services 64082 6194229248 Source document: Sources:
+INFO 2025-11-05 15:14:54,281 services 64082 6194229248 Matches with page numbers: []
+INFO 2025-11-05 15:14:54,282 services 64082 6194229248 Finished processing 24 lines
+INFO 2025-11-05 15:14:54,300 views 64082 6194229248 Stream completed with 13 chunks
+INFO 2025-11-05 15:14:54,301 basehttp 64082 6194229248 "POST /api/chat/stream/ HTTP/1.1" 200 4274
+INFO 2025-11-05 15:14:54,331 basehttp 64082 6211055616 "GET /api/chat/conversations/ HTTP/1.1" 200 513
+INFO 2025-11-05 15:14:54,337 basehttp 64082 6227881984 "GET /api/chat/conversations/3b1dd5ab-7c07-42e1-bcef-a7264db873a7/history/ HTTP/1.1" 200 1733
+INFO 2025-11-05 15:14:56,188 basehttp 64082 6261534720 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:14:56,194 basehttp 64082 6244708352 "GET /api/chat/conversations/ HTTP/1.1" 200 513
+INFO 2025-11-05 15:14:56,208 basehttp 64082 6261534720 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:14:56,213 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 513
+INFO 2025-11-05 15:15:00,468 basehttp 64082 6194229248 "POST /api/chat/conversations/ HTTP/1.1" 201 310
+INFO 2025-11-05 15:15:00,475 basehttp 64082 6211055616 "OPTIONS /api/chat/conversations/af6a9d26-9236-4896-ba3e-e6f88cf8215d/history/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:15:00,496 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 824
+INFO 2025-11-05 15:15:00,501 basehttp 64082 6211055616 "GET /api/chat/conversations/af6a9d26-9236-4896-ba3e-e6f88cf8215d/history/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:15:00,525 views 64082 6211055616 ChatStreamView POST called by user: bro (bro bro)
+INFO 2025-11-05 15:15:00,525 views 64082 6211055616 Request data: {'message': 'hi boy', 'conversation_id': 'af6a9d26-9236-4896-ba3e-e6f88cf8215d', 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:15:00,528 views 64082 6211055616 Serializer validated data: OrderedDict({'message': 'hi boy', 'conversation_id': UUID('af6a9d26-9236-4896-ba3e-e6f88cf8215d'), 'user_info': {'email': 'bro@gmail.com'}})
+INFO 2025-11-05 15:15:00,528 views 64082 6211055616 Starting generate_stream function
+INFO 2025-11-05 15:15:00,528 views 64082 6211055616 About to call process_chat_message_stream
+INFO 2025-11-05 15:15:00,544 notifications 64082 6211055616 Attempting to send notification: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: hi boy
+User ID: 2...
+INFO 2025-11-05 15:15:00,973 notifications 64082 6211055616 Notification sent successfully: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: hi boy
+...
+ERROR 2025-11-05 15:15:00,975 services 64082 6211055616 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'hi boy'}], 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:15:02,503 services 64082 6211055616 Source document: Sources:
+INFO 2025-11-05 15:15:02,503 services 64082 6211055616 Matches with page numbers: []
+INFO 2025-11-05 15:15:02,503 services 64082 6211055616 Finished processing 24 lines
+INFO 2025-11-05 15:15:02,511 views 64082 6211055616 Stream completed with 13 chunks
+INFO 2025-11-05 15:15:02,511 basehttp 64082 6211055616 "POST /api/chat/stream/ HTTP/1.1" 200 4274
+INFO 2025-11-05 15:15:02,532 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 1013
+INFO 2025-11-05 15:15:02,533 basehttp 64082 6211055616 "GET /api/chat/conversations/af6a9d26-9236-4896-ba3e-e6f88cf8215d/history/ HTTP/1.1" 200 862
+INFO 2025-11-05 15:16:10,702 basehttp 64082 6227881984 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:16:10,709 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 1013
+INFO 2025-11-05 15:16:10,738 basehttp 64082 6227881984 "GET /api/chat/folders/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:16:10,755 basehttp 64082 6244708352 "GET /api/chat/conversations/ HTTP/1.1" 200 1013
+INFO 2025-11-05 15:16:19,162 services 64082 6194229248 Storage directory ready: /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/media/uploads
+INFO 2025-11-05 15:16:19,171 services 64082 6194229248 Successfully uploaded file: CyberFlow_0f6d1a66.pdf
+INFO 2025-11-05 15:16:19,177 services 64082 6194229248 File uploaded successfully: 48b8febb-e827-4d79-9448-b714897617fc
+INFO 2025-11-05 15:16:24,734 services 64082 6194229248 File CyberFlow.pdf uploaded to RAG successfully
+INFO 2025-11-05 15:16:24,735 basehttp 64082 6194229248 "POST /api/files/upload/ HTTP/1.1" 201 924
+INFO 2025-11-05 15:16:24,769 basehttp 64082 6194229248 "POST /api/chat/conversations/ HTTP/1.1" 201 313
+INFO 2025-11-05 15:16:24,774 basehttp 64082 6211055616 "OPTIONS /api/chat/conversations/257e43eb-42ac-4d89-8e56-c18fe5befcdf/history/ HTTP/1.1" 200 0
+INFO 2025-11-05 15:16:24,792 basehttp 64082 6211055616 "GET /api/chat/conversations/257e43eb-42ac-4d89-8e56-c18fe5befcdf/history/ HTTP/1.1" 200 2
+INFO 2025-11-05 15:16:24,792 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 1327
+INFO 2025-11-05 15:16:24,828 views 64082 6194229248 ChatStreamView POST called by user: bro (bro bro)
+INFO 2025-11-05 15:16:24,828 views 64082 6194229248 Request data: {'message': 'What meas', 'conversation_id': '257e43eb-42ac-4d89-8e56-c18fe5befcdf', 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:16:24,831 views 64082 6194229248 Serializer validated data: OrderedDict({'message': 'What meas', 'conversation_id': UUID('257e43eb-42ac-4d89-8e56-c18fe5befcdf'), 'user_info': {'email': 'bro@gmail.com'}})
+INFO 2025-11-05 15:16:24,832 views 64082 6194229248 Starting generate_stream function
+INFO 2025-11-05 15:16:24,832 views 64082 6194229248 About to call process_chat_message_stream
+INFO 2025-11-05 15:16:24,871 notifications 64082 6194229248 Attempting to send notification: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: What meas
+User ID: 2...
+INFO 2025-11-05 15:16:25,279 notifications 64082 6194229248 Notification sent successfully: RAG API Call - Streaming_Chat - RAG API called by: bro@gmail.com
+Question: What me...
+ERROR 2025-11-05 15:16:25,285 services 64082 6194229248 ASK DATA 2 ==========================: {'question': [{'message_type': 'user', 'content': 'What meas'}], 'user_info': {'email': 'bro@gmail.com'}}
+INFO 2025-11-05 15:16:27,046 services 64082 6194229248 Source document: Sources:
+INFO 2025-11-05 15:16:27,051 services 64082 6194229248 Matches with page numbers: []
+INFO 2025-11-05 15:16:27,051 services 64082 6194229248 Finished processing 24 lines
+INFO 2025-11-05 15:16:27,070 views 64082 6194229248 Stream completed with 13 chunks
+INFO 2025-11-05 15:16:27,070 basehttp 64082 6194229248 "POST /api/chat/stream/ HTTP/1.1" 200 4274
+INFO 2025-11-05 15:16:27,135 basehttp 64082 6211055616 "GET /api/chat/conversations/257e43eb-42ac-4d89-8e56-c18fe5befcdf/history/ HTTP/1.1" 200 865
+INFO 2025-11-05 15:16:27,135 basehttp 64082 6194229248 "GET /api/chat/conversations/ HTTP/1.1" 200 1516
+INFO 2025-11-05 15:21:39,925 autoreload 64082 8460142592 /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-11-05 15:21:40,455 autoreload 72923 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 15:21:51,013 autoreload 72923 8460142592 /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/chat/views.py changed, reloading.
+INFO 2025-11-05 15:21:51,425 autoreload 72981 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 15:22:04,040 autoreload 72981 8460142592 /Users/uzmacbook/PROJECTS/bonfarmon/farmon/farmon-be/apps/chat/urls.py changed, reloading.
+INFO 2025-11-05 15:22:04,451 autoreload 73092 8460142592 Watching for file changes with StatReloader
+INFO 2025-11-05 15:22:22,730 basehttp 73092 6205386752 "GET /api/chat/conversations/257e43eb-42ac-4d89-8e56-c18fe5befcdf/history/ HTTP/1.1" 200 865
+INFO 2025-11-05 15:36:35,816 basehttp 73092 6205386752 "GET /api/chat/conversations/257e43eb-42ac-4d89-8e56-c18fe5befcdf/history/ HTTP/1.1" 200 865
